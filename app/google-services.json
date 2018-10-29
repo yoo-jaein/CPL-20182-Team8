@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "876315161384",
+    "firebase_url": "https://onthejourney-1538547464083.firebaseio.com",
+    "project_id": "onthejourney-1538547464083",
+    "storage_bucket": "onthejourney-1538547464083.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876315161384:android:0362571190348680",
+        "android_client_info": {
+          "package_name": "com.example.OntheJournet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876315161384-l9sud7eg7trl8not4kdgtr9ugatb639i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.OntheJournet",
+            "certificate_hash": "f6e2a22027d1ef3cc2de435ae8d7bc66fa9c167a"
+          }
+        },
+        {
+          "client_id": "876315161384-75sdgrottkig3jt7gves4fo88gocth3h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtI5eX12gSj_5xrfMCukNIkmUdV0Es4Oo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876315161384-75sdgrottkig3jt7gves4fo88gocth3h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
