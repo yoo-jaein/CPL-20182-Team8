@@ -2,15 +2,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var customerSchema = new Schema({
-    //_id : {type:String, required : true , unique: true},
+    customer_id : {type:String, required : true , unique: true},
     pw : { type : String, required : true , trim : true},
     name : { type : String, required : true },
-    nickname : { type: String, default:name, required : true},
+    nickname : { type: String, default:'name', required : true},
     favorite_buddy_id_list : [ String ],
     favorite_feed_item_id_list : [ Schema.Types.ObjectId ],
-    checklist_id_list : [Schema.Types.ObjectId],
-    chat_id_list : [Schema.Types.ObjectId],
-    comment_id_list : [ Schema.Types.ObjectId ]
 });
 
 customerSchema.statics.create = function(data){

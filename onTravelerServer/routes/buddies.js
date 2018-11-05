@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Buddy = require('../models/buddy')
+var Buddy = require('../models/buddy');
 
 /* GET buddy listing. */
 router.get('/', function(req, res, next) {
@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 
 /* Get particular buddy*/
 router.get('/:buddy_id', function(req, res, next){
-    Buddy.find({_id : req.params.buddy_id})
+    Buddy.find({buddy_id : req.params.buddy_id})
         .then(function(buddy){
             if(!buddy.length) return res.status(404).send({ err : 'not found'});
             res.send({ success : 1, size : buddy.length, data : buddy});
@@ -55,7 +55,7 @@ router.post('/', function(req, res){
 
 /* Delete buddy */
 router.delete('/:buddy_id', function(req, res){
-    Buddy.remove({_id : req.params.buddy_id})
+    Buddy.remove({buddy_id : req.params.buddy_id})
         .then(function(){
             res.sendStatus(200);
         }).catch((function (err) {

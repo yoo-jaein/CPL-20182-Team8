@@ -4,11 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const passport = require('passport');
 
 
 /* set routing */
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
+var authRouter = require('./routes/auth');
 
 var buddyRouter = require('./routes/buddies');
 var checklistRouter = require('./routes/checklists');
@@ -16,12 +19,14 @@ var customerRouter = require('./routes/customers');
 var feed_itemRouter = require('./routes/feed_items');
 var schedule_itemRouter = require('./routes/schedule_items');
 var imageRouter = require('./routes/images');
+var postScriptRouter = require('./routes/postScripts');
+
 
 
 var app = express();
 
 var mongo_server_url = "mongodb://localhost:27017/traveler";
-var User = require('./models/user');
+
 
 
 // view engine setup
@@ -31,13 +36,22 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.use(bodyParser.json({limit : '50mb'}));
+app.use(bodyParser.urlencoded({extended: false, limit: '50mb'}));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('uploads'));
 
+require('./passport')(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 /*  use routing   */
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+app.use('/auth', authRouter);
 
 app.use('/images', imageRouter);
 app.use('/buddies', buddyRouter);
@@ -45,6 +59,7 @@ app.use('/checklists', checklistRouter);
 app.use('/customers', customerRouter);
 app.use('/feed_items', feed_itemRouter);
 app.use('/schedule_items', schedule_itemRouter);
+app.use('/post_scripts', postScriptRouter);
 
 
 // catch 404 and forward to error handler

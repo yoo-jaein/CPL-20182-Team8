@@ -2,12 +2,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var scheduleSchema = new Schema({
+    buddy_id : {type:String},
+    checklist_id : { type:Schema.Types.ObjectId },
     start_time : Date,
     end_time : Date,
     schedule_type : {type:String},
     name : {type:String},
     location : {type:String},
-    checklist_id : {type:Schema.Types.ObjectId}
 });
 
 scheduleSchema.statics.create = function(data){

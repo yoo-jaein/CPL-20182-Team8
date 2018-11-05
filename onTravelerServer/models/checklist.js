@@ -8,9 +8,9 @@ var checkListSchema = new Schema({
     start_time : { type:Date, required: true },
     end_time : {type: Date, required: true},
     location : {type: String, required: true},
-    people_number : {type : Number, min : 1},
+    people_number : {type : Number, min : 1, required:true},
     requirement_list : [String],
-    suggested_price : {type : Number, min : 0}
+    suggested_price : {type : Number, min : 0, required: true}
 });
 
 checkListSchema.statics.create = function(data){
