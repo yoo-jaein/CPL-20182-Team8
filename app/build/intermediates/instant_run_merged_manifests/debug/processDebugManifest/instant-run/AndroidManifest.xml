@@ -61,7 +61,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.example.onthejourney.MapsActivity"
+            android:name="com.example.onthejourney.Activity.MapsActivity"
             android:label="@string/title_activity_maps" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,7 +69,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.onthejourney.Photographer_info" />
+        <activity android:name="com.example.onthejourney.Activity.Photographer_info" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

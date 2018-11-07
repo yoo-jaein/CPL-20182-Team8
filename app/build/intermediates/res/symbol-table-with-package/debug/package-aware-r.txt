@@ -1064,11 +1064,14 @@ id icon_group
 id icon_only
 id ifRoom
 id image
-id imageView
+id imageView1
+id imageView2
+id imageView3
 id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id iv_picture
 id left
 id light
 id line1
