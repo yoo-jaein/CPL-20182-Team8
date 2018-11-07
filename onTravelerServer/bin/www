@@ -26,9 +26,10 @@ var server = http.createServer(app);
  */
 var myip = require('quick-local-ip');
 
+console.log(myip.getLocalIP4());
 
-//server.listen(port, myip.getLocalIP4());
-server.listen(port);
+server.listen(port, myip.getLocalIP4());
+//server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
