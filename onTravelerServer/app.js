@@ -42,7 +42,7 @@ app.use(bodyParser.urlencoded({extended: false, limit: '50mb'}));
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('uploads'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 require('./passport')(passport);
 app.use(passport.initialize());
