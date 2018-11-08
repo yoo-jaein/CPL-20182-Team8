@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+var config = require('./config');
 
 
 /* set routing */
@@ -25,7 +26,7 @@ var postScriptRouter = require('./routes/postScripts');
 
 var app = express();
 
-var mongo_server_url = "mongodb://t-hhm:1234@localhost:27017/traveler";
+var mongo_server_url = config.mongo_url;
 
 
 
