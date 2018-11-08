@@ -25,7 +25,7 @@ var postScriptRouter = require('./routes/postScripts');
 
 var app = express();
 
-var mongo_server_url = "mongodb://localhost:27017/traveler";
+var mongo_server_url = "mongodb://t-hhm:1234@localhost:27017/traveler";
 
 
 
