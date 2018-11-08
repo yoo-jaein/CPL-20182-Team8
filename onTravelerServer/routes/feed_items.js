@@ -53,7 +53,11 @@ router.get('/buddy/:buddy_id', function(req, res, next){
 
 /* Get particular feed_item */
 router.get('/hashtag/:hashtag_name', function(req, res, next){
-    Feed.find({hashtag : req.params.hashtag_name})
+    var hashtags = req.params.hashtag_name.split(/[ ,]+/);
+
+    console.log(hashtags);
+
+    Feed.find({hashtag : { $in : hashtags}})
         .then(function (feed) {
             if(!feed.length) return res.status(404).send({err : 'not found'});
             res.send({success: 1, size : feed.length, data :feed});
