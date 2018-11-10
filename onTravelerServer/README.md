@@ -1,9 +1,9 @@
 ## 서버 사용법
 
 ### rest api 사용법
-**server의 ip:3000/path** 가 기본적인 방법이다.
+**server의 ip:3000/path**<br />
 **path = routes 디렉토리에 있는 파일명 + 각 파일에서 원하는 추가 path**.
-
+<br /><br />
 **예**
 routes에 buddies.js에 가보면 여러 router.get, router.post 같은 함수가 있다.
 이 함수에 보면 추가 path들이 있다. 
@@ -14,7 +14,7 @@ get server_ip:3000/buddies/ 를 하면 된다. (맨 마지막 /는 생략가능)
 
 ### rest api의 return 값
 **return_form.js에 각 부분에 맞는 format이 있다.**
-
+<br /><br />
 **예**
 위에서 했던 get server_ip:3000/buddies/로 해보자
 만약 찾았다면 success는 1이고 size는 찾은 버디들의 수, datas에 배열로 버디들의 정보가 들어간다.
@@ -24,4 +24,5 @@ get server_ip:3000/buddies/ 를 하면 된다. (맨 마지막 /는 생략가능)
 
 ### 데이터베이스 model
 **각 collection의 schema = models디렉토리의 각 파일**
+<br /><br />
 required는 필수로 있어야 하는 정보이다.
