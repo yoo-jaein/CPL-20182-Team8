@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Feed = require('../models/feed');
+var ReturnFormat = require('../return_form')();
 
 var multer = require('multer');
 var upload = multer({
@@ -20,10 +21,10 @@ var upload = multer({
 router.get('/', function(req, res, next) {
     Feed.findAll()
         .then(function(feed){
-            if(!feed.length) return res.status(404).send({err : 'not found'});
-            res.send({success:1, size:feed.length, data : feed});
+            if(!feed.length) return res.status(404).send(ReturnFormat.get_format(0,feed,"cannot found"));
+            res.send(ReturnFormat.get_format(1,feed,""));
         }).catch(function (err) {
-        res.status(500).send(err);
+        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
     });
 });
 
@@ -33,10 +34,10 @@ router.get('/', function(req, res, next) {
 router.get('/:feed_item_id', function(req, res, next){
     Feed.find({_id : req.params.feed_item_id})
         .then(function(feed){
-            if(!feed.length) return res.status(404).send({err : 'not found'});
-            res.send({success: 1, size : feed.length, data :feed});
+            if(!feed.length) return res.status(404).send(ReturnFormat.get_format(0,feed,"cannot found"));
+            res.send(ReturnFormat.get_format(1,feed,""));
         }).catch(function (err) {
-        res.status(500).send(err);
+        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
     });
 });
 
@@ -44,10 +45,10 @@ router.get('/:feed_item_id', function(req, res, next){
 router.get('/buddy/:buddy_id', function(req, res, next){
     Feed.find({buddy_id : req.params.buddy_id})
         .then(function(feed){
-            if(!feed.length) return res.status(404).send({err : 'not found'});
-            res.send({success: 1, size : feed.length, data :feed});
+            if(!feed.length) return res.status(404).send(ReturnFormat.get_format(0,feed,"cannot found"));
+            res.send(ReturnFormat.get_format(1,feed,""));
         }).catch(function (err) {
-        res.status(500).send(err);
+        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
     });
 });
 
@@ -55,14 +56,12 @@ router.get('/buddy/:buddy_id', function(req, res, next){
 router.get('/hashtag/:hashtag_name', function(req, res, next){
     var hashtags = req.params.hashtag_name.split(/[ ,]+/);
 
-    console.log(hashtags);
-
     Feed.find({hashtag : { $in : hashtags}})
         .then(function (feed) {
-            if(!feed.length) return res.status(404).send({err : 'not found'});
-            res.send({success: 1, size : feed.length, data :feed});
+            if(!feed.length) return res.status(404).send(ReturnFormat.get_format(0,feed,"cannot found"));
+            res.send(ReturnFormat.get_format(1,feed,""));
         }).catch(function (err) {
-        res.status(500).send(err);
+        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
     });
 });
 
@@ -80,9 +79,9 @@ router.post('/', upload.single('image'),function(req, res){
 
     Feed.create(new_feed_item)
         .then(function(feed){
-            res.send(feed);
+            res.send(ReturnFormat.post_format(1, feed, ""));
         }).catch(function (err) {
-            res.status(500).send(err);
+            res.status(500).send(ReturnFormat.post_format(0, "", "500"));
     });
 });
 
@@ -91,9 +90,9 @@ router.post('/', upload.single('image'),function(req, res){
 router.delete('/:feed_item_id', function(req, res){
     Feed.remove({_id : req.params.feed_item_id})
         .then(function () {
-            res.sendStatus(200);
+            res.send(ReturnFormat.delete_format(1, ""));
         }).catch(function (err) {
-            res.status(500).send(err);
+            res.status(500).send(ReturnFormat.delete_format(0, "500"));
     });
 });
 

@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var Buddy = require('../models/buddy');
 var Customer = require('../models/customer');
+var ReturnFormat = require('../return_form')();
 
 const passport = require('passport');
 
@@ -21,20 +22,21 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
         * */
         Buddy.find({buddy_id : req.user.id})
             .then(function(buddy){
-                if(!buddy.length){
+                console.log(buddy.length);
+                if(buddy.length){
+                    console.log('exist');
+                    res.send(ReturnFormat.auth_format(1, 0, buddy, ""));
+                }else if(!buddy.length) {
                     Buddy.create({
-                        buddy_id : req.user.id,
-                        pw : "0",
-                        name : req.user.name.familyName + req.user.name.givenName
+                        buddy_id: req.user.id,
+                        pw: "0",
+                        name: req.user.name.familyName + req.user.name.givenName
+                    }).then(function(buddy){
+                        res.send(ReturnFormat.auth_format(1, 1, buddy, ""));
                     });
-
-                    res.send({status : 'created account!'});
                 }
-
-                /*  있으면 */
-                res.send({success:1, size:buddy.length, data:buddy});
             }).catch(function (err) {
-            res.status(500).send(err);
+            res.status(500).send(ReturnFormat.auth_format(0, 0, "", err));
         });
     });
 

@@ -20,7 +20,7 @@ var customerRouter = require('./routes/customers');
 var feed_itemRouter = require('./routes/feed_items');
 var schedule_itemRouter = require('./routes/schedule_items');
 var imageRouter = require('./routes/images');
-var postScriptRouter = require('./routes/postScripts');
+var postScriptRouter = require('./routes/post_scripts');
 
 
 
