@@ -1,35 +1,37 @@
 package com.example.onthejourney.Adapter;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.provider.ContactsContract;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.onthejourney.Activity.MapsActivity;
+import com.bumptech.glide.Glide;
 import com.example.onthejourney.Data.MyItem;
-import com.example.onthejourney.Module.GetImage;
-import com.example.onthejourney.Module.ServerModule;
+import com.example.onthejourney.Module.RequestHttpURLConnection;
 import com.example.onthejourney.R;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class PhotographerListViewAdapter extends BaseAdapter {
-    private ArrayList<MyItem> listViewItemList = new ArrayList<MyItem>();
-    String imageUrl = "";
-    Bitmap bitmap = null;
+    private TextView titleTextView;
+    private ImageView imageView1;
+    private ImageView imageView2;
+    private ImageView imageView3;
+    Context context;
+    private String url = "http://ec2-18-222-114-158.us-east-2.compute.amazonaws.com:3000/";
+    private ArrayList<MyItem> listViewItemList;
+
     public PhotographerListViewAdapter(ArrayList<MyItem> arrayList) {
         listViewItemList = arrayList;
+        context = null;
     }
 
     @Override
@@ -39,7 +41,7 @@ public class PhotographerListViewAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return listViewItemList.get(position);
     }
 
     @Override
@@ -49,29 +51,52 @@ public class PhotographerListViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final int pos = position;
-        final Context context = parent.getContext();
-
         if (convertView == null) {
+            context = parent.getContext();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.photographer, parent, false);
         }
 
-        TextView titleTextView = (TextView) convertView.findViewById(R.id.textView);
-        ImageView imageView1 = (ImageView) convertView.findViewById(R.id.imageView1);
-        ImageView imageView2 = (ImageView) convertView.findViewById(R.id.imageView2);
-        ImageView imageView3 = (ImageView) convertView.findViewById(R.id.imageView3);
+        titleTextView = (TextView) convertView.findViewById(R.id.textView);
+        imageView1 = (ImageView)convertView.findViewById(R.id.imageView1);
+        imageView2 = (ImageView)convertView.findViewById(R.id.imageView2);
+        imageView3 = (ImageView)convertView.findViewById(R.id.imageView3);
 
 
         MyItem myItem = listViewItemList.get(position);
 
-        //iconImageView.setImageDrawable(myItem.getImage);
-        titleTextView.setText(myItem.getTitle());
-        new GetImage().execute(bitmap, imageUrl);
-        imageView1.setImageBitmap(bitmap);
-        imageView2.setImageBitmap(bitmap);
-        imageView3.setImageBitmap(bitmap);
+        NetworkTask networkTask = new NetworkTask("feed_items","image_path");
+        networkTask.execute();
 
-        return convertView;
+        titleTextView.setText(myItem.getTitle());
+
+
+
+       return convertView;
+    }
+
+    public class NetworkTask extends AsyncTask<Void, Void, ArrayList<String>> {
+
+        private String option1, option2;
+
+        public NetworkTask(String option1, String option2) {
+            this.option1 = option1;
+            this.option2 = option2;
+        }
+
+        @Override
+        protected ArrayList<String> doInBackground(Void... voids) {
+            ArrayList<String> result;
+            RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
+            result = requestHttpURLConnection.getJsonText(option1, option2);
+
+            return result;
+        }
+
+        protected void onPostExecute(ArrayList<String> s) {
+            Glide.with(context).load(url+s.get(0)).into(imageView1);
+            Glide.with(context).load(url+s.get(1)).into(imageView2);
+            Glide.with(context).load(url+s.get(2)).into(imageView3);
+        }
     }
 }

@@ -1038,6 +1038,10 @@ id content
 id contentPanel
 id custom
 id customPanel
+id cv
+id cv1
+id cv2
+id cv3
 id dark
 id decor_content_parent
 id default_activity_button
@@ -1064,6 +1068,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView
 id imageView1
 id imageView2
 id imageView3
@@ -1071,9 +1076,10 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
-id iv_picture
 id left
 id light
+id like
+id likeNum
 id line1
 id line3
 id listMode
@@ -1152,9 +1158,12 @@ id place_autocomplete_separator
 id progress_circular
 id progress_horizontal
 id radio
+id rating
+id recyclerImageView
 id right
 id right_icon
 id right_side
+id rvSample
 id satellite
 id screen
 id scrollIndicatorDown
@@ -1259,7 +1268,6 @@ layout activity_photographer_info
 layout amu_info_window
 layout amu_text_bubble
 layout amu_webview
-layout image
 layout mr_cast_dialog
 layout mr_cast_group_item
 layout mr_cast_group_volume_item
@@ -1294,6 +1302,7 @@ layout place_autocomplete_fragment
 layout place_autocomplete_item_powered_by_google
 layout place_autocomplete_item_prediction
 layout place_autocomplete_progress
+layout recyclerviewimage
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

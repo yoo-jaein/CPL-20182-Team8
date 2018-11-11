@@ -1,18 +1,24 @@
 package com.example.onthejourney.Activity;
 
 import android.Manifest;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -21,6 +27,7 @@ import com.example.onthejourney.Algorithm.CustomClusterRenderer;
 import com.example.onthejourney.Algorithm.NonHierarchicalDistanceBasedAlgorithm;
 import com.example.onthejourney.Data.MyItem;
 import com.example.onthejourney.ETC.PermissionUtils;
+import com.example.onthejourney.Module.RequestHttpURLConnection;
 import com.example.onthejourney.R;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
@@ -49,7 +56,7 @@ public class MapsActivity extends FragmentActivity implements
     private Geocoder geocoder;
     private Button button;
     MyItem myItem = null;
-
+    private ArrayList<String> image_path_list;
     private ClusterManager<MyItem> mClusterManager;
     String str;
     PlaceAutocompleteFragment autocompleteFragment;
@@ -129,9 +136,7 @@ public class MapsActivity extends FragmentActivity implements
                         }
 
                         PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr);
-
                         listView.setAdapter(adapter);
-
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -141,9 +146,9 @@ public class MapsActivity extends FragmentActivity implements
                                 myItem = arr.get(position);
                                 System.out.println(myItem.getTitle());
 
-                                Intent intent  = new Intent(MapsActivity.this, Photographer_info.class);
-                                intent.putExtra("MyItem",myItem);
-                                startActivity(intent);
+
+                                NetworkTask networkTask = new NetworkTask("feed_items","image_path");
+                                networkTask.execute();
                             }
                         });
 
@@ -155,7 +160,30 @@ public class MapsActivity extends FragmentActivity implements
         mClusterManager.setOnClusterItemClickListener(
                 new ClusterManager.OnClusterItemClickListener<MyItem>() {
                     @Override
-                    public boolean onClusterItemClick(MyItem myItem) {
+                    public boolean onClusterItemClick(MyItem MyItem) {
+                        final ListView listView = (ListView) findViewById(R.id.listView);
+
+                        final ArrayList<MyItem> arr = new ArrayList<MyItem>();
+                        arr.add(MyItem);
+
+                        final PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr);
+                        listView.setAdapter(adapter);
+
+
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                                System.out.println(position);
+                                myItem = arr.get(position);
+                                System.out.println(myItem.getTitle());
+
+                                NetworkTask networkTask = new NetworkTask("feed_items","image_path");
+                                networkTask.execute();
+                            }
+                        });
+
                         Toast.makeText(MapsActivity.this, "Cluster item click", Toast.LENGTH_SHORT).show();
                         return false;
                     }
@@ -262,6 +290,8 @@ public class MapsActivity extends FragmentActivity implements
         map.setOnMarkerClickListener(mClusterManager);
     }
 
+
+
     private void addItems(ArrayList<MyItem> aryList) {
 
 //        // Add ten cluster items in close proximity, for purposes of this example.
@@ -284,6 +314,38 @@ public class MapsActivity extends FragmentActivity implements
             aryList.add(offsetItem);
 
             mClusterManager.addItem(offsetItem);
+        }
+    }
+
+
+    public class NetworkTask extends AsyncTask<Void, Void, ArrayList<String>> {
+
+        private String option1, option2;
+
+        public NetworkTask(String option1, String option2) {
+            this.option1 = option1;
+            this.option2 = option2;
+        }
+
+        @Override
+        protected ArrayList<String> doInBackground(Void... voids) {
+            ArrayList<String> result;
+            RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
+            result = requestHttpURLConnection.getJsonText(option1, option2);
+
+            return result;
+        }
+
+        protected void onPostExecute(ArrayList<String> s) {
+            if(option2.equals("image_path")) {
+                Log.d("onPostExecute", s.toString());
+                image_path_list = s;
+
+                Intent intent = new Intent(MapsActivity.this, Photographer_info.class);
+                intent.putExtra("MyItem", myItem);
+                intent.putStringArrayListExtra("List", image_path_list);
+                startActivity(intent);
+            }
         }
     }
 
