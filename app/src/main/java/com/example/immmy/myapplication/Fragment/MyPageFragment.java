@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.example.immmy.myapplication.R;
 
 public class MyPageFragment extends Fragment {
-    private TextView tv;
 
     public MyPageFragment() {}
 
@@ -22,9 +21,6 @@ public class MyPageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_my_page, container, false);
-        tv = (TextView) view.findViewById(R.id.tv);
-
-        tv.setText("MyPage");
         return view;
     }
 }

@@ -17,7 +17,7 @@ import com.example.immmy.myapplication.R;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity{
     private Fragment fragment;
     private FragmentManager fragmentManager;
 
@@ -29,8 +29,10 @@ public class HomeActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
 
         BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNavViewBar);
-        bottomNavigationView.enableItemShiftingMode(false);
         bottomNavigationView.setTextVisibility(false);
+        bottomNavigationView.enableItemShiftingMode(true);
+        bottomNavigationView.enableAnimation(false);
+        bottomNavigationView.enableShiftingMode(true);
 
         // HomeActivity의 Default Fragment 설정
         if(savedInstanceState == null) {
@@ -63,6 +65,5 @@ public class HomeActivity extends AppCompatActivity {
         });
 
     }
-
 
 }

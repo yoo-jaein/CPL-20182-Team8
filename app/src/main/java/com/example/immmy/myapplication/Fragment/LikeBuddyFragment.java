@@ -8,19 +8,19 @@ import android.widget.TextView;
 
 import com.example.immmy.myapplication.R;
 
-public class MapFragment extends Fragment {
+public class LikeBuddyFragment extends Fragment {
 
-    public MapFragment() {}
+    public LikeBuddyFragment() {}
 
-    public static MapFragment newInstance(String param1, String param2) {
-        MapFragment fragment = new MapFragment();
+    public static LikeBuddyFragment newInstance(String param1, String param2) {
+        LikeBuddyFragment fragment = new LikeBuddyFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_map, container, false);
+        View view = inflater.inflate(R.layout.fragment_like_buddy, container, false);
 
         return view;
     }

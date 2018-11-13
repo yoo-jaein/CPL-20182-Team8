@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.example.immmy.myapplication.R;
 
 public class SearchFragment extends Fragment {
-    private TextView tv;
 
     public SearchFragment() {}
 
@@ -22,9 +21,7 @@ public class SearchFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
-        tv = (TextView) view.findViewById(R.id.tv);
 
-        tv.setText("Search");
         return view;
     }
 }
