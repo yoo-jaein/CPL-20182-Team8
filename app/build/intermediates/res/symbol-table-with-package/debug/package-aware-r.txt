@@ -1036,6 +1036,7 @@ id clip_vertical
 id collapseActionView
 id content
 id contentPanel
+id count
 id custom
 id customPanel
 id cv
@@ -1073,12 +1074,14 @@ id imageView1
 id imageView2
 id imageView3
 id info
+id introducePrice
 id invisible
 id italic
 id item_touch_helper_previous_elevation
 id left
 id light
 id like
+id likeInInfo
 id likeNum
 id line1
 id line3
@@ -1136,9 +1139,11 @@ id mr_volume_group_list
 id mr_volume_item_icon
 id mr_volume_slider
 id multiply
+id mung
 id never
 id none
 id normal
+id notice
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -1165,6 +1170,7 @@ id right_icon
 id right_side
 id rvSample
 id satellite
+id schedule
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -1184,6 +1190,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id sliderImageView
 id spacer
 id split_action_bar
 id spread
@@ -1207,6 +1214,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textView
 id textView2
+id thisArea
 id time
 id title
 id titleDividerNoCustom
@@ -1216,6 +1224,7 @@ id topPanel
 id uniform
 id up
 id useLogo
+id view
 id volume_item_container
 id webview
 id wide
@@ -1263,8 +1272,12 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_introduce_price
 layout activity_maps
+layout activity_notice
 layout activity_photographer_info
+layout activity_schedule
+layout activity_slider_view
 layout amu_info_window
 layout amu_text_bubble
 layout amu_webview
@@ -1306,6 +1319,7 @@ layout recyclerviewimage
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout slider
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round

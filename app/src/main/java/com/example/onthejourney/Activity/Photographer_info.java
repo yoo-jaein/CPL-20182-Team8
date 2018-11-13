@@ -2,6 +2,7 @@
 package com.example.onthejourney.Activity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -11,6 +12,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -54,4 +56,16 @@ public class Photographer_info extends AppCompatActivity {
         this.rvSample.setAdapter(adapter);
     }
 
+    public void noticeClick(View v){
+        Intent i = new Intent(Photographer_info.this, Notice.class);
+        startActivity(i);
+    }
+    public void introduceClick(View v){
+        Intent i = new Intent(Photographer_info.this, IntroducePrice.class);
+        startActivity(i);
+    }
+    public void scheduleClick(View v){
+        Intent i = new Intent(Photographer_info.this, Schedule.class);
+        startActivity(i);
+    }
 }

@@ -10,7 +10,7 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1.5"
         android:orientation="vertical">
 
         <fragment
@@ -38,11 +38,38 @@
         android:layout_weight="5"
         tools:context="io.github.tonyshkurenko.clustermanagerdemo.MapsActivity" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.5">
+
+        <TextView
+            android:id="@+id/thisArea"
+            android:visibility="invisible"
+            android:text="이 지역의 버디 목록 총"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/count"
+            android:visibility="invisible"
+            android:text=" 52"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/mung"
+            android:visibility="invisible"
+            android:text="명"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"></ListView>
+        android:layout_weight="3">
+
+    </ListView>
 
 </LinearLayout>

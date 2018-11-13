@@ -20,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.onthejourney.Adapter.PhotographerListViewAdapter;
@@ -56,6 +57,9 @@ public class MapsActivity extends FragmentActivity implements
     private Geocoder geocoder;
     private Button button;
     MyItem myItem = null;
+
+    private TextView mung,count,thisArea;
+
     private ArrayList<String> image_path_list;
     private ClusterManager<MyItem> mClusterManager;
     String str;
@@ -74,6 +78,12 @@ public class MapsActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_maps);
+
+        thisArea = findViewById(R.id.thisArea);
+        mung = findViewById(R.id.mung);
+        count = findViewById(R.id.count);
+
+
         button = (Button) findViewById(R.id.button);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -130,10 +140,17 @@ public class MapsActivity extends FragmentActivity implements
                         final ListView listView = (ListView) findViewById(R.id.listView);
 
                         final ArrayList<MyItem> arr = new ArrayList<MyItem>();
+
+                        thisArea.setVisibility(TextView.VISIBLE);
+                        mung.setVisibility(TextView.VISIBLE);
+                        count.setVisibility(TextView.VISIBLE);
                         Object[] ary = cluster.getItems().toArray();
+
                         for(int i=0;i<ary.length;i++){
                             arr.add((MyItem)ary[i]);
                         }
+
+                        count.setText(String.valueOf(ary.length));
 
                         PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr);
                         listView.setAdapter(adapter);
@@ -164,6 +181,12 @@ public class MapsActivity extends FragmentActivity implements
                         final ListView listView = (ListView) findViewById(R.id.listView);
 
                         final ArrayList<MyItem> arr = new ArrayList<MyItem>();
+
+                        thisArea.setCursorVisible(true);
+                        mung.setCursorVisible(true);
+                        count.setCursorVisible(true);
+                        count.setText("1");
+
                         arr.add(MyItem);
 
                         final PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr);

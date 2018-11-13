@@ -21,10 +21,7 @@ import com.example.onthejourney.R;
 import java.util.ArrayList;
 
 public class PhotographerListViewAdapter extends BaseAdapter {
-    private TextView titleTextView;
-    private ImageView imageView1;
-    private ImageView imageView2;
-    private ImageView imageView3;
+
     Context context;
     private String url = "http://ec2-18-222-114-158.us-east-2.compute.amazonaws.com:3000/";
     private ArrayList<MyItem> listViewItemList;
@@ -51,6 +48,11 @@ public class PhotographerListViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+         TextView titleTextView;
+         final ImageView imageView1;
+         final ImageView imageView2;
+         final ImageView imageView3;
+
         if (convertView == null) {
             context = parent.getContext();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -65,7 +67,15 @@ public class PhotographerListViewAdapter extends BaseAdapter {
 
         MyItem myItem = listViewItemList.get(position);
 
-        NetworkTask networkTask = new NetworkTask("feed_items","image_path");
+        NetworkTask networkTask = new NetworkTask("feed_items","image_path", new NetworkTask.Listener(){
+
+            @Override
+            public void onFinished(ArrayList<String> s) {
+                Glide.with(context).load(url+s.get(0)).into(imageView1);
+                Glide.with(context).load(url+s.get(1)).into(imageView2);
+                Glide.with(context).load(url+s.get(2)).into(imageView3);
+            }
+        });
         networkTask.execute();
 
         titleTextView.setText(myItem.getTitle());
@@ -75,13 +85,19 @@ public class PhotographerListViewAdapter extends BaseAdapter {
        return convertView;
     }
 
-    public class NetworkTask extends AsyncTask<Void, Void, ArrayList<String>> {
+    public static class NetworkTask extends AsyncTask<Void, Void, ArrayList<String>> {
+
+        public interface Listener{
+            void onFinished(ArrayList<String> s);
+        }
 
         private String option1, option2;
+        private Listener listener;
 
-        public NetworkTask(String option1, String option2) {
+        public NetworkTask(String option1, String option2, Listener listener) {
             this.option1 = option1;
             this.option2 = option2;
+            this.listener = listener;
         }
 
         @Override
@@ -94,9 +110,8 @@ public class PhotographerListViewAdapter extends BaseAdapter {
         }
 
         protected void onPostExecute(ArrayList<String> s) {
-            Glide.with(context).load(url+s.get(0)).into(imageView1);
-            Glide.with(context).load(url+s.get(1)).into(imageView2);
-            Glide.with(context).load(url+s.get(2)).into(imageView3);
+            listener.onFinished(s);
+
         }
     }
 }
