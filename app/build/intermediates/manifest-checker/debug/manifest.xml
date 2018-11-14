@@ -60,11 +60,6 @@
             android:name="com.example.onthejourney.Activity.MapsActivity"
             android:label="@string/title_activity_maps" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -74,6 +69,14 @@
                     android:host="www.recipe-app.com"
                     android:pathPattern="/recipe"
                     android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.onthejourney.Activity.HomeActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+"
             </intent-filter>
         </activity>
         <activity android:name="com.example.onthejourney.Activity.Photographer_info" />
@@ -86,6 +89,11 @@
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
+        <provider
+            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.example.onthejourney.lifecycle-trojan"
+            android:exported="false"
+            android:multiprocess="true" />
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
             android:authorities="com.example.onthejourney.com.android.tools.ir.server.InstantRunContentProvider"
