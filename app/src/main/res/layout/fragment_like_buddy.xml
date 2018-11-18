@@ -11,4 +11,9 @@
         android:layout_height="match_parent"
         android:text="좋아하는 사진작가" />
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="8dp"
+        android:id="@+id/item_likephoto_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </FrameLayout>

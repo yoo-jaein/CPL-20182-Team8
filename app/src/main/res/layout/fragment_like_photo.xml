@@ -11,4 +11,10 @@
         android:layout_height="match_parent"
         android:text="좋아하는 사진" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvLikePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
 </FrameLayout>
