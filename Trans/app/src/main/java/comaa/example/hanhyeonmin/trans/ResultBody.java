@@ -8,12 +8,24 @@ public class ResultBody<T> implements Serializable {
     private String size;
     private ArrayList<T> datas;
     private String error;
+    private String newUser;
 
-    public ResultBody(String success, String size, ArrayList<T> data, String error) {
+
+    public ResultBody(String success, String size, ArrayList<T> datas, String error, String newUser) {
+
         this.success = success;
         this.size = size;
-        this.datas = data;
+        this.datas = datas;
         this.error = error;
+        this.newUser = newUser;
+    }
+
+    public String getNewUser() {
+        return newUser;
+    }
+
+    public void setNewUser(String newUser) {
+        this.newUser = newUser;
     }
 
     public String getSuccess() {

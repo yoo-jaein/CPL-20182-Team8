@@ -134,7 +134,7 @@ public class HttpAsyncTask extends AsyncTask<Void, Void, ResultBody> implements 
             e.printStackTrace();
         }
 
-        return new ResultBody<>(resultBody.getSuccess(), resultBody.getSize(), resultBody.getDatas(), resultBody.getError());
+        return new ResultBody<>(resultBody.getSuccess(), resultBody.getSize(), resultBody.getDatas(), resultBody.getError(), resultBody.getNewUser());
     }
 
     @Override
