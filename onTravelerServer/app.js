@@ -21,6 +21,8 @@ var feed_itemRouter = require('./routes/feed_items');
 var schedule_itemRouter = require('./routes/schedule_items');
 var imageRouter = require('./routes/images');
 var postScriptRouter = require('./routes/post_scripts');
+var favoriteBuddyRouter =require('./routes/favorite_buddies');
+var favoriteFeedRouter = require('./routes/favorite_feeds');
 
 
 
@@ -61,6 +63,8 @@ app.use('/customers', customerRouter);
 app.use('/feed_items', feed_itemRouter);
 app.use('/schedule_items', schedule_itemRouter);
 app.use('/post_scripts', postScriptRouter);
+app.use('/favorite_buddies', favoriteBuddyRouter);
+app.use('./favorite_feeds', favoriteFeedRouter);
 
 
 // catch 404 and forward to error handler

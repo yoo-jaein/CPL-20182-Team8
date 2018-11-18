@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var PostScript = require('../models/postScript');
+var PostScript = require('../models/post_script');
 var ReturnFormat = require('../return_form')();
 
 
