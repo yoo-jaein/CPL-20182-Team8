@@ -32,7 +32,7 @@ router.get('/:buddy_id', function(req, res, next){
 
 /* Get particular buddy list */
 router.get('/location/:location_pos', function(req, res, next){
-    pos = req.body.req.params.location_pos.split(/[ ,]+/);
+    pos = req.params.location_pos.split(/[ ,]+/);
 
     Buddy.find({active_location : { langitude : pos[0]},
                     longitude : pos[1] })
