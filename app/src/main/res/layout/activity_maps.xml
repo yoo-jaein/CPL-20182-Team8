@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="10">
+    android:orientation="vertical">
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -37,40 +36,44 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="5.5"
         tools:context="io.github.tonyshkurenko.clustermanagerdemo.MapsActivity" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="0.5">
+        android:layout_weight="0.5"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/thisArea"
-            android:visibility="invisible"
-            android:text="이 지역의 버디 목록 총"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:text="이 지역의 버디 목록 총" />
+
         <TextView
             android:id="@+id/count"
-            android:visibility="invisible"
-            android:text=" 52"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:text=" 52"
+            />
+
         <TextView
             android:id="@+id/mung"
-            android:visibility="invisible"
-            android:text="명"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:text="명"
+            />
     </LinearLayout>
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3">
+        android:layout_weight="4"
+        android:visibility="gone">
 
     </ListView>
 

@@ -1,7 +1,6 @@
 package com.example.onthejourney.Activity;
 
 import android.Manifest;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -14,11 +13,9 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ListAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +23,7 @@ import android.widget.Toast;
 import com.example.onthejourney.Adapter.PhotographerListViewAdapter;
 import com.example.onthejourney.Algorithm.CustomClusterRenderer;
 import com.example.onthejourney.Algorithm.NonHierarchicalDistanceBasedAlgorithm;
-import com.example.onthejourney.Data.MyItem;
+import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.ETC.PermissionUtils;
 import com.example.onthejourney.Module.RequestHttpURLConnection;
 import com.example.onthejourney.R;
@@ -56,17 +53,17 @@ public class MapsActivity extends FragmentActivity implements
     private GoogleMap mMap;
     private Geocoder geocoder;
     private Button button;
-    MyItem myItem = null;
+     Buddy buddy = null;
 
     private TextView mung,count,thisArea;
 
-    private ArrayList<String> image_path_list;
-    private ClusterManager<MyItem> mClusterManager;
+    private ClusterManager<Buddy> mClusterManager;
     String str;
     PlaceAutocompleteFragment autocompleteFragment;
     private boolean mPermissionDenied = false;
 
-    ArrayList<MyItem> aryList = new ArrayList<MyItem>();
+    ArrayList<Buddy> aryList = new ArrayList<Buddy>();
+    static final ArrayList<Buddy> arr = new ArrayList<Buddy>();
 
     public boolean onMyLocationButtonClick() {
         Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT).show();
@@ -134,40 +131,48 @@ public class MapsActivity extends FragmentActivity implements
 
         //클러스터링 이벤트
         mClusterManager.setOnClusterClickListener(
-                new ClusterManager.OnClusterClickListener<MyItem>() {
+                new ClusterManager.OnClusterClickListener<Buddy>() {
                     @Override
-                    public boolean onClusterClick(Cluster<MyItem> cluster) {
+                    public boolean onClusterClick(Cluster<Buddy> cluster) {
                         final ListView listView = (ListView) findViewById(R.id.listView);
-
-                        final ArrayList<MyItem> arr = new ArrayList<MyItem>();
-
-                        thisArea.setVisibility(TextView.VISIBLE);
-                        mung.setVisibility(TextView.VISIBLE);
-                        count.setVisibility(TextView.VISIBLE);
+                        LinearLayout linearLayout = findViewById(R.id.linearLayout);
+                        linearLayout.setVisibility(LinearLayout.VISIBLE);
                         Object[] ary = cluster.getItems().toArray();
 
                         for(int i=0;i<ary.length;i++){
-                            arr.add((MyItem)ary[i]);
+                            arr.add((Buddy)ary[i]);
                         }
 
                         count.setText(String.valueOf(ary.length));
 
-                        PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr);
-                        listView.setAdapter(adapter);
-                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        NetworkTask networkTask = new NetworkTask("feed_items","image_path", new NetworkTask.Listener() {
                             @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            public void onFinished(final ArrayList<ArrayList<String>> s) {
+                                Log.d("Image_path_list", s.toString());
+
+                                PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr,s);
+                                listView.setAdapter(adapter);
+                                listView.setVisibility(ListView.VISIBLE);
+                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                    @Override
+                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                        System.out.println(position);
+                                        buddy = arr.get(position);
+                                        System.out.println(buddy.getTitle());
 
 
-                                System.out.println(position);
-                                myItem = arr.get(position);
-                                System.out.println(myItem.getTitle());
+                                        Intent intent = new Intent(MapsActivity.this, Photographer_info.class);
+                                        intent.putExtra("Buddy", buddy);
+                                        intent.putStringArrayListExtra("List", s.get(position));
+                                        startActivity(intent);
+                                    }
+                                });
 
-
-                                NetworkTask networkTask = new NetworkTask("feed_items","image_path");
-                                networkTask.execute();
                             }
                         });
+                        networkTask.execute();
+
+
 
                         Toast.makeText(MapsActivity.this, "Cluster click", Toast.LENGTH_SHORT).show();
                         return false;
@@ -175,38 +180,44 @@ public class MapsActivity extends FragmentActivity implements
                 }
         );
         mClusterManager.setOnClusterItemClickListener(
-                new ClusterManager.OnClusterItemClickListener<MyItem>() {
+                new ClusterManager.OnClusterItemClickListener<Buddy>() {
                     @Override
-                    public boolean onClusterItemClick(MyItem MyItem) {
+                    public boolean onClusterItemClick(Buddy Buddy) {
                         final ListView listView = (ListView) findViewById(R.id.listView);
 
-                        final ArrayList<MyItem> arr = new ArrayList<MyItem>();
 
-                        thisArea.setCursorVisible(true);
-                        mung.setCursorVisible(true);
-                        count.setCursorVisible(true);
+
                         count.setText("1");
+                        LinearLayout linearLayout = findViewById(R.id.linearLayout);
+                        linearLayout.setVisibility(LinearLayout.VISIBLE);
+                        arr.add(Buddy);
 
-                        arr.add(MyItem);
-
-                        final PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr);
-                        listView.setAdapter(adapter);
-
-
-
-                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        NetworkTask networkTask = new NetworkTask("feed_items","image_path", new NetworkTask.Listener() {
                             @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            public void onFinished(final ArrayList<ArrayList<String>> s) {
+                                PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr,s);
+                                listView.setAdapter(adapter);
+
+                                listView.setVisibility(ListView.VISIBLE);
+                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                    @Override
+                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-                                System.out.println(position);
-                                myItem = arr.get(position);
-                                System.out.println(myItem.getTitle());
+                                        System.out.println(position);
+                                        buddy = arr.get(position);
+                                        System.out.println(buddy.getTitle());
 
-                                NetworkTask networkTask = new NetworkTask("feed_items","image_path");
-                                networkTask.execute();
+                                        Intent intent = new Intent(MapsActivity.this, Photographer_info.class);
+                                        intent.putExtra("Buddy", buddy);
+                                        intent.putStringArrayListExtra("List", s.get(position));
+                                        startActivity(intent);
+                                    }
+                                });
+
                             }
                         });
+                        networkTask.execute();
 
                         Toast.makeText(MapsActivity.this, "Cluster item click", Toast.LENGTH_SHORT).show();
                         return false;
@@ -302,7 +313,7 @@ public class MapsActivity extends FragmentActivity implements
 
         // Initialize the manager with the context and the map.
         // (Activity extends context, so we can pass 'this' in the constructor.)
-        mClusterManager = new ClusterManager<MyItem>(this, map);
+        mClusterManager = new ClusterManager<Buddy>(this, map);
 
         final CustomClusterRenderer render = new CustomClusterRenderer(this, mMap, mClusterManager);
         mClusterManager.setRenderer(render);
@@ -316,14 +327,14 @@ public class MapsActivity extends FragmentActivity implements
 
 
 
-    private void addItems(ArrayList<MyItem> aryList) {
+    private void addItems(ArrayList<Buddy> aryList) {
 
 //        // Add ten cluster items in close proximity, for purposes of this example.
 //        for (int i = 0; i < 10; i++) {
 //            double offset = i / 60d;
 //            lat = var.latitude + offset;
 //            lng = var.longitude + offset;
-//            MyItem offsetItem = new MyItem(lat, lng);
+//            Buddy offsetItem = new Buddy(lat, lng);
 //            mClusterManager.addItem(offsetItem);
 //        }
         for (int i = 0; i < 100; i++) {
@@ -333,8 +344,14 @@ public class MapsActivity extends FragmentActivity implements
             LatLng DEFAULT_LOCATION = new LatLng(37.56, 126.97);
             lat = (double) random.nextInt(300) / 5000.0 + DEFAULT_LOCATION.latitude;
             lng = (double) random.nextInt(300) / 5000.0 + DEFAULT_LOCATION.longitude;
-            MyItem offsetItem = new MyItem(lat, lng);
+            Buddy offsetItem = new Buddy(lat, lng);
             offsetItem.setmTitle(i + "번째 생성");
+            if(i%2 == 0) {
+                offsetItem.setBuddy_id("hihi");
+            }
+            else{
+                offsetItem.setBuddy_id("hiroo~");
+            }
             aryList.add(offsetItem);
 
             mClusterManager.addItem(offsetItem);
@@ -342,34 +359,38 @@ public class MapsActivity extends FragmentActivity implements
     }
 
 
-    public class NetworkTask extends AsyncTask<Void, Void, ArrayList<String>> {
+    public static class NetworkTask extends AsyncTask<Void, Void, ArrayList<ArrayList<String>>> {
 
         private String option1, option2;
+        private Listener listener;
 
-        public NetworkTask(String option1, String option2) {
+        public interface Listener{
+            void onFinished(ArrayList<ArrayList<String>> s);
+        }
+
+        public NetworkTask(String option1, String option2, Listener listener){
             this.option1 = option1;
             this.option2 = option2;
+            this.listener = listener;
         }
 
         @Override
-        protected ArrayList<String> doInBackground(Void... voids) {
-            ArrayList<String> result;
-            RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
-            result = requestHttpURLConnection.getJsonText(option1, option2);
+        protected ArrayList<ArrayList<String>> doInBackground(Void... voids) {
+            ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
+            for(int i=0;i<arr.size();i++) {
+                RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
+                ArrayList<String> request = requestHttpURLConnection.getJsonText(option1, option2, arr.get(i).getBuddy_id());
+                Log.d("DoinBackGround", "request : " + request);
+                result.add(request);
+                Log.d("DoinBackground", "result : " + result);
 
+            }
             return result;
         }
 
-        protected void onPostExecute(ArrayList<String> s) {
-            if(option2.equals("image_path")) {
-                Log.d("onPostExecute", s.toString());
-                image_path_list = s;
+        protected void onPostExecute(ArrayList<ArrayList<String>> s) {
+                listener.onFinished(s);
 
-                Intent intent = new Intent(MapsActivity.this, Photographer_info.class);
-                intent.putExtra("MyItem", myItem);
-                intent.putStringArrayListExtra("List", image_path_list);
-                startActivity(intent);
-            }
         }
     }
 

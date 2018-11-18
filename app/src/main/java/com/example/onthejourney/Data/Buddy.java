@@ -1,58 +1,57 @@
 package com.example.onthejourney.Data;
 
-import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.clustering.ClusterItem;
 
-import java.util.ArrayList;
-
-public class MyItem implements ClusterItem, Parcelable {
+public class Buddy implements ClusterItem, Parcelable {
     private LatLng mPosition;
     private String mTitle = null;
     private String mSnippet = null;
-    private ArrayList<Bitmap> imageByteList= null;
+    private String buddy_id = null;
 
-    public MyItem(double lat, double lng) {
+    public Buddy(double lat, double lng) {
         mPosition = new LatLng(lat, lng);
     }
-
-    public MyItem(double lat, double lng, String title, String snippet) {
+    public Buddy(double lat, double lng, String buddy_id) {
+        mPosition = new LatLng(lat, lng);
+        this.buddy_id = buddy_id;
+    }
+    public Buddy(double lat, double lng, String title, String snippet, String buddy_id) {
         mPosition = new LatLng(lat, lng);
         mTitle = title;
         mSnippet = snippet;
-        imageByteList = new ArrayList<Bitmap>();
+        this.buddy_id = buddy_id;
     }
 
-    protected MyItem(Parcel in) {
+    protected Buddy(Parcel in) {
         mPosition = in.readParcelable(LatLng.class.getClassLoader());
         mTitle = in.readString();
         mSnippet = in.readString();
-
-        imageByteList = in.readArrayList(ArrayList.class.getClassLoader());
+        buddy_id = in.readString();
     }
 
-    public static final Creator<MyItem> CREATOR = new Creator<MyItem>() {
+    public static final Creator<Buddy> CREATOR = new Creator<Buddy>() {
         @Override
-        public MyItem createFromParcel(Parcel in) {
-            return new MyItem(in);
+        public Buddy createFromParcel(Parcel in) {
+            return new Buddy(in);
         }
 
         @Override
-        public MyItem[] newArray(int size) {
-            return new MyItem[size];
+        public Buddy[] newArray(int size) {
+            return new Buddy[size];
         }
     };
-    public void addImageByteToList(Bitmap bitmap){
-        imageByteList.add(bitmap);
-    }
 
     public void setmTitle(String mTitle) {
         this.mTitle = mTitle;
     }
 
+    public void setBuddy_id(String buddy_id){
+        this.buddy_id = buddy_id;
+    }
     @Override
     public LatLng getPosition() {
         return mPosition;
@@ -68,6 +67,10 @@ public class MyItem implements ClusterItem, Parcelable {
         return mSnippet;
     }
 
+    public String getBuddy_id() {
+        return buddy_id;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -75,10 +78,11 @@ public class MyItem implements ClusterItem, Parcelable {
 
     @Override
     public String toString() {
-        return "MyItem{" +
+        return "Buddy{" +
                 "mPosition=" + mPosition +
                 ", mTitle='" + mTitle + '\'' +
                 ", mSnippet='" + mSnippet + '\'' +
+                ", buddy_id='" + buddy_id + '\'' +
                 '}';
     }
 
@@ -87,6 +91,6 @@ public class MyItem implements ClusterItem, Parcelable {
         dest.writeParcelable(this.mPosition, flags);
         dest.writeString(this.mTitle);
         dest.writeString(this.mSnippet);
-        dest.writeList(this.imageByteList);
+        dest.writeString(this.buddy_id);
     }
 }

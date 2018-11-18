@@ -1127,6 +1127,7 @@ drawable android_construction
 drawable avd_hide_password
 drawable avd_show_password
 drawable black_border
+drawable button
 drawable circle_grey
 drawable circle_opaque
 drawable circle_red
@@ -1462,7 +1463,6 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_text
 id actions
-id activity
 id activity_chooser_view_content
 id add
 id adjust_height
@@ -1471,6 +1471,7 @@ id alertTitle
 id all
 id always
 id amu_text
+id area
 id async
 id auto
 id barrier
@@ -1527,6 +1528,7 @@ id fill_vertical
 id filled
 id fixed
 id forever
+id fragmentviewpager
 id ghost_view
 id gone
 id group_divider
@@ -1547,6 +1549,9 @@ id info
 id introducePrice
 id invisible
 id italic
+id item_likephoto_recyclerView
+id item_likephotographer_buddyid
+id item_likephotographer_image
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
@@ -1557,6 +1562,7 @@ id likeInInfo
 id likeNum
 id line1
 id line3
+id linearLayout
 id listMode
 id listView
 id list_item
@@ -1657,6 +1663,7 @@ id retry
 id right
 id right_icon
 id right_side
+id rvLikePhoto
 id rvSample
 id satellite
 id save_image_matrix
@@ -1835,9 +1842,11 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_like
+layout fragment_likephoto
 layout fragment_map
 layout fragment_my_page
 layout fragment_search
+layout item_likephotographer_recycler_view
 layout layout_bottom_navigation_view
 layout layout_top_tabs
 layout mr_cast_dialog

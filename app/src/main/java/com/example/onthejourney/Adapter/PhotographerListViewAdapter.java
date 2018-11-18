@@ -1,21 +1,15 @@
 package com.example.onthejourney.Adapter;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.onthejourney.Data.MyItem;
-import com.example.onthejourney.Module.RequestHttpURLConnection;
+import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.R;
 
 import java.util.ArrayList;
@@ -24,10 +18,13 @@ public class PhotographerListViewAdapter extends BaseAdapter {
 
     Context context;
     private String url = "http://ec2-18-222-114-158.us-east-2.compute.amazonaws.com:3000/";
-    private ArrayList<MyItem> listViewItemList;
+    private ArrayList<Buddy> listViewItemList;
+    private ArrayList<ArrayList<String>> image_path_list;
 
-    public PhotographerListViewAdapter(ArrayList<MyItem> arrayList) {
+    public PhotographerListViewAdapter(ArrayList<Buddy> arrayList, ArrayList<ArrayList<String>> image_path_list) {
         listViewItemList = arrayList;
+        this.image_path_list = image_path_list;
+
         context = null;
     }
 
@@ -47,11 +44,11 @@ public class PhotographerListViewAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-         TextView titleTextView;
-         final ImageView imageView1;
-         final ImageView imageView2;
-         final ImageView imageView3;
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        TextView titleTextView;
+        final ImageView imageView1;
+        final ImageView imageView2;
+        final ImageView imageView3;
 
         if (convertView == null) {
             context = parent.getContext();
@@ -60,58 +57,22 @@ public class PhotographerListViewAdapter extends BaseAdapter {
         }
 
         titleTextView = (TextView) convertView.findViewById(R.id.textView);
-        imageView1 = (ImageView)convertView.findViewById(R.id.imageView1);
-        imageView2 = (ImageView)convertView.findViewById(R.id.imageView2);
-        imageView3 = (ImageView)convertView.findViewById(R.id.imageView3);
+        imageView1 = (ImageView) convertView.findViewById(R.id.imageView1);
+        imageView2 = (ImageView) convertView.findViewById(R.id.imageView2);
+        imageView3 = (ImageView) convertView.findViewById(R.id.imageView3);
 
+        int size = image_path_list.get(position).size();
+        if (size >= 1) {
+            Glide.with(context).load(url + image_path_list.get(position).get(0)).into(imageView1);
+            if (size >= 2)
+                Glide.with(context).load(url + image_path_list.get(position).get(1)).into(imageView2);
+            if (size >= 3)
+                Glide.with(context).load(url + image_path_list.get(position).get(2)).into(imageView3);
+        }
+        Buddy buddy = listViewItemList.get(position);
+        titleTextView.setText(buddy.getBuddy_id());
 
-        MyItem myItem = listViewItemList.get(position);
-
-        NetworkTask networkTask = new NetworkTask("feed_items","image_path", new NetworkTask.Listener(){
-
-            @Override
-            public void onFinished(ArrayList<String> s) {
-                Glide.with(context).load(url+s.get(0)).into(imageView1);
-                Glide.with(context).load(url+s.get(1)).into(imageView2);
-                Glide.with(context).load(url+s.get(2)).into(imageView3);
-            }
-        });
-        networkTask.execute();
-
-        titleTextView.setText(myItem.getTitle());
-
-
-
-       return convertView;
+        return convertView;
     }
 
-    public static class NetworkTask extends AsyncTask<Void, Void, ArrayList<String>> {
-
-        public interface Listener{
-            void onFinished(ArrayList<String> s);
-        }
-
-        private String option1, option2;
-        private Listener listener;
-
-        public NetworkTask(String option1, String option2, Listener listener) {
-            this.option1 = option1;
-            this.option2 = option2;
-            this.listener = listener;
-        }
-
-        @Override
-        protected ArrayList<String> doInBackground(Void... voids) {
-            ArrayList<String> result;
-            RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
-            result = requestHttpURLConnection.getJsonText(option1, option2);
-
-            return result;
-        }
-
-        protected void onPostExecute(ArrayList<String> s) {
-            listener.onFinished(s);
-
-        }
-    }
 }

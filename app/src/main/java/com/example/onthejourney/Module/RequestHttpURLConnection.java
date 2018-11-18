@@ -5,6 +5,9 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.onthejourney.Data.Buddy;
+import com.google.android.gms.maps.model.LatLng;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,23 +27,77 @@ public class RequestHttpURLConnection {
     String url = "http://ec2-18-222-114-158.us-east-2.compute.amazonaws.com:3000/";
     HttpURLConnection con = null;
 
-    public ArrayList<String> getJsonText(String option1, String option2) {
+    public ArrayList<String> getJsonText(String option1, String option2, String id) {
         ArrayList<String> arrayList = new ArrayList<>();
         if (option1 != null) {
             url += option1;
         }
         try {
+            if (option1.equals("feed_items")) {
+                String jsonPage = getStringFromUrl(url);
+                JSONObject json = new JSONObject(jsonPage);
+                JSONArray jArr = json.getJSONArray("datas");
+                for (int i = 0; i < jArr.length(); i++) {
+                    json = jArr.getJSONObject(i);
+                    if (json.getString("buddy_id").equals(id)) {
+                        String image_path = json.getString(option2);
+
+                        arrayList.add(image_path);
+                    }
+                }
+            } else if (option1.equals("customers")) {
+                String jsonPage = getStringFromUrl(url);
+                JSONObject json = new JSONObject(jsonPage);
+                JSONArray jArr = json.getJSONArray("datas");
+                JSONArray option2List = null;
+
+                for (int i = 0; i < jArr.length(); i++) {
+                    json = jArr.getJSONObject(i);
+                    if (json.getString("customer_id").equals(id)) {
+                        option2List = json.getJSONArray(option2);
+                        Log.d("option2List", option2List.toString());
+                        break;
+                    }
+                }
+                if (option2.equals("favorite_buddy_id_list") && option2List == null) {
+                    return null;
+                } else {
+                    for (int i = 0; i < option2List.length(); i++) {
+                        Log.d("forloop option2List", option2List.toString());
+                        arrayList.add(option2List.getString(i));
+                    }
+                }
+            }
+
+            return arrayList;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Buddy getBuddy(String option1, String id) {
+        Buddy buddy = null;
+        if (option1 != null) {
+            url += option1;
+        }
+        try {
+
             String jsonPage = getStringFromUrl(url);
             JSONObject json = new JSONObject(jsonPage);
             JSONArray jArr = json.getJSONArray("datas");
             for (int i = 0; i < jArr.length(); i++) {
                 json = jArr.getJSONObject(i);
+                if (json.getString("buddy_id").equals(id)) {
+                    LatLng DEFAULT_LOCATION = new LatLng(37.56, 126.97);
+                    buddy = new Buddy(DEFAULT_LOCATION.latitude, DEFAULT_LOCATION.longitude);
+                    buddy.setBuddy_id(id);
+                    buddy.setmTitle(json.getString("name"));
+                    Log.d("In getBuddy",buddy.toString());
+                }
 
-                String image_path = json.getString(option2);
-                arrayList.add(image_path);
             }
-
-            return arrayList;
+            return buddy;
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -80,8 +137,7 @@ public class RequestHttpURLConnection {
             return page.toString();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             //자원해제
             try {
                 bufreader.close();

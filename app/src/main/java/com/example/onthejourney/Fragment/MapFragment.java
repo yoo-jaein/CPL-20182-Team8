@@ -1,15 +1,15 @@
 package com.example.onthejourney.Fragment;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.onthejourney.R;
 
 public class MapFragment extends Fragment {
-    private TextView tv;
 
     public MapFragment() {}
 
@@ -21,8 +21,14 @@ public class MapFragment extends Fragment {
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_map, container, false);
-
-        return view;
+        return inflater.inflate(R.layout.fragment_map, container, false);
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+
+
 }
