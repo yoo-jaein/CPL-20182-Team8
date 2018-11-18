@@ -3,9 +3,11 @@ var Schema = mongoose.Schema;
 
 var buddySchema = new Schema({
     buddy_id : { type : String, required : true , unique: true},
-    pw : { type : String, required : true , trim : true},
     name : { type : String, required : true },
-    active_location : String,
+    active_location : {
+        latitude : String,
+        longitude : String
+    },
     notification : String,
     price_list : [
         {

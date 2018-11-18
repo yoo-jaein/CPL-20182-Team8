@@ -31,8 +31,9 @@ router.get('/:buddy_id', function(req, res, next){
 
 
 /* Get particular buddy list */
-router.get('/location/:location_name', function(req, res, next){
-    Buddy.find({active_location : req.params.location_name})
+router.get('/location/:location_pos', function(req, res, next){
+    Buddy.find({active_location : { langitude : req.params.location_pos.langitud},
+                    longitude : req.params.location_pos.lengitude })
         .then(function(buddy){
             if(!buddy.length) return res.status(404).send(ReturnFormat.get_format(0, buddy, "cannot found"));
             res.send(ReturnFormat.get_format(1, buddy, ""));
