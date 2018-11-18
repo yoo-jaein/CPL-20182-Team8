@@ -34,8 +34,9 @@ router.get('/:buddy_id', function(req, res, next){
 router.get('/location/:location_pos', function(req, res, next){
     pos = req.params.location_pos.split(/[ ,]+/);
 
-    Buddy.find({active_location : { langitude : pos[0]},
-                    longitude : pos[1] })
+    Buddy.find()
+        .where(active_location.langitude = pos[0])
+        .where(active_location.longitude = pos[1])
         .then(function(buddy){
             if(!buddy.length) return res.status(404).send(ReturnFormat.get_format(0, buddy, "cannot found"));
             res.send(ReturnFormat.get_format(1, buddy, ""));
