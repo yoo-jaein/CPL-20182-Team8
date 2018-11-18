@@ -71,16 +71,6 @@ public class HttpAsyncTask extends AsyncTask<Void, Void, ResultBody> implements 
                 requestBody = MultipartBody.create(JSON, requestBodyJson.toString());
 
 
-                /*
-                MultipartBody.Builder requestBodyBuilder = new MultipartBody.Builder()
-                        .setType(MultipartBody.FORM);
-
-                for(Pair<String, String> content : this.bodyContentList){
-                    requestBodyBuilder.addFormDataPart(content.first, content.second);
-                    System.out.println(content.first + " " + content.second);
-                }
-                requestBody = requestBodyBuilder.build();
-                */
             }
 
             if(this.action.equalsIgnoreCase("GET")){ //GET, 대소문자 상관X
