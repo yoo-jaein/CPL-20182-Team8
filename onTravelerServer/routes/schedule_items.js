@@ -44,7 +44,7 @@ router.get('/buddy/:buddy_id', function(req, res, next){
 router.post('/', function(req, res){
     ScheduleItem.create(req.body)
         .then(function(schedule_item){
-            res.send(ReturnFormat.post_format(1, schedule_item, ""));
+            res.send(ReturnFormat.post_format(1, [schedule_item], ""));
         }).catch(function(err){
             res.send(500).status(ReturnFormat.post_format(0, "", err));
     });

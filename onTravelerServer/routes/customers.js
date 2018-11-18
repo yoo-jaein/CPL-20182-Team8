@@ -33,7 +33,7 @@ router.get('/:customer_id', function(req, res, next){
 router.post('/', function(req, res){
     Customer.create(req.body)
         .then(function(customer){
-            res.send(ReturnFormat.post_format(1, customer, ""));
+            res.send(ReturnFormat.post_format(1, [customer], ""));
         }).catch(function(err){
             res.status(500).send(ReturnFormat.get_format(0, "", err));
     });

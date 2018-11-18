@@ -2,12 +2,12 @@ package comaa.example.hanhyeonmin.trans;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Pair;
 import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
 
-import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,6 +49,25 @@ public class MainActivity extends AppCompatActivity {
         */
 
 
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject();
+            jsonObject.put("customer_id", "hhh");
+            jsonObject.put("pw", "1234");
+            jsonObject.put("name", "hiroo~");
+            jsonObject.put("nickname", "1234");
+
+            JSONArray array = new JSONArray();
+            array.put("hhm");
+            array.put("hiroo~");
+            array.put("hihi");
+
+            jsonObject.put("favorite_buddy_id_list", array);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        /*
         ArrayList<Pair<String, String>> requstBodyContent = new ArrayList<>();
         requstBodyContent.add(new Pair<>("customer_id", "hhh"));
         requstBodyContent.add(new Pair<>("pw", "1234"));
@@ -67,9 +86,10 @@ public class MainActivity extends AppCompatActivity {
         favorite_buddy_id_str = favorite_buddy_id_str.substring(0, favorite_buddy_id_str.length()-1);
         favorite_buddy_id_str  += " ]";
 
-        requstBodyContent.add(new Pair<>("favorite_feed_item_id_list", favorite_buddy_id_str));
+        requstBodyContent.add(new Pair<>("favorite_buddy_id_list", favorite_buddy_id_str));
+        */
 
-        new HttpAsyncTask("POST", "customers", requstBodyContent, new TypeToken<ResultBody<Customer>>() {
+        new HttpAsyncTask("POST", "customers", jsonObject, new TypeToken<ResultBody<Customer>>() {
         }.getType(),
                 new MyCallBack() {
                     @Override
@@ -79,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .execute();
+
+
 
     }
 }

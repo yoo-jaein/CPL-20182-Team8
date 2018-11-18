@@ -55,7 +55,7 @@ router.get('/buddy/:buddy_id', function(req, res, next){
 router.post('/', function(req, res){
     Checklist.create(req.body)
         .then(function(checklist){
-            res.send(ReturnFormat.post_format(1, checklist, ""));
+            res.send(ReturnFormat.post_format(1, [checklist], ""));
         }).catch(function(err){
             res.status(500).send(ReturnFormat.post_format(0, "", err));
     });

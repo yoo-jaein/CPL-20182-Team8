@@ -79,7 +79,7 @@ router.post('/', upload.single('image'),function(req, res){
 
     Feed.create(new_feed_item)
         .then(function(feed){
-            res.send(ReturnFormat.post_format(1, feed, ""));
+            res.send(ReturnFormat.post_format(1, [feed], ""));
         }).catch(function (err) {
             res.status(500).send(ReturnFormat.post_format(0, "", err));
     });

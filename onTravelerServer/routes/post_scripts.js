@@ -28,7 +28,7 @@ router.get('/feed/:feed_id', function(req,res, next){
 router.post('/', function(req, res){
     PostScript.create(req.body)
         .then(function(postScript){
-            res.send(ReturnFormat.post_format(1, postScript, ""));
+            res.send(ReturnFormat.post_format(1, [postScript], ""));
         })
         .catch(function(err){
             res.status(500).send(ReturnFormat.post_format(0, "", err));

@@ -1,7 +1,6 @@
 package comaa.example.hanhyeonmin.trans;
 
 import android.os.AsyncTask;
-import android.util.Pair;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonDeserializationContext;
@@ -13,7 +12,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -28,13 +26,13 @@ public class HttpAsyncTask extends AsyncTask<Void, Void, ResultBody> implements 
     private String path;
     private Type typeToken;
     private MyCallBack callback;
-    private ArrayList<Pair<String, String>> bodyContentList;
+    private JSONObject requestBodyJson;
 
 
-    public HttpAsyncTask(String action, String path, ArrayList<Pair<String, String>> bodyContentList ,Type typeToken, MyCallBack callback) {
+    public HttpAsyncTask(String action, String path, JSONObject requestBodyJson ,Type typeToken, MyCallBack callback) {
         this.action = action;
         this.path = path;
-        this.bodyContentList = bodyContentList;
+        this.requestBodyJson = requestBodyJson;
         this.typeToken = typeToken;
         this.callback = callback;
     }
@@ -66,16 +64,11 @@ public class HttpAsyncTask extends AsyncTask<Void, Void, ResultBody> implements 
             Request request = null;
             RequestBody requestBody = null;
 
-            if(this.bodyContentList != null){
+            if(this.requestBodyJson != null){
 
-                JSONObject jsonBody = new JSONObject();
-                for(Pair<String, String> content : this.bodyContentList){
-                    jsonBody.put(content.first, content.second);
-                    System.out.println(content.first + " " + content.second);
-                }
 
                 MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-                requestBody = MultipartBody.create(JSON, jsonBody.toString());
+                requestBody = MultipartBody.create(JSON, requestBodyJson.toString());
 
 
                 /*
@@ -88,10 +81,7 @@ public class HttpAsyncTask extends AsyncTask<Void, Void, ResultBody> implements 
                 }
                 requestBody = requestBodyBuilder.build();
                 */
-
             }
-
-            System.out.println(requestBody.toString());
 
             if(this.action.equalsIgnoreCase("GET")){ //GET, 대소문자 상관X
                 // 요청

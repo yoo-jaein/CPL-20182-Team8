@@ -47,7 +47,7 @@ router.get('/location/:location_name', function(req, res, next){
 router.post('/', function(req, res){
     Buddy.create(req.body)
         .then(function(buddy){
-            res.send(ReturnFormat.post_format(1, buddy, ""));
+            res.send(ReturnFormat.post_format(1, [buddy], ""));
         }).catch(function(err){
             res.status(500).send(ReturnFormat.post_format(0, "", err));
     });
