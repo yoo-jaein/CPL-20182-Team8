@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
         }
     )
     .catch(function (err) {
-        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+        res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -25,7 +25,7 @@ router.get('/:buddy_id', function(req, res, next){
             res.send(ReturnFormat.get_format(1, buddy, ""));
         })
         .catch(function(err){
-            res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.get_format(0, "", err));
         });
 });
 
@@ -38,7 +38,7 @@ router.get('/location/:location_name', function(req, res, next){
             res.send(ReturnFormat.get_format(1, buddy, ""));
         })
         .catch(function(err){
-            res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.get_format(0, "", err));
         });
 });
 
@@ -49,7 +49,7 @@ router.post('/', function(req, res){
         .then(function(buddy){
             res.send(ReturnFormat.post_format(1, buddy, ""));
         }).catch(function(err){
-            res.status(500).send(ReturnFormat.post_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.post_format(0, "", err));
     });
 });
 
@@ -60,7 +60,7 @@ router.delete('/:buddy_id', function(req, res){
         .then(function(){
             res.send(ReturnFormat.delete_format(1, ""));
         }).catch((function (err) {
-            res.status(500).send(ReturnFormat.delete_format(0, "500"));
+            res.status(500).send(ReturnFormat.delete_format(0, err));
     }))
 });
 

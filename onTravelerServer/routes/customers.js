@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
             res.send(ReturnFormat.get_format(1, customer, ""));
         })
         .catch(function(err){
-            res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.get_format(0, "", err));
         });
 });
 
@@ -24,7 +24,7 @@ router.get('/:customer_id', function(req, res, next){
             res.send(ReturnFormat.get_format(1, customer, ""));
         })
         .catch(function(err){
-            res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.get_format(0, "", err));
         });
 });
 
@@ -35,7 +35,7 @@ router.post('/', function(req, res){
         .then(function(customer){
             res.send(ReturnFormat.post_format(1, customer, ""));
         }).catch(function(err){
-            res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -46,7 +46,7 @@ router.delete('/:customer_id', function(req, res){
         .then(function(){
             res.send(ReturnFormat.delete_format(1,""));
         }).catch(function(err){
-            res.status(500).send(ReturnFormat.delete_format(0, "500"));
+            res.status(500).send(ReturnFormat.delete_format(0, err));
     });
 });
 

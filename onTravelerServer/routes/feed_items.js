@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
             if(!feed.length) return res.status(404).send(ReturnFormat.get_format(0,feed,"cannot found"));
             res.send(ReturnFormat.get_format(1,feed,""));
         }).catch(function (err) {
-        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+        res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -37,7 +37,7 @@ router.get('/:feed_item_id', function(req, res, next){
             if(!feed.length) return res.status(404).send(ReturnFormat.get_format(0,feed,"cannot found"));
             res.send(ReturnFormat.get_format(1,feed,""));
         }).catch(function (err) {
-        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+        res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -48,7 +48,7 @@ router.get('/buddy/:buddy_id', function(req, res, next){
             if(!feed.length) return res.status(404).send(ReturnFormat.get_format(0,feed,"cannot found"));
             res.send(ReturnFormat.get_format(1,feed,""));
         }).catch(function (err) {
-        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+        res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -61,7 +61,7 @@ router.get('/hashtag/:hashtag_name', function(req, res, next){
             if(!feed.length) return res.status(404).send(ReturnFormat.get_format(0,feed,"cannot found"));
             res.send(ReturnFormat.get_format(1,feed,""));
         }).catch(function (err) {
-        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+        res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -81,7 +81,7 @@ router.post('/', upload.single('image'),function(req, res){
         .then(function(feed){
             res.send(ReturnFormat.post_format(1, feed, ""));
         }).catch(function (err) {
-            res.status(500).send(ReturnFormat.post_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.post_format(0, "", err));
     });
 });
 
@@ -92,7 +92,7 @@ router.delete('/:feed_item_id', function(req, res){
         .then(function () {
             res.send(ReturnFormat.delete_format(1, ""));
         }).catch(function (err) {
-            res.status(500).send(ReturnFormat.delete_format(0, "500"));
+            res.status(500).send(ReturnFormat.delete_format(0, err));
     });
 });
 

@@ -10,7 +10,7 @@ router.get('/', function(req,res, next){
             if(!postScript.length) return res.status(404).send(ReturnFormat.get_format(0,postScript,"cannot found"));
             res.send(ReturnFormat.get_format(1,postScript,""));
         }).catch(function(err){
-        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+        res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -21,7 +21,7 @@ router.get('/feed/:feed_id', function(req,res, next){
             if(!postScript.length) return res.status(404).send(ReturnFormat.get_format(0,postScript,"cannot found"));
             res.send(ReturnFormat.get_format(1,postScript,""));
         }).catch(function(err){
-            res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -31,7 +31,7 @@ router.post('/', function(req, res){
             res.send(ReturnFormat.post_format(1, postScript, ""));
         })
         .catch(function(err){
-            res.status(500).send(ReturnFormat.post_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.post_format(0, "", err));
         });
 });
 
@@ -41,7 +41,7 @@ router.delete('/:postScript_id', function(req,res){
         .then(function () {
             res.send(ReturnFormat.delete_format(1, ""));
         }).catch(function (err) {
-            res.status(500).send(ReturnFormat.delete_format(0, "500"));
+            res.status(500).send(ReturnFormat.delete_format(0, err));
     });
 });
 

@@ -11,7 +11,7 @@ router.get('/', function(req, res, next){
             if(!schedule_item.length) return res.status(404).send(ReturnFormat.get_format(0,schedule_item,"cannot found"));
             res.send(ReturnFormat.get_format(1,schedule_item,""));
         }).catch(function (err) {
-        res.send(500).send(ReturnFormat.get_format(0, "", "500"));
+        res.send(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -24,7 +24,7 @@ router.get('/:schedule_item_id', function(req, res, next){
             if(!schedule_item.length) return res.status(404).send(ReturnFormat.get_format(0,schedule_item,"cannot found"));
             res.send(ReturnFormat.get_format(1,schedule_item,""));
         }).catch(function (err) {
-            res.send(500).send(ReturnFormat.get_format(0, "", "500"));
+            res.send(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -35,7 +35,7 @@ router.get('/buddy/:buddy_id', function(req, res, next){
             if(!schedule_item.length) return res.status(404).send(ReturnFormat.get_format(0,schedule_item,"cannot found"));
             res.send(ReturnFormat.get_format(1,schedule_item,""));
         }).catch(function (err) {
-        res.send(500).send(ReturnFormat.get_format(0, "", "500"));
+        res.send(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -46,7 +46,7 @@ router.post('/', function(req, res){
         .then(function(schedule_item){
             res.send(ReturnFormat.post_format(1, schedule_item, ""));
         }).catch(function(err){
-            res.send(500).status(ReturnFormat.post_format(0, "", "500"));
+            res.send(500).status(ReturnFormat.post_format(0, "", err));
     });
 });
 
@@ -57,7 +57,7 @@ router.delete('/:schedule_item_id', function(req, res){
         .then(function () {
             res.send(ReturnFormat.delete_format(1, ""));
         }).catch(function (err) {
-            res.status(500).send(ReturnFormat.delete_format(0, "500"));
+            res.status(500).send(ReturnFormat.delete_format(0, err));
     });
 });
 

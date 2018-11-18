@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
             if(!checklist.length) return res.status(404).send(ReturnFormat.get_format(0,checklist,"cannot found"));
             res.send(ReturnFormat.get_format(1,checklist,""));
         }).catch(function(err){
-            res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -22,7 +22,7 @@ router.get('/:checklist_id', function(req, res, next){
             if(!checklist.length) return res.status(404).send(ReturnFormat.get_format(0,checklist,"cannot found"));
             res.send(ReturnFormat.get_format(1,checklist,""));
         }).catch(function(err){
-            res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -34,7 +34,7 @@ router.get('/customer/:customer_id', function(req, res, next){
             if(!checklist.length) return res.status(404).send(ReturnFormat.get_format(0,checklist,"cannot found"));
             res.send(ReturnFormat.get_format(1,checklist,""));
         }).catch(function(err){
-        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+        res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -46,7 +46,7 @@ router.get('/buddy/:buddy_id', function(req, res, next){
             if(!checklist.length) return res.status(404).send(ReturnFormat.get_format(0,checklist,"cannot found"));
             res.send(ReturnFormat.get_format(1,checklist,""));
         }).catch(function(err){
-        res.status(500).send(ReturnFormat.get_format(0, "", "500"));
+        res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
 
@@ -57,7 +57,7 @@ router.post('/', function(req, res){
         .then(function(checklist){
             res.send(ReturnFormat.post_format(1, checklist, ""));
         }).catch(function(err){
-            res.status(500).send(ReturnFormat.post_format(0, "", "500"));
+            res.status(500).send(ReturnFormat.post_format(0, "", err));
     });
 });
 
@@ -68,7 +68,7 @@ router.delete('/:checklist_id', function(req, res){
         .then(function(){
             res.send(ReturnFormat.delete_format(1, ""));
         }).catch(function(err){
-            res.status(500).send(ReturnFormat.delete_format(0, "500"));
+            res.status(500).send(ReturnFormat.delete_format(0, err));
     });
 });
 
