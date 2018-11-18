@@ -8,10 +8,13 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.Iterator;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -27,12 +30,14 @@ public class HttpAsyncTask extends AsyncTask<Void, Void, ResultBody> implements 
     private Type typeToken;
     private MyCallBack callback;
     private JSONObject requestBodyJson;
+    private File file;
 
 
-    public HttpAsyncTask(String action, String path, JSONObject requestBodyJson ,Type typeToken, MyCallBack callback) {
+    public HttpAsyncTask(String action, String path, JSONObject requestBodyJson, File file ,Type typeToken, MyCallBack callback) {
         this.action = action;
         this.path = path;
         this.requestBodyJson = requestBodyJson;
+        this.file = file;
         this.typeToken = typeToken;
         this.callback = callback;
     }
@@ -64,14 +69,32 @@ public class HttpAsyncTask extends AsyncTask<Void, Void, ResultBody> implements 
             Request request = null;
             RequestBody requestBody = null;
 
-            if(this.requestBodyJson != null){
+            if(this.file != null){
+                MultipartBody.Builder bodyBuilder = new MultipartBody.Builder()
+                        .setType(MultipartBody.FORM)
+                        .addFormDataPart("image", file.getName(), RequestBody.create(MultipartBody.FORM, file));
 
+                Iterator<String> keys = requestBodyJson.keys();
+                while(keys.hasNext()){
+                    String key = keys.next();
+                    try{
+                        String multiValueStr = "";
+                        for(int i=0; i<requestBodyJson.getJSONArray(key).length(); i++){
+                            multiValueStr += requestBodyJson.getJSONArray(key).get(i) + ",";
+                        }
+                        bodyBuilder.addFormDataPart(key, multiValueStr);
+                    }catch (JSONException e){
+                        bodyBuilder.addFormDataPart(key, requestBodyJson.getString(key));
+                    }
+                }
 
+                requestBody = bodyBuilder.build();
+            }else if(this.requestBodyJson != null){
                 MediaType JSON = MediaType.parse("application/json; charset=utf-8");
                 requestBody = MultipartBody.create(JSON, requestBodyJson.toString());
-
-
             }
+
+
 
             if(this.action.equalsIgnoreCase("GET")){ //GET, 대소문자 상관X
                 // 요청
