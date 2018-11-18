@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 
 
 /* Get particular favorite_buddies*/
-router.get('customer/:customer_id', function(req, res, next){
+router.get('/customer/:customer_id', function(req, res, next){
     Favorite_feed.find({customer_id : req.params.customer_id})
         .then(function(favorite_feed){
             if(!favorite_feed.length) return res.status(404).send(ReturnFormat.get_format(0, favorite_feed, "not_found"));
@@ -30,7 +30,7 @@ router.get('customer/:customer_id', function(req, res, next){
 
 
 /* Get particular favorite_buddies*/
-router.get('feed/:feed_id', function(req, res, next){
+router.get('/feed/:feed_id', function(req, res, next){
     Favorite_feed.find({feed_id : req.params.feed_id})
         .then(function(favorite_feed){
             if(!favorite_feed.length) return res.status(404).send(ReturnFormat.get_format(0, favorite_feed, "not_found"));
