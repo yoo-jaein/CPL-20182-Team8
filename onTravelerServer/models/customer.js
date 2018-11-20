@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 var customerSchema = new Schema({
     customer_id : {type:String, required : true , unique: true},
     name : { type : String, required : true },
-    nickname : { type: String, default:'name', required : true}
+    nickname : { type: String, default:'name', required : true},
+    hashtag : [String]
 });
 
 customerSchema.statics.create = function(data){

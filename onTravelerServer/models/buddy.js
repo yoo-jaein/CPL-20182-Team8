@@ -14,7 +14,8 @@ var buddySchema = new Schema({
             name : {type:String, required : true},
             money : {type : Number, required : true, min : 0},
         }
-    ]
+    ],
+    hashtag : [String]
 });
 
 
