@@ -34,7 +34,7 @@ public class LikephotoFragment extends android.support.v4.app.Fragment {
 
 
     public static final Customer customer = new Customer("traveler",
-            "abcdefg123",
+            "hhm",
             "kim");
     private ArrayList<String> favorite_image;
 
@@ -58,30 +58,22 @@ public class LikephotoFragment extends android.support.v4.app.Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        favorite_image = new ArrayList<>();
-        favorite_image.add("images/building.png");
-        favorite_image.add("images/iot.png");
-        favorite_image.add("images/iot2.png");
-        favorite_image.add("images/baby.jpg");
-        favorite_image.add("images/fome.jpeg");
-        customer.setFavorite_feed_id_list(favorite_image);
 
 
 
-//        NetworkTask networkTask = new NetworkTask("customers", "favorite_feed_item_id_list", new NetworkTask.Listener() {
-//            @Override
-//            public void onFinished(final ArrayList<String> s) {
+        NetworkTask networkTask = new NetworkTask("favorite_feeds/customer/", "feed_id", new NetworkTask.Listener() {
+            @Override
+            public void onFinished(final ArrayList<String> s) {
 
                 RecyclerView rv = (RecyclerView) getActivity().findViewById(R.id.rvLikePhoto);
                 rv.setLayoutManager(new GridLayoutManager(getContext(),3));
 
-                RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), favorite_image);
+                RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), s);
                 rv.setAdapter(adapter);
 
-
-//            }
-//        });
-//        networkTask.execute();
+            }
+        });
+        networkTask.execute();
 
 
     }
@@ -104,8 +96,10 @@ public class LikephotoFragment extends android.support.v4.app.Fragment {
         @Override
         protected ArrayList<String> doInBackground(Void... voids) {
             ArrayList<String> result = new ArrayList<String>();
+            ArrayList<String> feedId = new ArrayList<>();
             RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
             result = requestHttpURLConnection.getJsonText(option1, option2, customer.getCustomer_id());
+
 
             return result;
         }

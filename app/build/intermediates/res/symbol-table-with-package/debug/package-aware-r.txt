@@ -419,6 +419,23 @@ attr materialCardViewStyle
 attr maxActionInlineWidth
 attr maxButtonHeight
 attr maxImageSize
+attr mcv_allowClickDaysOutsideCurrentMonth
+attr mcv_arrowColor
+attr mcv_calendarMode
+attr mcv_dateTextAppearance
+attr mcv_firstDayOfWeek
+attr mcv_headerTextAppearance
+attr mcv_leftArrowMask
+attr mcv_monthLabels
+attr mcv_rightArrowMask
+attr mcv_selectionColor
+attr mcv_showOtherDates
+attr mcv_tileHeight
+attr mcv_tileSize
+attr mcv_tileWidth
+attr mcv_titleAnimationOrientation
+attr mcv_weekDayLabels
+attr mcv_weekDayTextAppearance
 attr measureWithLargestChild
 attr mediaRouteAudioTrackDrawable
 attr mediaRouteButtonStyle
@@ -726,6 +743,8 @@ color material_grey_850
 color material_grey_900
 color mcam_color_dark
 color mcam_color_light
+color mcv_text_date_dark
+color mcv_text_date_light
 color mtrl_bottom_nav_colored_item_tint
 color mtrl_bottom_nav_item_tint
 color mtrl_btn_bg_color_disabled
@@ -1390,6 +1409,8 @@ drawable mcam_circle_selected
 drawable mcam_circle_selector
 drawable mcam_square_selected
 drawable mcam_square_selector
+drawable mcv_action_next
+drawable mcv_action_previous
 drawable mr_button_connected_dark
 drawable mr_button_connected_light
 drawable mr_button_connecting_dark
@@ -1481,6 +1502,7 @@ id bottom
 id bottomNavViewBar
 id button
 id buttonPanel
+id calendarView
 id cancel_action
 id center
 id center_horizontal
@@ -1505,7 +1527,9 @@ id cv2
 id cv3
 id dark
 id decor_content_parent
+id decorated_disabled
 id default_activity_button
+id defaults
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1529,12 +1553,14 @@ id filled
 id fixed
 id forever
 id fragmentviewpager
+id friday
 id ghost_view
 id gone
 id group_divider
 id groups
 id home
 id homeAsUp
+id horizontal
 id hybrid
 id icon
 id icon_group
@@ -1566,13 +1592,18 @@ id linearLayout
 id listMode
 id listView
 id list_item
+id list_schedule
 id main_container
 id map
 id masked
+id match_parent
+id mcv_pager
 id media_actions
 id message
 id middle
 id mini
+id monday
+id month
 id mr_art
 id mr_cast_checkbox
 id mr_cast_close_button
@@ -1632,6 +1663,8 @@ id notice
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id other_months
+id out_of_range
 id outline
 id packed
 id parallax
@@ -1666,6 +1699,7 @@ id right_side
 id rvLikePhoto
 id rvSample
 id satellite
+id saturday
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1714,6 +1748,7 @@ id stretch
 id submenuarrow
 id submit
 id submit_area
+id sunday
 id tabMode
 id tabs
 id tag_transition_group
@@ -1732,6 +1767,7 @@ id textinput_counter
 id textinput_error
 id textinput_helper_text
 id thisArea
+id thursday
 id time
 id title
 id titleDividerNoCustom
@@ -1744,17 +1780,21 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tuesday
 id tv
 id tv1
 id uniform
 id unlabeled
 id up
 id useLogo
+id vertical
 id view
 id view_offset_helper
 id visible
 id volume_item_container
 id webview
+id wednesday
+id week
 id wide
 id window
 id withText
@@ -1845,6 +1885,7 @@ layout fragment_like
 layout fragment_likephoto
 layout fragment_map
 layout fragment_my_page
+layout fragment_schedule
 layout fragment_search
 layout item_likephotographer_recycler_view
 layout layout_bottom_navigation_view
@@ -2018,6 +2059,7 @@ string bitmap
 string bottom_sheet_behavior
 string bundle_photo
 string bundle_user_account_settings
+string calendar
 string calling_activity
 string character_counter_content_description
 string character_counter_pattern
@@ -2130,6 +2172,7 @@ string mr_system_route_name
 string mr_user_route_category_name
 string mtrl_chip_close_icon_content_description
 string new_photo
+string next
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2138,6 +2181,7 @@ string path_password_strike_through
 string photo
 string place_autocomplete_clear_button
 string place_autocomplete_search_hint
+string previous
 string profile_activity
 string profile_fragment
 string profile_photo
@@ -2461,6 +2505,9 @@ style TextAppearance_Design_HelperText
 style TextAppearance_Design_Hint
 style TextAppearance_Design_Snackbar_Message
 style TextAppearance_Design_Tab
+style TextAppearance_MaterialCalendarWidget_Date
+style TextAppearance_MaterialCalendarWidget_Header
+style TextAppearance_MaterialCalendarWidget_WeekDay
 style TextAppearance_MaterialComponents_Body1
 style TextAppearance_MaterialComponents_Body2
 style TextAppearance_MaterialComponents_Button
@@ -2733,6 +2780,7 @@ styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerti
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
 styleable MapAttrs ambientEnabled cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
 styleable MaterialButton android_insetLeft android_insetRight android_insetTop android_insetBottom backgroundTint backgroundTintMode cornerRadius icon iconGravity iconPadding iconSize iconTint iconTintMode rippleColor strokeColor strokeWidth
+styleable MaterialCalendarView mcv_allowClickDaysOutsideCurrentMonth mcv_arrowColor mcv_calendarMode mcv_dateTextAppearance mcv_firstDayOfWeek mcv_headerTextAppearance mcv_leftArrowMask mcv_monthLabels mcv_rightArrowMask mcv_selectionColor mcv_showOtherDates mcv_tileHeight mcv_tileSize mcv_tileWidth mcv_titleAnimationOrientation mcv_weekDayLabels mcv_weekDayTextAppearance
 styleable MaterialCardView strokeColor strokeWidth
 styleable MaterialComponentsTheme bottomSheetDialogTheme bottomSheetStyle chipGroupStyle chipStandaloneStyle chipStyle colorAccent colorBackgroundFloating colorPrimary colorPrimaryDark colorSecondary editTextStyle floatingActionButtonStyle materialButtonStyle materialCardViewStyle navigationViewStyle scrimBackground snackbarButtonStyle tabStyle textAppearanceBody1 textAppearanceBody2 textAppearanceButton textAppearanceCaption textAppearanceHeadline1 textAppearanceHeadline2 textAppearanceHeadline3 textAppearanceHeadline4 textAppearanceHeadline5 textAppearanceHeadline6 textAppearanceOverline textAppearanceSubtitle1 textAppearanceSubtitle2 textInputStyle
 styleable MediaRouteButton android_minWidth android_minHeight externalRouteEnabledDrawable mediaRouteButtonTint

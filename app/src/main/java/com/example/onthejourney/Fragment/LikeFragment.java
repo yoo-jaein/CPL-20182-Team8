@@ -32,7 +32,7 @@ public class LikeFragment extends Fragment {
     public  ArrayList<Buddy> buddies = new ArrayList<Buddy>();
 
     public static final Customer customer = new Customer("traveler",
-            "abcdefg123",
+            "hhm",
             "kim");
     private ArrayList<String> favorite_buddy;
 
@@ -68,7 +68,7 @@ public class LikeFragment extends Fragment {
         buddies.add(buddy2);
 
 
-        NetworkTask networkTask = new NetworkTask("customers", "favorite_buddy_id_list", new NetworkTask.Listener() {
+        NetworkTask networkTask = new NetworkTask("favorite_buddies/customer/", "buddy_id", new NetworkTask.Listener() {
             @Override
             public void onFinished(final ArrayList<ArrayList<String>> s) {
 
@@ -128,7 +128,7 @@ public class LikeFragment extends Fragment {
             ArrayList<String> buddy;
             RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
             buddy = requestHttpURLConnection.getJsonText(option1, option2, customer.getCustomer_id());
-
+            Log.d("InNetTask",buddy.toString());
 //            for(int i=0;i<buddy.size(); i++){
 //                requestHttpURLConnection = new RequestHttpURLConnection();
 //                Buddy buddy1;

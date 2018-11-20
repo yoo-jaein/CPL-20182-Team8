@@ -15,6 +15,7 @@ import com.example.onthejourney.Adapter.FragmentPagerAdapter;
 import com.example.onthejourney.Fragment.LikeFragment;
 import com.example.onthejourney.Fragment.MapFragment;
 import com.example.onthejourney.Fragment.MyPageFragment;
+import com.example.onthejourney.Fragment.ScheduleFragment;
 import com.example.onthejourney.Fragment.SearchFragment;
 import com.example.onthejourney.R;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
@@ -41,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
                     beginTransaction().replace(R.id.main_container,new SearchFragment()).commit();
         }
 
+
         // BottomNavigationView의 item을 클릭했을 때 Fragment 전환
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -48,9 +50,10 @@ public class HomeActivity extends AppCompatActivity {
                 TabLayout mTab = (TabLayout)findViewById(R.id.tabs);
                 flag = 0;
                 mTab.setVisibility(TabLayout.INVISIBLE);
+
                 switch (item.getItemId()) {
                     case R.id.search:
-                        fragment = new SearchFragment();
+                        fragment = new ScheduleFragment();
                         break;
                     case R.id.map:
                         Intent intent = new Intent(HomeActivity.this,MapsActivity.class);
