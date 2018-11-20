@@ -66,7 +66,7 @@ app.use('/feed_items', feed_itemRouter);
 app.use('/schedule_items', schedule_itemRouter);
 app.use('/post_scripts', postScriptRouter);
 app.use('/favorite_buddies', favoriteBuddyRouter);
-app.use('./favorite_feeds', favoriteFeedRouter);
+app.use('/favorite_feeds', favoriteFeedRouter);
 
 
 // catch 404 and forward to error handler
