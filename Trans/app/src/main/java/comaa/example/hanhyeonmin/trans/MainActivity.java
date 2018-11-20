@@ -102,18 +102,55 @@ public class MainActivity extends AppCompatActivity {
         myText = findViewById(R.id.text);
 
 
-        /*
-        new HttpAsyncTask("GET", "buddies", null, new TypeToken<ResultBody<Buddy>>() {
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject();
+            jsonObject.put("customer_id", "abcd");
+            jsonObject.put("name", "100");
+            jsonObject.put("nickname", "hello");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        new HttpAsyncTask("POST", "customers", jsonObject, null, new TypeToken<ResultBody<Customer>>() {
         }.getType(),
                 new MyCallBack() {
                     @Override
                     public void doTask(Object resultBody) {
-                        ResultBody<Buddy> result = (ResultBody<Buddy>) resultBody;
+                        ResultBody<Customer> result = (ResultBody<Customer>) resultBody;
                         myText.setText(result.getDatas().get(0).getName());
                     }
                 }).execute();
-        */
 
+
+        /*
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject();
+            jsonObject.put("buddy_id", "abcd");
+            jsonObject.put("favorite_num", "100");
+
+
+            JSONArray array = new JSONArray();
+            array.put("wedding");
+            array.put("hiroo~");
+            array.put("hihi");
+
+            jsonObject.put("hashtag", array);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        new HttpAsyncTask("POST", "feed_items", jsonObject, null, new TypeToken<ResultBody<FeedItem>>() {
+        }.getType(),
+                new MyCallBack() {
+                    @Override
+                    public void doTask(Object resultBody) {
+                        ResultBody<FeedItem> result = (ResultBody<FeedItem>) resultBody;
+                        myText.setText(result.getDatas().get(0).);
+                    }
+                }).execute();
+        */
 
         /*
         new HttpAsyncTask("GET", "feed_items", null, new TypeToken<ResultBody<FeedItem>>() {
@@ -133,17 +170,22 @@ public class MainActivity extends AppCompatActivity {
         JSONObject jsonObject = null;
         try {
             jsonObject = new JSONObject();
-            jsonObject.put("customer_id", "hhh");
-            jsonObject.put("pw", "1234");
-            jsonObject.put("name", "hiroo~");
-            jsonObject.put("nickname", "1234");
+            jsonObject.put("customer_id", "knu");
+            jsonObject.put("buddy_id", "hoot~");
+            jsonObject.put("state", "finished");
+            jsonObject.put("start_time", "2018-11-01");
+            jsonObject.put("end_time", "2018-11-02");
+            jsonObject.put("location", "daegu");
+            jsonObject.put("people_number", "1");
+            jsonObject.put("suggested_price", "1");
+
 
             JSONArray array = new JSONArray();
             array.put("hhm");
             array.put("hiroo~");
             array.put("hihi");
 
-            jsonObject.put("favorite_buddy_id_list", array);
+            jsonObject.put("requirement_list", array);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -159,9 +201,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .execute();
-        */
+
 
         //this.requestPermission();
         sendFeed();
+        */
     }
 }
