@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1 on traveler server
-  h3 auth
+  h2 auth
   table(style='width:100%',  border='1')
     tr
       th action
@@ -12,7 +12,9 @@ block content
       td GET
       td auth/google/
       td auth... with google
-  h3 buddeis
+  h2 buddeis
+  a(href='buddy.js') Buddy Schema
+  h4 Rest api
   table(style='width:100%', border='1')
     tr
       th action
@@ -42,7 +44,9 @@ block content
       td DELETE
       td buddies/(buddy_id)
       td delete buddy
-  h3 checklists
+  h2 checklists
+  a(href='checklist.js') Checklist Schema
+  h4 Rest api
   table(style='width=100%', border='1')
     tr
       th action
@@ -76,7 +80,9 @@ block content
       td DELETE
       td checklists/(cheklist_id)
       td delete checklist
-  h3 customers
+  h2 customers
+  a(href='customer.js') Customer Schema
+  h4 Rest api
   table(style='width=100%', border='1')
     tr
       th action
@@ -102,7 +108,9 @@ block content
       td DELETE
       td customers/(customer_id)
       td delete customer
-  h3 favorite_buddies
+  h2 favorite_buddies
+  a(href='favorite_buddy.js') favorite_buddy Schema
+  h4 Rest api
   table(style='width=100%', border='1')
     tr
       th action
@@ -132,7 +140,9 @@ block content
       td DELETE
       td favorite_buddies/(favorite_buddy_id)
       td delete favorite_buddies
-  h3 favorite_feeds
+  h2 favorite_feeds
+  a(href='favorite_feed.js') favorite_feed Schema
+  h4 Rest api
   table(style='width=100%', border='1')
     tr
       th action
@@ -162,7 +172,9 @@ block content
       td DELETE
       td favorite_feeds/(favorite_feed_id)
       td delete favorite_feeds
-  h3 feed_items
+  h2 feed_items
+  a(href='feed.js') feed_item Schema
+  h4 Rest api
   table(style='width=100%', border='1')
     tr
       th action
@@ -196,7 +208,9 @@ block content
       td DELETE
       td feed_items/(feed_item_id)
       td delete feed_items
-  h3 post_scripts
+  h2 post_scripts
+  a(href='post_script.js') post_script Schema
+  h4 Rest api
   table(style='width=100%', border='1')
     tr
       th action
@@ -226,7 +240,9 @@ block content
       td DELETE
       td post_scripts/(post_script_id)
       td delete post_scripts
-  h3 schedule_items
+  h2 schedule_items
+  a(href='schedule.js') schedule Schema
+  h4 Rest api
   table(style='width=100%', border='1')
     tr
       th action
