@@ -1,4 +1,5 @@
 package com.example.immmy.myapplication.Fragment;
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -9,9 +10,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.immmy.myapplication.Activity.Photographer_info;
 import com.example.immmy.myapplication.Adapter.Item_likephotographer_adapter;
@@ -21,31 +22,30 @@ import com.example.immmy.myapplication.Data.Customer;
 import com.example.immmy.myapplication.Module.RequestHttpURLConnection;
 import com.example.immmy.myapplication.R;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.maps.android.clustering.view.DefaultClusterRenderer;
 
 import java.util.ArrayList;
 
+
 public class LikeBuddyFragment extends Fragment {
 
-    public ArrayList<Buddy> buddies = new ArrayList<Buddy>();
+    public  ArrayList<Buddy> buddies = new ArrayList<Buddy>();
 
     public static final Customer customer = new Customer("traveler",
-            "abcdefg123",
+            "hhm",
             "kim");
     private ArrayList<String> favorite_buddy;
 
-    public LikeBuddyFragment() {}
-
-    public static LikeBuddyFragment newInstance(String param1, String param2) {
+    public static LikeBuddyFragment newInstance() {
         LikeBuddyFragment fragment = new LikeBuddyFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_like_buddy, container, false);
-
-        return view;
+        return inflater.inflate(R.layout.fragment_like_buddy, container, false);
     }
 
     @Override
@@ -54,7 +54,6 @@ public class LikeBuddyFragment extends Fragment {
         favorite_buddy = new ArrayList<>();
         favorite_buddy.add("hihi");
         favorite_buddy.add("hiroo~");
-        customer.setFavorite_buddy_id_list(favorite_buddy);
 
         LatLng DEFAULT_LOCATION = new LatLng(37.56, 126.97);
 
@@ -68,7 +67,7 @@ public class LikeBuddyFragment extends Fragment {
         buddies.add(buddy2);
 
 
-        NetworkTask networkTask = new NetworkTask("customers", "favorite_buddy_id_list", new NetworkTask.Listener() {
+        NetworkTask networkTask = new NetworkTask("favorite_buddies/customer/", "buddy_id", new NetworkTask.Listener() {
             @Override
             public void onFinished(final ArrayList<ArrayList<String>> s) {
 
@@ -104,6 +103,7 @@ public class LikeBuddyFragment extends Fragment {
         });
         networkTask.execute();
 
+
     }
 
     public static class NetworkTask extends AsyncTask<Void, Void, ArrayList<ArrayList<String>>> {
@@ -127,7 +127,7 @@ public class LikeBuddyFragment extends Fragment {
             ArrayList<String> buddy;
             RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
             buddy = requestHttpURLConnection.getJsonText(option1, option2, customer.getCustomer_id());
-
+            Log.d("InNetTask",buddy.toString());
 //            for(int i=0;i<buddy.size(); i++){
 //                requestHttpURLConnection = new RequestHttpURLConnection();
 //                Buddy buddy1;

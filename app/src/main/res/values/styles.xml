@@ -17,8 +17,8 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <!--&lt;!&ndash;SplashActivity theme&ndash;&gt;-->
-    <!--<style name="SplashTheme" parent="AppTheme">-->
-        <!--<item name="android:background">@drawable/splash</item>-->
-    <!--</style>-->
+    <!--SplashActivity theme-->
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:background">@drawable/splash</item>
+    </style>
 </resources>

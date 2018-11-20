@@ -1,5 +1,9 @@
 package com.example.immmy.myapplication.Module;
 
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.immmy.myapplication.Data.Buddy;
@@ -10,11 +14,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 //스트링 배열으로 바꿔서 URL들 리턴하면 더빨리 이미지 띄울수있음
@@ -28,6 +35,8 @@ public class RequestHttpURLConnection {
             url += option1;
         }
         try {
+            Log.d("URL",url);
+
             if (option1.equals("feed_items")) {
                 String jsonPage = getStringFromUrl(url);
                 JSONObject json = new JSONObject(jsonPage);
@@ -40,28 +49,48 @@ public class RequestHttpURLConnection {
                         arrayList.add(image_path);
                     }
                 }
-            } else if (option1.equals("customers")) {
+            } else if (option1.equals("favorite_buddies/customer/")) {
+                url += id;
+                Log.d("URL",url);
                 String jsonPage = getStringFromUrl(url);
                 JSONObject json = new JSONObject(jsonPage);
                 JSONArray jArr = json.getJSONArray("datas");
-                JSONArray option2List = null;
-
                 for (int i = 0; i < jArr.length(); i++) {
                     json = jArr.getJSONObject(i);
-                    if (json.getString("customer_id").equals(id)) {
-                        option2List = json.getJSONArray(option2);
-                        Log.d("option2List", option2List.toString());
-                        break;
+                    arrayList.add(json.getString(option2));
+
+                }
+
+            }else if (option1.equals("favorite_feeds/customer/")) {
+                String jsonPage = null;
+                url += id;
+                ArrayList<String> feedId = new ArrayList<String>();
+                try {
+                    jsonPage = getStringFromUrl(url);
+                }catch(NullPointerException e){
+                    e.printStackTrace();
+                }
+
+                JSONObject json = new JSONObject(jsonPage);
+                JSONArray jArr = json.getJSONArray("datas");
+                for (int i = 0; i < jArr.length(); i++) {
+                    json = jArr.getJSONObject(i);
+                    feedId.add(json.getString(option2));
+
+                }
+                jsonPage = getStringFromUrl("http://ec2-18-222-114-158.us-east-2.compute.amazonaws.com:3000/feed_items");
+                json = new JSONObject(jsonPage);
+                jArr = json.getJSONArray("datas");
+                for(int i=0;i<jArr.length();i++){
+                    json = jArr.getJSONObject(i);
+                    for(int j=0;j<feedId.size();j++) {
+                        if (json.getString("_id").equals(feedId.get(j))){
+                            arrayList.add(json.getString("image_path"));
+                            break;
+                        }
                     }
                 }
-                if (option2.equals("favorite_buddy_id_list") && option2List == null) {
-                    return null;
-                } else {
-                    for (int i = 0; i < option2List.length(); i++) {
-                        Log.d("forloop option2List", option2List.toString());
-                        arrayList.add(option2List.getString(i));
-                    }
-                }
+
             }
 
             return arrayList;
@@ -88,7 +117,7 @@ public class RequestHttpURLConnection {
                     buddy = new Buddy(DEFAULT_LOCATION.latitude, DEFAULT_LOCATION.longitude);
                     buddy.setBuddy_id(id);
                     buddy.setmTitle(json.getString("name"));
-                    Log.d("In getBuddy",buddy.toString());
+                    Log.d("In getBuddy", buddy.toString());
                 }
 
             }
@@ -116,8 +145,13 @@ public class RequestHttpURLConnection {
             */
 
             //[Type2]
+
             URL url = new URL(pUrl);
-            urlConnection = (HttpURLConnection) url.openConnection();
+            try {
+                urlConnection = (HttpURLConnection) url.openConnection();
+            }catch (FileNotFoundException e){
+                e.printStackTrace();
+            }
             InputStream contentStream = urlConnection.getInputStream();
 
             bufreader = new BufferedReader(new InputStreamReader(contentStream, "UTF-8"));
@@ -144,5 +178,6 @@ public class RequestHttpURLConnection {
         }
         return null;
     }// getStringFromUrl()-------------------------
+
 
 }
