@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2e1a55b-2cb6-47eb-ae78-b248db725cc1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/chatting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/chattings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/buddies.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/buddies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/checklists.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/checklists.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/customers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/favorite_buddies.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/favorite_buddies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/favorite_feeds.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/favorite_feeds.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/feed_items.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/feed_items.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/post_scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/post_scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
-    </list>
+    <list default="true" id="d2e1a55b-2cb6-47eb-ae78-b248db725cc1" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +86,7 @@
         <counts>
           <entry key="JPG" value="2" />
           <entry key="iml" value="2" />
-          <entry key="js" value="212" />
+          <entry key="js" value="214" />
           <entry key="json" value="9" />
           <entry key="md" value="3" />
           <entry key="png" value="5" />
@@ -115,14 +101,14 @@
           <entry key="Image" value="7" />
           <entry key="JSON" value="9" />
           <entry key="Jade" value="10" />
-          <entry key="JavaScript" value="214" />
+          <entry key="JavaScript" value="216" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="10749" />
+          <entry key="js" value="10756" />
           <entry key="pug" value="3256" />
           <entry key="www" value="129" />
         </counts>
@@ -130,7 +116,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Jade" value="3256" />
-          <entry key="JavaScript" value="10878" />
+          <entry key="JavaScript" value="10885" />
         </counts>
       </usages-collector>
     </session>
@@ -140,24 +126,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/buddies.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="60" selection-start-line="60" selection-end-line="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/chatting.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/chattings.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -194,11 +162,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/post_scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+            <state relative-caret-position="69">
+              <caret line="38" selection-start-line="38" selection-end-line="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/schedule_items.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/schedule.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -242,8 +228,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>local</find>
-      <find>listen</find>
       <find>growl</find>
       <find>minimatch</find>
       <find>body-</find>
@@ -272,6 +256,8 @@
       <find>checklist</find>
       <find>favorite_buddy</find>
       <find>favorite_feed</find>
+      <find>feed_item</find>
+      <find>post_script</find>
     </findStrings>
     <replaceStrings>
       <replace>ReturnFormat.get_format(0, customer, &quot;not_found&quot;)</replace>
@@ -293,6 +279,7 @@
       <replace>favorite_feed</replace>
       <replace>feed_item</replace>
       <replace>post_script</replace>
+      <replace>schedule</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -319,7 +306,6 @@
         <option value="$PROJECT_DIR$/routes/images.js" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/passport.js" />
-        <option value="$PROJECT_DIR$/routes/schedule_items.js" />
         <option value="$PROJECT_DIR$/return_form.js" />
         <option value="$PROJECT_DIR$/models/post_script.js" />
         <option value="$PROJECT_DIR$/models/favorite_feed.js" />
@@ -341,6 +327,7 @@
         <option value="$PROJECT_DIR$/routes/favorite_feeds.js" />
         <option value="$PROJECT_DIR$/routes/feed_items.js" />
         <option value="$PROJECT_DIR$/routes/post_scripts.js" />
+        <option value="$PROJECT_DIR$/routes/schedule_items.js" />
       </list>
     </option>
   </component>
@@ -472,12 +459,12 @@
       <workItem from="1542596683624" duration="218000" />
       <workItem from="1542679863582" duration="2406000" />
       <workItem from="1542695558385" duration="5114000" />
-      <workItem from="1542708149294" duration="5439000" />
+      <workItem from="1542708149294" duration="5748000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105118000" />
+    <option name="totallyTimeSpent" value="105427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="840" y="23" width="840" height="961" extended-state="0" />
@@ -492,13 +479,13 @@
       <window_info id="Favorites" order="6" sideWeight="0.07912844" side_tool="true" weight="0.31704262" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32911393" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40391254" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.40391254" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32258064" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32220945" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -581,13 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/schedule_items.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="46" column="64" selection-start-line="46" selection-start-column="64" selection-end-line="46" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -622,13 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/schedule.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -800,8 +773,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/post_scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        <state relative-caret-position="69">
+          <caret line="38" selection-start-line="38" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/schedule_items.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/schedule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
         </state>
       </provider>
     </entry>

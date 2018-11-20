@@ -22,4 +22,4 @@ scheduleSchema.statics.findAll = function(){
     return this.find({});
 };
 
-module.exports = mongoose.model('schedule', scheduleSchema);
+module.exports = mongoose.model('schedule', scheduleSchema);햧
