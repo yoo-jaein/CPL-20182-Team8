@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signin_cus_background"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edit_nickname"
+        android:layout_width="660px"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:hint="사용할 닉네임을 입력하세요."
+        android:imeOptions="actionSend"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textColor="#5f5f5f"
+        android:textColorHint="#5f5f5f"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.182" />
+
+    <Button
+        android:id="@+id/sign_up"
+        android:layout_width="770px"
+        android:layout_height="150px"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/signup_x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cond_travel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="82dp"
+        android:background="#0000"
+        android:button="@drawable/selector_cond_travel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_nickname" />
+
+    <CheckBox
+        android:id="@+id/cond_family"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="82dp"
+        android:background="#0000"
+        android:button="@drawable/selector_cond_family"
+        app:layout_constraintStart_toEndOf="@+id/cond_travel"
+        app:layout_constraintTop_toBottomOf="@+id/edit_nickname" />
+
+    <CheckBox
+        android:id="@+id/cond_pet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="7dp"
+        android:background="#0000"
+        android:button="@drawable/selector_cond_pet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toEndOf="@+id/cond_family"
+        app:layout_constraintTop_toBottomOf="@+id/edit_nickname" />
+
+    <CheckBox
+        android:id="@+id/cond_baby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="64dp"
+        android:background="#0000"
+        android:button="@drawable/selector_cond_baby"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cond_pet" />
+
+    <CheckBox
+        android:id="@+id/cond_daily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="7dp"
+        android:background="#0000"
+        android:button="@drawable/selector_cond_daily"
+        app:layout_constraintEnd_toStartOf="@+id/cond_baby"
+        app:layout_constraintTop_toBottomOf="@+id/cond_family" />
+
+    <CheckBox
+        android:id="@+id/cond_wedding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="7dp"
+        android:background="#0000"
+        android:button="@drawable/selector_cond_wedding"
+        app:layout_constraintEnd_toStartOf="@+id/cond_edit"
+        app:layout_constraintTop_toBottomOf="@+id/cond_travel" />
+
+    <CheckBox
+        android:id="@+id/cond_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="7dp"
+        android:background="#0000"
+        android:button="@drawable/selector_cond_edit"
+        app:layout_constraintEnd_toStartOf="@+id/cond_daily"
+        app:layout_constraintTop_toBottomOf="@+id/cond_family" />
+
+</android.support.constraint.ConstraintLayout>
