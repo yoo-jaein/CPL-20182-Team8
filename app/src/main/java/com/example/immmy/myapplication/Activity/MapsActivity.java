@@ -172,8 +172,6 @@ public class MapsActivity extends FragmentActivity implements
                         });
                         networkTask.execute();
 
-
-
                         Toast.makeText(MapsActivity.this, "Cluster click", Toast.LENGTH_SHORT).show();
                         return false;
                     }
@@ -184,8 +182,6 @@ public class MapsActivity extends FragmentActivity implements
                     @Override
                     public boolean onClusterItemClick(Buddy Buddy) {
                         final ListView listView = (ListView) findViewById(R.id.listView);
-
-
 
                         count.setText("1");
                         LinearLayout linearLayout = findViewById(R.id.linearLayout);

@@ -145,5 +145,4 @@ public class RequestHttpURLConnection {
         return null;
     }// getStringFromUrl()-------------------------
 
-
 }

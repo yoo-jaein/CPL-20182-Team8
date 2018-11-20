@@ -1,5 +1,6 @@
 package com.example.immmy.myapplication.Activity;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -26,6 +27,9 @@ public class HomeActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        Intent login_select = new Intent(this, LoginSelectActivity.class);
+        startActivity(login_select);
+
         fragmentManager = getSupportFragmentManager();
 
         BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNavViewBar);
@@ -49,7 +53,8 @@ public class HomeActivity extends AppCompatActivity{
                         fragment = new SearchFragment();
                         break;
                     case R.id.map:
-                        fragment = new MapFragment();
+                        Intent i = new Intent(HomeActivity.this, MapsActivity.class);
+                        startActivity(i);
                         break;
                     case R.id.like:
                         fragment = new LikeFragment();
