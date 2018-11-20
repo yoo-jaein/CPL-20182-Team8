@@ -61,6 +61,16 @@ router.post('/', function(req, res){
     });
 });
 
+router.put('/:checklist_id', function (req, res) {
+    Checklist.updateMany({_id : req.params.checklist_id}, {$set:req.body})
+        .then(function(checklist){
+            res.send(ReturnFormat.put_format(1, checklist, ""));
+        }) .catch(function(err){
+        res.status(500).send(ReturnFormat.put_format(0,"", err));
+    });
+});
+
+
 
 /* Delete checklist */
 router.delete('/:checklist_id', function(req, res){

@@ -272,3 +272,40 @@ block content
       td DELETE
       td schedule_items/(schedule_item_id)
       td delete schedule_items
+  h2 Chattings
+  a(href='chatting.js') chatting Schema
+  h4 Rest api
+  table(style='width=100%', border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td chattings/
+      td get all chattings
+    tr
+      td GET
+      td chattings/(chatting_id)
+      td get chattings that's id is chatting_id
+    tr
+      td GET
+      td chattings/customer/(customer_id)
+      td get chattings who's owner customer's id is customer_id
+    tr
+      td GET
+      td chattings/buddy/(buddy_id)
+      td get chattings who's owner buddy's id is buddy_id
+    tr
+      td POST
+      td chattings/
+      td make chattings
+    tr
+      td PUT
+      td chattings/(chatting_id)
+      td update chattings
+    tr
+      td DELETE
+      td chattings/(chatting_id)
+      td delete chattings
+

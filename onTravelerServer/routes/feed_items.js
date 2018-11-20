@@ -86,6 +86,16 @@ router.post('/', upload.single('image'),function(req, res){
 });
 
 
+router.put('/:feed_item_id', function (req, res) {
+    Feed.updateMany({_id : req.params.feed_item_id}, {$set:req.body})
+        .then(function(feed_item){
+            res.send(ReturnFormat.put_format(1, feed_item, ""));
+        }) .catch(function(err){
+        res.status(500).send(ReturnFormat.put_format(0,"", err));
+    });
+});
+
+
 /* Delete feed_item */
 router.delete('/:feed_item_id', function(req, res){
     Feed.remove({_id : req.params.feed_item_id})

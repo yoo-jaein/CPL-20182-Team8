@@ -53,6 +53,16 @@ router.post('/', function(req, res){
     });
 });
 
+router.put('/:favorite_buddy_id', function (req, res) {
+    Favorite_buddy.updateMany({_id : req.params.favorite_buddy_id}, {$set:req.body})
+        .then(function(favorite_buddy){
+            res.send(ReturnFormat.put_format(1, favorite_buddy, ""));
+        }) .catch(function(err){
+        res.status(500).send(ReturnFormat.put_format(0,"", err));
+    });
+});
+
+
 
 /* Delete favorite_buddy */
 router.delete('/:favorite_buddy_id', function(req, res){

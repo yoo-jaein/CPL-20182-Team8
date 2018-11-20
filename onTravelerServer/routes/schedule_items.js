@@ -51,6 +51,17 @@ router.post('/', function(req, res){
 });
 
 
+router.put('/:schedule_id', function (req, res) {
+    ScheduleItem.updateMany({_id : req.params.schedule_id}, {$set:req.body})
+        .then(function(schedule){
+            res.send(ReturnFormat.put_format(1, schedule, ""));
+        }) .catch(function(err){
+        res.status(500).send(ReturnFormat.put_format(0,"", err));
+    });
+});
+
+
+
 /* Delete schedule_item */
 router.delete('/:schedule_item_id', function(req, res){
     ScheduleItem.remove({_id : req.params.schedule_item_id})

@@ -54,6 +54,17 @@ router.post('/', function(req, res){
 });
 
 
+router.put('/:favorite_feed_id', function (req, res) {
+    Favorite_feed.updateMany({_id : req.params.favorite_feed_id}, {$set:req.body})
+        .then(function(favorite_feed){
+            res.send(ReturnFormat.put_format(1, favorite_feed, ""));
+        }) .catch(function(err){
+        res.status(500).send(ReturnFormat.put_format(0,"", err));
+    });
+});
+
+
+
 /* Delete favorite_feed */
 router.delete('/:favorite_feed_id', function(req, res){
     Favorite_feed.remove({_id: req.params.favorite_feed_id})

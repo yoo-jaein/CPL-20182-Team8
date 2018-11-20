@@ -39,6 +39,16 @@ router.post('/', function(req, res){
     });
 });
 
+router.put('/:customer_id', function (req, res) {
+    Customer.updateMany({customer_id : req.params.customer_id}, {$set:req.body})
+        .then(function(customer){
+            res.send(ReturnFormat.put_format(1, customer, ""));
+        }) .catch(function(err){
+        res.status(500).send(ReturnFormat.put_format(0,"", err));
+    });
+});
+
+
 
 /* Delete customer */
 router.delete('/:customer_id', function(req, res){

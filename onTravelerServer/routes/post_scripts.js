@@ -36,6 +36,16 @@ router.post('/', function(req, res){
 });
 
 
+router.put('/:post_script_id', function (req, res) {
+    PostScript.updateMany({_id : req.params.post_script_id}, {$set:req.body})
+        .then(function(post_script){
+            res.send(ReturnFormat.put_format(1, post_script, ""));
+        }) .catch(function(err){
+        res.status(500).send(ReturnFormat.put_format(0,"", err));
+    });
+});
+
+
 router.delete('/:postScript_id', function(req,res){
     PostScript.remove({_id : req.params.postScript_id})
         .then(function () {

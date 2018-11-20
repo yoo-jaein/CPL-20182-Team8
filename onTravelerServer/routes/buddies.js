@@ -58,6 +58,16 @@ router.post('/', function(req, res){
 });
 
 
+router.put('/:buddy_id', function (req, res) {
+   Buddy.updateMany({buddy_id : req.params.buddy_id}, {$set:req.body})
+       .then(function(buddy){
+           res.send(ReturnFormat.put_format(1, buddy, ""));
+       }) .catch(function(err){
+           res.status(500).send(ReturnFormat.put_format(0,"", err));
+   });
+});
+
+
 /* Delete buddy */
 router.delete('/:buddy_id', function(req, res){
     Buddy.remove({buddy_id : req.params.buddy_id})
