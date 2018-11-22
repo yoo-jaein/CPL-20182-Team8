@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
+import com.example.immmy.myapplication.Fragment.LikeBuddyFragment;
 import com.example.immmy.myapplication.Fragment.LikeFragment;
 import com.example.immmy.myapplication.Fragment.LikePhotoFragment;
 
@@ -16,9 +17,9 @@ public class FragmentPagerAdapter extends android.support.v4.app.FragmentPagerAd
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                //return LikeFragment.newInstance();
+                return LikeBuddyFragment.newInstance();
             case 1:
-                //return LikePhotoFragment.newInstance();
+                return LikePhotoFragment.newInstance();
             default:
                 return null;
         }

@@ -85,10 +85,10 @@ public class LikeFragment extends Fragment {
 
             switch (position) {
                 case 0:
-                    String str = "111";
+                    String str = "Photo";
                     return str;
                 case 1:
-                    String str1 = "11221";
+                    String str1 = "Buddy";
                     return str1;
             }
             return null;

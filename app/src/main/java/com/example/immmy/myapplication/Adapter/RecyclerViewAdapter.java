@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
     String url = "http://ec2-18-222-114-158.us-east-2.compute.amazonaws.com:3000/";
-    private ArrayList<String> image_path_arr;
+    private ArrayList<String> image_path_arr = new ArrayList<String>();;
     private Context context;
 
     public RecyclerViewAdapter(Context context, ArrayList<String> list){
@@ -49,7 +49,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return image_path_arr.size();
+        if (image_path_arr == null)
+            return 0;
+        else
+            return image_path_arr.size();
     }
 
 }

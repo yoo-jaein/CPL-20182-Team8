@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.immmy.myapplication.Activity.Photographer_info;
+import com.example.immmy.myapplication.Adapter.FragmentPagerAdapter;
 import com.example.immmy.myapplication.Adapter.Item_likephotographer_adapter;
 import com.example.immmy.myapplication.Adapter.Item_likephotographer_listener;
 import com.example.immmy.myapplication.Data.Buddy;
@@ -31,12 +32,21 @@ public class LikeBuddyFragment extends Fragment {
 
     public  ArrayList<Buddy> buddies = new ArrayList<Buddy>();
 
+    public LikeBuddyFragment() {}
+
     public static final Customer customer = new Customer("traveler",
             "hhm",
             "kim");
     private ArrayList<String> favorite_buddy;
 
     public static LikeBuddyFragment newInstance() {
+        LikeBuddyFragment fragment = new LikeBuddyFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public static LikeBuddyFragment newInstance(String param1, String param2) {
         LikeBuddyFragment fragment = new LikeBuddyFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -76,6 +86,8 @@ public class LikeBuddyFragment extends Fragment {
                 RecyclerView rv = getActivity().findViewById(R.id.item_likephoto_recyclerView);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
                 rv.setLayoutManager(layoutManager);
+                rv.setHasFixedSize(true);
+
 
                 Log.d("image_path_list",s.toString());
 

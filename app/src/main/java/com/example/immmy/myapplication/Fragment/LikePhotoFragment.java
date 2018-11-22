@@ -2,12 +2,12 @@ package com.example.immmy.myapplication.Fragment;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,51 +28,59 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LikePhotoFragment extends android.support.v4.app.Fragment {
-
+public class LikePhotoFragment extends Fragment {
 
     public static final Customer customer = new Customer("traveler",
             "hhm",
             "kim");
     private ArrayList<String> favorite_image;
 
+    public LikePhotoFragment() {}
     public static LikePhotoFragment newInstance() {
-        // Required empty public constructor
-        Bundle args = new Bundle();
-
         LikePhotoFragment fragment = new LikePhotoFragment();
+        Bundle args = new Bundle();
         fragment.setArguments(args);
-
         return fragment;
     }
 
+    public static LikePhotoFragment newInstance(String param1, String param2) {
+        LikePhotoFragment fragment = new LikePhotoFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_like_photo, container, false);
+        View view = inflater.inflate(R.layout.fragment_like_photo, container, false);
+        RecyclerView r = (RecyclerView) view.findViewById(R.id.rvLikePhoto);
+        r.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        return view;
+
+
+       // * return inflater.inflate(R.layout.fragment_like_photo, container, false);
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//
-//
-//        NetworkTask networkTask = new NetworkTask("favorite_feeds/customer/", "feed_id", new NetworkTask.Listener() {
-//            @Override
-//            public void onFinished(final ArrayList<String> s) {
-//
-//                RecyclerView rv = (RecyclerView) getActivity().findViewById(R.id.rvLikePhoto);
-//                rv.setLayoutManager(new GridLayoutManager(getContext(),3));
-//
-//                RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), s);
-//                rv.setAdapter(adapter);
-//
-//            }
-//        });
-//        networkTask.execute();
+        NetworkTask networkTask = new NetworkTask("favorite_feeds/customer/", "feed_id", new NetworkTask.Listener() {
+            @Override
+            public void onFinished(@NonNull final ArrayList<String> s) {
 
+                RecyclerView rv = (RecyclerView) getView().findViewById(R.id.rvLikePhoto);
+                rv.setLayoutManager(new GridLayoutManager(getContext(),3));
+                rv.setAdapter(new RecyclerViewAdapter(getContext(), s));
+
+                // * RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), s);
+                // *rv.setAdapter(adapter);
+
+            }
+        });
+        networkTask.execute();
 
     }
 
