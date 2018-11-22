@@ -10,12 +10,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.immmy.myapplication.Activity.Photographer_info;
-import com.example.immmy.myapplication.Adapter.FragmentPagerAdapter;
 import com.example.immmy.myapplication.Adapter.Item_likephotographer_adapter;
 import com.example.immmy.myapplication.Adapter.Item_likephotographer_listener;
 import com.example.immmy.myapplication.Data.Buddy;
@@ -23,7 +21,6 @@ import com.example.immmy.myapplication.Data.Customer;
 import com.example.immmy.myapplication.Module.RequestHttpURLConnection;
 import com.example.immmy.myapplication.R;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.maps.android.clustering.view.DefaultClusterRenderer;
 
 import java.util.ArrayList;
 

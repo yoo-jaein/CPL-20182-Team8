@@ -8,10 +8,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.immmy.myapplication.Adapter.LikeFragmentPagerAdapter;
 import com.example.immmy.myapplication.Fragment.LikeFragment;
 import com.example.immmy.myapplication.Fragment.MapFragment;
 import com.example.immmy.myapplication.Fragment.MyPageFragment;
@@ -24,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
     private Fragment fragment;
     private FragmentManager fragmentManager;
     private int flag=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
                         fragment = new MapFragment();
                         break;
                     case R.id.like:
+                        flag = 2;
                         fragment = new LikeFragment();
                         break;
                     case R.id.mypage:
@@ -72,6 +76,19 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                 }
                 if(flag == 1){
+                    return true;
+                }
+                else if(flag == 2){
+                    LikeFragmentPagerAdapter mFragmentPagerAdapter = new LikeFragmentPagerAdapter(getSupportFragmentManager());
+                    ViewPager mViewPager = (ViewPager)findViewById(R.id.fragmentviewpager);
+                    mViewPager.setAdapter(mFragmentPagerAdapter);
+
+                    mTab.setupWithViewPager(mViewPager);
+                    mTab.setVisibility(TabLayout.VISIBLE);
+
+                    final FragmentTransaction transaction = fragmentManager.beginTransaction();
+                    transaction.replace(R.id.main_container, fragment).commit();
+
                     return true;
                 }
                 else {

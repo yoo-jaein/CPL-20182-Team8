@@ -8,8 +8,8 @@ import com.example.immmy.myapplication.Fragment.LikeBuddyFragment;
 import com.example.immmy.myapplication.Fragment.LikeFragment;
 import com.example.immmy.myapplication.Fragment.LikePhotoFragment;
 
-public class FragmentPagerAdapter extends android.support.v4.app.FragmentPagerAdapter {
-    public FragmentPagerAdapter(FragmentManager fm) {
+public class LikeFragmentPagerAdapter extends android.support.v4.app.FragmentStatePagerAdapter {
+    public LikeFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
