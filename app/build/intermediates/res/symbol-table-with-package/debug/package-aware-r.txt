@@ -1184,6 +1184,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable grey_border
 drawable grey_border_bottom
+drawable hash_orange
 drawable ic_add_to_story
 drawable ic_alert
 drawable ic_android
@@ -1396,6 +1397,8 @@ drawable ic_web
 drawable ic_white_x
 drawable instagram_logo
 drawable like
+drawable like_orange
+drawable location_orange
 drawable mcam_action_capture
 drawable mcam_action_flash
 drawable mcam_action_flash_auto
@@ -1434,6 +1437,7 @@ drawable mr_vol_type_audiotrack_dark
 drawable mr_vol_type_audiotrack_light
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
+drawable mypage_orange
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -1981,6 +1985,8 @@ mipmap ic_heart_white
 mipmap ic_house
 mipmap ic_instagram_black
 mipmap ic_launcher
+mipmap ic_launcher_new
+mipmap ic_launcher_new_round
 mipmap ic_launcher_round
 mipmap ic_phone
 mipmap ic_plus_white
