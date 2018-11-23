@@ -64,7 +64,6 @@ public class MapsActivity extends FragmentActivity implements
     private boolean mPermissionDenied = false;
 
     ArrayList<Buddy> aryList = new ArrayList<Buddy>();
-    static final ArrayList<Buddy> arr = new ArrayList<Buddy>();
 
     public boolean onMyLocationButtonClick() {
         Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT).show();
@@ -142,6 +141,8 @@ public class MapsActivity extends FragmentActivity implements
 
                         final Object[] ary = cluster.getItems().toArray();
 
+                        final ArrayList<Buddy> arr = new ArrayList<Buddy>();
+
                         Task task = new Task("favorite_buddies/customer/", "buddy_id", me, new Task.Listener() {
                             @Override
                             public void onFinished(ArrayList<String> s) {
@@ -158,7 +159,7 @@ public class MapsActivity extends FragmentActivity implements
 
 
 
-                                NetworkTask networkTask = new NetworkTask("feed_items", "image_path", new NetworkTask.Listener() {
+                                NetworkTask networkTask = new NetworkTask("feed_items", "image_path", arr, new NetworkTask.Listener() {
                                     @Override
                                     public void onFinished(final ArrayList<ArrayList<String>> s) {
                                         Log.d("Image_path_list", s.toString());
@@ -202,6 +203,7 @@ public class MapsActivity extends FragmentActivity implements
                     public boolean onClusterItemClick(final Buddy Buddy) {
 
                         final ListView listView = (ListView) findViewById(R.id.listView);
+                        final ArrayList<Buddy> arr = new ArrayList<Buddy>();
 
                         Task task = new Task("favorite_buddies/customer/", "buddy_id", me, new Task.Listener() {
                             @Override
@@ -219,7 +221,7 @@ public class MapsActivity extends FragmentActivity implements
 
 
 
-                                NetworkTask networkTask = new NetworkTask("feed_items", "image_path", new NetworkTask.Listener() {
+                                NetworkTask networkTask = new NetworkTask("feed_items", "image_path", arr, new NetworkTask.Listener() {
                                     @Override
                                     public void onFinished(final ArrayList<ArrayList<String>> s) {
                                         Log.d("Image_path_list", s.toString());
@@ -436,15 +438,17 @@ public class MapsActivity extends FragmentActivity implements
 
         private String option1, option2;
         private Listener listener;
+        private ArrayList<Buddy> arr;
 
         public interface Listener{
             void onFinished(ArrayList<ArrayList<String>> s);
         }
 
-        public NetworkTask(String option1, String option2, Listener listener){
+        public NetworkTask(String option1, String option2, ArrayList<Buddy> arr, Listener listener){
             this.option1 = option1;
             this.option2 = option2;
             this.listener = listener;
+            this.arr = arr;
         }
 
         @Override
