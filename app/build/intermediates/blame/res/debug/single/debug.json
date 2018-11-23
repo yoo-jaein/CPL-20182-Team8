@@ -92,12 +92,12 @@
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_mcam_action_stop.xml.flat",
-        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-xxhdpi\\mcam_action_stop.xml"
-    },
-    {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_likephoto.xml.flat",
         "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\layout\\fragment_likephoto.xml"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_mcam_action_stop.xml.flat",
+        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-xxhdpi\\mcam_action_stop.xml"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_ic_group_collapse_04.png.flat",
@@ -156,12 +156,12 @@
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_22_dark.png.flat",
-        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_22_dark.png"
-    },
-    {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connected_11_dark.png.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_11_dark.png"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_22_dark.png.flat",
+        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_22_dark.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -212,24 +212,24 @@
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xxxhdpi-v4\\ic_group_expand_12.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_media_pause_dark.png.flat",
-        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xxhdpi-v4\\ic_media_pause_dark.png"
-    },
-    {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_mtrl_chip_close_circle.xml.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e09e2978ab20f75fc7f90a3a3daebbbd\\res\\drawable\\ic_mtrl_chip_close_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_media_pause_dark.png.flat",
+        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xxhdpi-v4\\ic_media_pause_dark.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_22_light.png.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_22_light.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connected_04_dark.png.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_04_dark.png"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_25_light.png.flat",
@@ -292,16 +292,16 @@
         "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-mdpi\\ic_web.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_mcam_square_selected.xml.flat",
-        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-xxhdpi\\mcam_square_selected.xml"
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\cb96e5ef456a51b7253ad4ddb97e345b\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_design_ic_visibility.png.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e09e2978ab20f75fc7f90a3a3daebbbd\\res\\drawable-xxxhdpi-v4\\design_ic_visibility.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\cb96e5ef456a51b7253ad4ddb97e345b\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_mcam_square_selected.xml.flat",
+        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-xxhdpi\\mcam_square_selected.xml"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_speech_bubble.png.flat",
@@ -336,16 +336,16 @@
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xhdpi-v4\\ic_dialog_close_light.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_mypage_orange.png.flat",
+        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\drawable-xxhdpi\\mypage_orange.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_ic_audiotrack_light.png.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-mdpi-v4\\ic_audiotrack_light.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_mypage_orange.png.flat",
-        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\drawable-xxhdpi\\mypage_orange.png"
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_subheader.xml.flat",
@@ -368,12 +368,12 @@
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_exit.xml.flat",
-        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\anim\\abc_tooltip_exit.xml"
-    },
-    {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_dark.xml.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d474753a1f3076b9851e32c40ea01266\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_exit.xml.flat",
+        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\anim\\abc_tooltip_exit.xml"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_edittext.xml.flat",
@@ -412,12 +412,12 @@
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xxxhdpi-v4\\ic_group_collapse_00.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
-        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_13_light.png.flat",
@@ -432,20 +432,20 @@
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_16_light.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
-        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
-    },
-    {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_ellipses.png.flat",
         "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-mdpi\\ic_ellipses.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
-        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
+        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_black_x.png.flat",
         "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\drawable-mdpi\\ic_black_x.png"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mr_dialog_close_dark.xml.flat",
@@ -460,20 +460,20 @@
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_10_light.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_instagram_black.png.flat",
-        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-mdpi\\ic_instagram_black.png"
-    },
-    {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_out.xml.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e09e2978ab20f75fc7f90a3a3daebbbd\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_arrow.png.flat",
-        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow.png"
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_instagram_black.png.flat",
+        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-mdpi\\ic_instagram_black.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d474753a1f3076b9851e32c40ea01266\\res\\drawable-xhdpi-v4\\googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_arrow.png.flat",
+        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_search.xml.flat",
@@ -484,12 +484,12 @@
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_radio.xml.flat",
-        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\layout\\abc_list_menu_item_radio.xml"
-    },
-    {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_circle.png.flat",
         "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-xhdpi\\ic_circle.png"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_radio.xml.flat",
+        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_amu_bubble_mask.9.png.flat",
@@ -3170,6 +3170,10 @@
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mr_media_play_dark.xml.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable\\mr_media_play_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_maps_search_bar.png.flat",
+        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\drawable-xxhdpi\\maps_search_bar.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_vol_type_speaker_light.png.flat",

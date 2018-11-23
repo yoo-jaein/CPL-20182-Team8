@@ -1400,6 +1400,7 @@ drawable like
 drawable like_orange
 drawable loading_back
 drawable location_orange
+drawable maps_search_bar
 drawable mcam_action_capture
 drawable mcam_action_flash
 drawable mcam_action_flash_auto
