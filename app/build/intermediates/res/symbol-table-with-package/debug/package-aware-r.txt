@@ -1146,6 +1146,8 @@ drawable android_construction
 drawable avd_hide_password
 drawable avd_show_password
 drawable black_border
+drawable buddy_background
+drawable buddy_list
 drawable button
 drawable circle_grey
 drawable circle_opaque
