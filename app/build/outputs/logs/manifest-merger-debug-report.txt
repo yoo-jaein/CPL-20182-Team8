@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-72:12
-INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-72:12
-INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-72:12
-INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-72:12
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-75:12
 MERGED from [com.android.support:mediarouter-v7:28.0.0] C:\Users\koomj\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-28.0.0.aar\859e8008a71d57bc6d8329bb61700f29\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.ittianyu:BottomNavigationViewEx:2.0.2] C:\Users\koomj\.gradle\caches\transforms-1\files-1.1\BottomNavigationViewEx-2.0.2.aar\4d4d55ef1883e6667b08e2c46328b098\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\koomj\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\e09e2978ab20f75fc7f90a3a3daebbbd\AndroidManifest.xml:17:1-24:12
@@ -50,20 +50,20 @@ MERGED from [com.android.support:documentfile:28.0.0] C:\Users\koomj\.gradle\cac
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\koomj\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\7612a215bdce1a10602ee7970b08f3f6\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] C:\Users\koomj\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\152ae89391df48ff15cf85c756dbd395\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\koomj\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\76ffbcd8dba81405d7d962b1cb224d26\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-72:12
-INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-72:12
-INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-72:12
+INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-75:12
 	package
 		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-72:12
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-75:12
 		INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-72:12
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:1-75:12
 		INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:2:11-69
@@ -82,7 +82,7 @@ ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\And
 	android:name
 		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:12:22-78
 application
-ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:14:5-70:19
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:14:5-73:19
 MERGED from [com.github.ittianyu:BottomNavigationViewEx:2.0.2] C:\Users\koomj\.gradle\caches\transforms-1\files-1.1\BottomNavigationViewEx-2.0.2.aar\4d4d55ef1883e6667b08e2c46328b098\AndroidManifest.xml:11:5-12:19
 MERGED from [com.github.ittianyu:BottomNavigationViewEx:2.0.2] C:\Users\koomj\.gradle\caches\transforms-1\files-1.1\BottomNavigationViewEx-2.0.2.aar\4d4d55ef1883e6667b08e2c46328b098\AndroidManifest.xml:11:5-12:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\koomj\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\e09e2978ab20f75fc7f90a3a3daebbbd\AndroidManifest.xml:22:5-20
@@ -171,40 +171,46 @@ ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\And
 		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:56:21-42
 	android:pathPattern
 		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:55:21-50
-activity#com.example.onthejourney.Activity.HomeActivity
-ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:59:9-64:20
+activity#com.example.onthejourney.Activity.SplashActivity
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:59:9-66:20
+	android:theme
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:61:13-47
 	android:name
-		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:59:19-56
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:60:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:60:13-63:29
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:62:13-65:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:61:17-69
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:63:17-69
 	android:name
-		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:61:25-66
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:63:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:62:17-77
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:64:17-77
 	android:name
-		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:62:27-74
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:64:27-74
+activity#com.example.onthejourney.Activity.HomeActivity
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:67:9-58
+	android:name
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:67:19-56
 activity#com.example.onthejourney.Activity.Photographer_info
-ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:65:9-64
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:68:9-64
 	android:name
-		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:65:19-61
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:68:19-61
 activity#com.example.onthejourney.Activity.SliderView
-ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:66:9-57
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:69:9-57
 	android:name
-		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:66:19-54
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:69:19-54
 activity#com.example.onthejourney.Activity.Notice
-ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:67:9-53
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:70:9-53
 	android:name
-		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:67:19-50
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:70:19-50
 activity#com.example.onthejourney.Activity.IntroducePrice
-ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:68:9-61
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:71:9-61
 	android:name
-		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:68:19-58
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:71:19-58
 activity#com.example.onthejourney.Activity.Schedule
-ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:69:9-64
+ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:72:9-64
 	android:name
-		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:69:19-52
+		ADDED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml:72:19-52
 uses-sdk
 INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\koomj\AndroidStudioProjects\CPL-20182-Team8\app\src\main\AndroidManifest.xml

@@ -103,9 +103,9 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int amu_info_window = 0x7f0b0026;
-        public static final int amu_text_bubble = 0x7f0b0027;
-        public static final int amu_webview = 0x7f0b0028;
+        public static final int amu_info_window = 0x7f0b0025;
+        public static final int amu_text_bubble = 0x7f0b0026;
+        public static final int amu_webview = 0x7f0b0027;
     }
     public static final class raw {
         private raw() {}
@@ -154,9 +154,9 @@ public final class R {
     public static final class style {
         private style() {}
 
-        public static final int amu_Bubble_TextAppearance_Dark = 0x7f100203;
-        public static final int amu_Bubble_TextAppearance_Light = 0x7f100204;
-        public static final int amu_ClusterIcon_TextAppearance = 0x7f100205;
+        public static final int amu_Bubble_TextAppearance_Dark = 0x7f100204;
+        public static final int amu_Bubble_TextAppearance_Light = 0x7f100205;
+        public static final int amu_ClusterIcon_TextAppearance = 0x7f100206;
     }
     public static final class styleable {
         private styleable() {}

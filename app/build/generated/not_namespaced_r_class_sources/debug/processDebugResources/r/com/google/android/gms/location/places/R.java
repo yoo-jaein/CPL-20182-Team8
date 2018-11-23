@@ -36,10 +36,10 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int places_ic_clear = 0x7f070192;
-        public static final int places_ic_search = 0x7f070193;
-        public static final int powered_by_google_dark = 0x7f070196;
-        public static final int powered_by_google_light = 0x7f070197;
+        public static final int places_ic_clear = 0x7f070193;
+        public static final int places_ic_search = 0x7f070194;
+        public static final int powered_by_google_dark = 0x7f070197;
+        public static final int powered_by_google_light = 0x7f070198;
     }
     public static final class id {
         private id() {}
@@ -56,10 +56,10 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int place_autocomplete_fragment = 0x7f0b0064;
-        public static final int place_autocomplete_item_powered_by_google = 0x7f0b0065;
-        public static final int place_autocomplete_item_prediction = 0x7f0b0066;
-        public static final int place_autocomplete_progress = 0x7f0b0067;
+        public static final int place_autocomplete_fragment = 0x7f0b0063;
+        public static final int place_autocomplete_item_powered_by_google = 0x7f0b0064;
+        public static final int place_autocomplete_item_prediction = 0x7f0b0065;
+        public static final int place_autocomplete_progress = 0x7f0b0066;
     }
     public static final class string {
         private string() {}

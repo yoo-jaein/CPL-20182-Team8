@@ -8,12 +8,12 @@
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\859e8008a71d57bc6d8329bb61700f29\\res\\drawable-xxhdpi-v4\\ic_mr_button_grey.png"
     },
     {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\raw_amu_nested_multigeometry.kml.flat",
-        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\android-maps-utils-0.5.aar\\946f4d3a9501baf92a4bf5025aaa1db7\\res\\raw\\amu_nested_multigeometry.kml"
-    },
-    {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_camera.png.flat",
         "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-xhdpi\\ic_camera.png"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\raw_amu_nested_multigeometry.kml.flat",
+        "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\android-maps-utils-0.5.aar\\946f4d3a9501baf92a4bf5025aaa1db7\\res\\raw\\amu_nested_multigeometry.kml"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -962,10 +962,6 @@
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_house.png.flat",
         "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_house.png"
-    },
-    {
-        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_03_dark.png.flat",
@@ -4134,6 +4130,10 @@
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "C:\\Users\\koomj\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\62de57e57a5ba83545a793bc148f64ec\\res\\drawable-xhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_loading_back.png.flat",
+        "source": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\src\\main\\res\\drawable-xxhdpi\\loading_back.png"
     },
     {
         "merged": "C:\\Users\\koomj\\AndroidStudioProjects\\CPL-20182-Team8\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
