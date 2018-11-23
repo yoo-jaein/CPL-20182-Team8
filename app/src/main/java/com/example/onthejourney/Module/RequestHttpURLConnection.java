@@ -48,6 +48,7 @@ public class RequestHttpURLConnection {
                 }
             } else if (option1.equals("favorite_buddies/customer/")) {
                 url += id;
+                Log.d("URL",url);
                 String jsonPage = getStringFromUrl(url);
                 JSONObject json = new JSONObject(jsonPage);
                 JSONArray jArr = json.getJSONArray("datas");

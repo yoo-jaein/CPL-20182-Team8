@@ -6,11 +6,16 @@ import android.os.Parcelable;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.clustering.ClusterItem;
 
+import java.util.ArrayList;
+
+
 public class Buddy implements ClusterItem, Parcelable {
     private LatLng mPosition;
-    private String mTitle = null;
+    private String name = null;
     private String mSnippet = null;
     private String buddy_id = null;
+    private ArrayList<String> price_list = null;
+    private int likeFlag = 0;
 
     public Buddy(double lat, double lng) {
         mPosition = new LatLng(lat, lng);
@@ -19,18 +24,21 @@ public class Buddy implements ClusterItem, Parcelable {
         mPosition = new LatLng(lat, lng);
         this.buddy_id = buddy_id;
     }
-    public Buddy(double lat, double lng, String title, String snippet, String buddy_id) {
+    public Buddy(double lat, double lng, String title, String snippet, String buddy_id, ArrayList<String> price_list) {
         mPosition = new LatLng(lat, lng);
-        mTitle = title;
+        name = title;
         mSnippet = snippet;
         this.buddy_id = buddy_id;
+        this.price_list = price_list;
     }
 
     protected Buddy(Parcel in) {
         mPosition = in.readParcelable(LatLng.class.getClassLoader());
-        mTitle = in.readString();
+        name = in.readString();
         mSnippet = in.readString();
         buddy_id = in.readString();
+        in.readList(price_list, null);
+        likeFlag = in.readInt();
     }
 
     public static final Creator<Buddy> CREATOR = new Creator<Buddy>() {
@@ -46,7 +54,7 @@ public class Buddy implements ClusterItem, Parcelable {
     };
 
     public void setmTitle(String mTitle) {
-        this.mTitle = mTitle;
+        this.name = mTitle;
     }
 
     public void setBuddy_id(String buddy_id){
@@ -59,7 +67,7 @@ public class Buddy implements ClusterItem, Parcelable {
 
     @Override
     public String getTitle() {
-        return mTitle;
+        return name;
     }
 
     @Override
@@ -71,6 +79,10 @@ public class Buddy implements ClusterItem, Parcelable {
         return buddy_id;
     }
 
+    public int getLikeFlag(){return this.likeFlag;}
+    public void setLikeFlag(int flag){
+        this.likeFlag = flag;
+    }
     @Override
     public int describeContents() {
         return 0;
@@ -80,7 +92,7 @@ public class Buddy implements ClusterItem, Parcelable {
     public String toString() {
         return "Buddy{" +
                 "mPosition=" + mPosition +
-                ", mTitle='" + mTitle + '\'' +
+                ", mTitle='" + name + '\'' +
                 ", mSnippet='" + mSnippet + '\'' +
                 ", buddy_id='" + buddy_id + '\'' +
                 '}';
@@ -89,8 +101,10 @@ public class Buddy implements ClusterItem, Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeParcelable(this.mPosition, flags);
-        dest.writeString(this.mTitle);
+        dest.writeString(this.name);
         dest.writeString(this.mSnippet);
         dest.writeString(this.buddy_id);
+        dest.writeStringList(this.price_list);
+        dest.writeInt(this.likeFlag);
     }
 }

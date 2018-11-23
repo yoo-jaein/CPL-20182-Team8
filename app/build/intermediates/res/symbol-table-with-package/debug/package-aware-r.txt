@@ -1395,6 +1395,7 @@ drawable ic_vol_type_tv_light
 drawable ic_web
 drawable ic_white_x
 drawable instagram_logo
+drawable like
 drawable mcam_action_capture
 drawable mcam_action_flash
 drawable mcam_action_flash_auto
@@ -1448,12 +1449,17 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable places_ic_clear
 drawable places_ic_search
+drawable post
+drawable postclicked
 drawable powered_by_google_dark
 drawable powered_by_google_light
+drawable request
+drawable selecter_like
 drawable story_progress_bar
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable unfollow_button
+drawable unlike
 drawable vector_heart_red
 drawable vector_heart_white
 drawable white_grey_border_bottom
@@ -1501,6 +1507,7 @@ id blocking
 id bottom
 id bottomNavViewBar
 id button
+id buttonInsearch
 id buttonPanel
 id calendarView
 id cancel_action
@@ -1538,6 +1545,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id editTextInsearch
 id edit_query
 id end
 id end_padder
@@ -1594,6 +1602,7 @@ id listView
 id list_item
 id list_schedule
 id main_container
+id main_content
 id map
 id masked
 id match_parent
@@ -1690,7 +1699,11 @@ id recyclerImageView
 id recycler_view
 id relLayout1
 id relLayout2
+id relLayout5
+id relLayout6
 id relLayoutParent
+id reqTabs
+id reqViewPager
 id restart
 id retry
 id right
@@ -1757,6 +1770,7 @@ id tag_unhandled_key_listeners
 id terrain
 id text
 id text2
+id textInsearch
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -1781,7 +1795,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tuesday
-id tv
 id tv1
 id uniform
 id unlabeled
@@ -1790,6 +1803,7 @@ id useLogo
 id vertical
 id view
 id view_offset_helper
+id viewpager
 id visible
 id volume_item_container
 id webview
@@ -1881,10 +1895,14 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_chat
 layout fragment_like
+layout fragment_like_buddy
 layout fragment_likephoto
 layout fragment_map
 layout fragment_my_page
+layout fragment_request
+layout fragment_request_achat
 layout fragment_schedule
 layout fragment_search
 layout item_likephotographer_recycler_view

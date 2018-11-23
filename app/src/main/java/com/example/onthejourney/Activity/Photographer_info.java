@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,7 +26,7 @@ public class Photographer_info extends AppCompatActivity {
 
     private ImageView imageView;
     private RecyclerView rvSample;
-
+    private boolean like = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,19 @@ public class Photographer_info extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.textView2);
         textView.setText(buddy.getTitle());
+        CheckBox likeText = findViewById(R.id.likeInInfo);
+        if(buddy.getLikeFlag() == 1){
+            likeText.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        if(like == false) like=true; //true이면 선호작가에 추가
+                        else like=false;
+                    }
+                    return false;
+                }
+            });
+        }
         imageView = findViewById(R.id.imageView);
         Glide.with(this).load("http://ec2-18-222-114-158.us-east-2.compute.amazonaws.com:3000/"+image_path_list.get(0)).into(imageView);
 

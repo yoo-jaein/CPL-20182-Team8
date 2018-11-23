@@ -1,8 +1,13 @@
 package com.example.onthejourney.Data;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.google.maps.android.clustering.ClusterItem;
+
 import java.util.ArrayList;
 
-public class Customer {
+public class Customer implements Parcelable {
     private String nickname;
     private String customer_id;
     private String name;
@@ -12,6 +17,24 @@ public class Customer {
         this.customer_id = customer_id;
         this.name = name;
     }
+
+    protected Customer(Parcel in) {
+        nickname = in.readString();
+        customer_id = in.readString();
+        name = in.readString();
+    }
+
+    public static final Creator<Customer> CREATOR = new Creator<Customer>() {
+        @Override
+        public Customer createFromParcel(Parcel in) {
+            return new Customer(in);
+        }
+
+        @Override
+        public Customer[] newArray(int size) {
+            return new Customer[size];
+        }
+    };
 
     public String getNickname() {
         return nickname;
@@ -45,5 +68,17 @@ public class Customer {
                 ", customer_id='" + customer_id + '\'' +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nickname);
+        dest.writeString(customer_id);
+        dest.writeString(name);
     }
 }

@@ -1,36 +1,28 @@
 package com.example.onthejourney.Fragment;
 
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.onthejourney.Activity.Photographer_info;
-import com.example.onthejourney.Adapter.Item_likephotographer_adapter;
-import com.example.onthejourney.Adapter.Item_likephotographer_listener;
 import com.example.onthejourney.Adapter.RecyclerViewAdapter;
-import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.Data.Customer;
 import com.example.onthejourney.Module.RequestHttpURLConnection;
 import com.example.onthejourney.R;
-import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LikephotoFragment extends android.support.v4.app.Fragment {
+public class LikePhotoFragment extends android.support.v4.app.Fragment {
 
 
     public static final Customer customer = new Customer("traveler",
@@ -38,11 +30,11 @@ public class LikephotoFragment extends android.support.v4.app.Fragment {
             "kim");
     private ArrayList<String> favorite_image;
 
-    public static LikephotoFragment newInstance() {
+    public static LikePhotoFragment newInstance() {
         // Required empty public constructor
         Bundle args = new Bundle();
 
-        LikephotoFragment fragment = new LikephotoFragment();
+        LikePhotoFragment fragment = new LikePhotoFragment();
         fragment.setArguments(args);
 
         return fragment;

@@ -24,6 +24,7 @@ import com.example.onthejourney.Adapter.PhotographerListViewAdapter;
 import com.example.onthejourney.Algorithm.CustomClusterRenderer;
 import com.example.onthejourney.Algorithm.NonHierarchicalDistanceBasedAlgorithm;
 import com.example.onthejourney.Data.Buddy;
+import com.example.onthejourney.Data.Customer;
 import com.example.onthejourney.ETC.PermissionUtils;
 import com.example.onthejourney.Module.RequestHttpURLConnection;
 import com.example.onthejourney.R;
@@ -55,8 +56,8 @@ public class MapsActivity extends FragmentActivity implements
     private Button button;
      Buddy buddy = null;
 
-    private TextView mung,count,thisArea;
-
+    private TextView like, mung,count,thisArea;
+    private Customer me;
     private ClusterManager<Buddy> mClusterManager;
     String str;
     PlaceAutocompleteFragment autocompleteFragment;
@@ -76,6 +77,9 @@ public class MapsActivity extends FragmentActivity implements
 
         setContentView(R.layout.activity_maps);
 
+        me = getIntent().getParcelableExtra("Customer");
+        Log.d("me",me.toString());
+        like = findViewById(R.id.like);
         thisArea = findViewById(R.id.thisArea);
         mung = findViewById(R.id.mung);
         count = findViewById(R.id.count);
@@ -135,43 +139,56 @@ public class MapsActivity extends FragmentActivity implements
                     @Override
                     public boolean onClusterClick(Cluster<Buddy> cluster) {
                         final ListView listView = (ListView) findViewById(R.id.listView);
-                        LinearLayout linearLayout = findViewById(R.id.linearLayout);
-                        linearLayout.setVisibility(LinearLayout.VISIBLE);
-                        Object[] ary = cluster.getItems().toArray();
 
-                        for(int i=0;i<ary.length;i++){
-                            arr.add((Buddy)ary[i]);
-                        }
+                        final Object[] ary = cluster.getItems().toArray();
 
-                        count.setText(String.valueOf(ary.length));
-
-                        NetworkTask networkTask = new NetworkTask("feed_items","image_path", new NetworkTask.Listener() {
+                        Task task = new Task("favorite_buddies/customer/", "buddy_id", me, new Task.Listener() {
                             @Override
-                            public void onFinished(final ArrayList<ArrayList<String>> s) {
-                                Log.d("Image_path_list", s.toString());
+                            public void onFinished(ArrayList<String> s) {
+                                ArrayList<String> likeBuddyList = s;
 
-                                PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr,s);
-                                listView.setAdapter(adapter);
-                                listView.setVisibility(ListView.VISIBLE);
-                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                for (int i = 0; i < ary.length; i++) {
+                                    for (int j = 0; j < likeBuddyList.size(); j++) {
+                                        if (likeBuddyList.get(j).equals(((Buddy) ary[i]).getBuddy_id())) {
+                                            ((Buddy) ary[i]).setLikeFlag(1);
+                                        }
+                                    }
+                                    arr.add((Buddy) ary[i]);
+                                }
+
+
+
+                                NetworkTask networkTask = new NetworkTask("feed_items", "image_path", new NetworkTask.Listener() {
                                     @Override
-                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                        System.out.println(position);
-                                        buddy = arr.get(position);
-                                        System.out.println(buddy.getTitle());
+                                    public void onFinished(final ArrayList<ArrayList<String>> s) {
+                                        Log.d("Image_path_list", s.toString());
+                                        LinearLayout linearLayout = findViewById(R.id.linearLayout);
+                                        linearLayout.setVisibility(LinearLayout.VISIBLE);
+                                        count.setText(String.valueOf(ary.length));
 
+                                        PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr, s);
+                                        listView.setAdapter(adapter);
+                                        listView.setVisibility(ListView.VISIBLE);
+                                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                            @Override
+                                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                System.out.println(position);
+                                                buddy = arr.get(position);
+                                                System.out.println(buddy.getTitle());
 
-                                        Intent intent = new Intent(MapsActivity.this, Photographer_info.class);
-                                        intent.putExtra("Buddy", buddy);
-                                        intent.putStringArrayListExtra("List", s.get(position));
-                                        startActivity(intent);
+                                                Intent intent = new Intent(MapsActivity.this, Photographer_info.class);
+                                                intent.putExtra("Buddy", buddy);
+                                                intent.putStringArrayListExtra("List", s.get(position));
+                                                startActivity(intent);
+                                            }
+                                        });
+
                                     }
                                 });
-
+                                networkTask.execute();
                             }
                         });
-                        networkTask.execute();
-
+                        task.execute();
 
 
                         Toast.makeText(MapsActivity.this, "Cluster click", Toast.LENGTH_SHORT).show();
@@ -182,42 +199,98 @@ public class MapsActivity extends FragmentActivity implements
         mClusterManager.setOnClusterItemClickListener(
                 new ClusterManager.OnClusterItemClickListener<Buddy>() {
                     @Override
-                    public boolean onClusterItemClick(Buddy Buddy) {
+                    public boolean onClusterItemClick(final Buddy Buddy) {
+
                         final ListView listView = (ListView) findViewById(R.id.listView);
 
-
-
-                        count.setText("1");
-                        LinearLayout linearLayout = findViewById(R.id.linearLayout);
-                        linearLayout.setVisibility(LinearLayout.VISIBLE);
-                        arr.add(Buddy);
-
-                        NetworkTask networkTask = new NetworkTask("feed_items","image_path", new NetworkTask.Listener() {
+                        Task task = new Task("favorite_buddies/customer/", "buddy_id", me, new Task.Listener() {
                             @Override
-                            public void onFinished(final ArrayList<ArrayList<String>> s) {
-                                PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr,s);
-                                listView.setAdapter(adapter);
+                            public void onFinished(ArrayList<String> s) {
+                                ArrayList<String> likeBuddyList = s;
 
-                                listView.setVisibility(ListView.VISIBLE);
-                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                                    for (int j = 0; j < likeBuddyList.size(); j++) {
+                                        if (likeBuddyList.get(j).equals(Buddy.getBuddy_id())) {
+                                           Buddy.setLikeFlag(1);
+                                        }
+                                    }
+                                    arr.add(Buddy);
+
+
+
+
+                                NetworkTask networkTask = new NetworkTask("feed_items", "image_path", new NetworkTask.Listener() {
                                     @Override
-                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    public void onFinished(final ArrayList<ArrayList<String>> s) {
+                                        Log.d("Image_path_list", s.toString());
+                                        LinearLayout linearLayout = findViewById(R.id.linearLayout);
+                                        linearLayout.setVisibility(LinearLayout.VISIBLE);
+                                        count.setText("1");
 
+                                        PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr, s);
+                                        listView.setAdapter(adapter);
+                                        listView.setVisibility(ListView.VISIBLE);
+                                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                            @Override
+                                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                System.out.println(position);
+                                                buddy = arr.get(position);
+                                                System.out.println(buddy.getTitle());
 
-                                        System.out.println(position);
-                                        buddy = arr.get(position);
-                                        System.out.println(buddy.getTitle());
+                                                Intent intent = new Intent(MapsActivity.this, Photographer_info.class);
+                                                intent.putExtra("Buddy", buddy);
+                                                intent.putStringArrayListExtra("List", s.get(position));
+                                                startActivity(intent);
+                                            }
+                                        });
 
-                                        Intent intent = new Intent(MapsActivity.this, Photographer_info.class);
-                                        intent.putExtra("Buddy", buddy);
-                                        intent.putStringArrayListExtra("List", s.get(position));
-                                        startActivity(intent);
                                     }
                                 });
-
+                                networkTask.execute();
                             }
                         });
-                        networkTask.execute();
+                        task.execute();
+
+
+
+
+
+
+//                        final ListView listView = (ListView) findViewById(R.id.listView);
+//
+//
+//
+//                        count.setText("1");
+//                        LinearLayout linearLayout = findViewById(R.id.linearLayout);
+//                        linearLayout.setVisibility(LinearLayout.VISIBLE);
+//                        arr.add(Buddy);
+//
+//                        NetworkTask networkTask = new NetworkTask("feed_items","image_path", new NetworkTask.Listener() {
+//                            @Override
+//                            public void onFinished(final ArrayList<ArrayList<String>> s) {
+//                                PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr,s);
+//                                listView.setAdapter(adapter);
+//
+//                                listView.setVisibility(ListView.VISIBLE);
+//                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                                    @Override
+//                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//
+//                                        System.out.println(position);
+//                                        buddy = arr.get(position);
+//                                        System.out.println(buddy.getTitle());
+//
+//                                        Intent intent = new Intent(MapsActivity.this, Photographer_info.class);
+//                                        intent.putExtra("Buddy", buddy);
+//                                        intent.putStringArrayListExtra("List", s.get(position));
+//                                        startActivity(intent);
+//                                    }
+//                                });
+//
+//                            }
+//                        });
+//                        networkTask.execute();
 
                         Toast.makeText(MapsActivity.this, "Cluster item click", Toast.LENGTH_SHORT).show();
                         return false;
@@ -393,5 +466,39 @@ public class MapsActivity extends FragmentActivity implements
 
         }
     }
+    public static class Task extends AsyncTask<Void, Void, ArrayList<String>> {
+
+        private String option1, option2;
+        private Customer customer;
+        private Listener listener;
+
+        public interface Listener {
+            void onFinished(ArrayList<String> s);
+        }
+
+        public Task(String option1, String option2, Customer customer, Listener listener) {
+            this.option1 = option1;
+            this.option2 = option2;
+            this.customer = customer;
+            this.listener = listener;
+        }
+
+        @Override
+        protected ArrayList<String> doInBackground(Void... voids) {
+            ArrayList<String> buddy;
+            RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
+            buddy = requestHttpURLConnection.getJsonText(option1, option2, customer.getCustomer_id());
+            Log.d("InNetTask", buddy.toString());
+
+
+            return buddy;
+        }
+
+        protected void onPostExecute(ArrayList<String> s) {
+            listener.onFinished(s);
+
+        }
+    }
+
 
 }

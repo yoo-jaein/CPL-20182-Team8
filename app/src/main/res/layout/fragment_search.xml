@@ -3,9 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="search" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextInsearch"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <Button
+            android:id="@+id/buttonInsearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickInSearch"
+            android:text="POST" />
+
+        <TextView
+            android:id="@+id/textInsearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </FrameLayout>
