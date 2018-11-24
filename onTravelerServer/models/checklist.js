@@ -14,9 +14,7 @@ var checkListSchema = new Schema({
     //start_time : { type:Date, required: true },
     //end_time : {type: Date, required: true},
     location : {
-        name : String,
-        latitude : String,
-        longitude : String
+        name : String
     },
     people_number : {type : Number, min : 1, required:true},
     requirement_list : [String],
