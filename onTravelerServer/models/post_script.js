@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var post_scriptSchema = new Schema({
-    feed_id : {type : Schema.Types.ObjectId, require: true},
+    buddy_id : {type:String, require: true},
     customer_id : {type:String, require: true},
     grade : {type : Number, default : 0, min:0, max:5},
     comments : {type:String}

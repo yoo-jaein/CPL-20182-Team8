@@ -15,15 +15,26 @@ router.get('/', function(req,res, next){
 });
 
 
-router.get('/feed/:feed_id', function(req,res, next){
-    PostScript.find({feed_id: req.params.feed_id})
+router.get('/buddy/:buddy_id', function(req,res, next){
+    PostScript.find({buddy_id: req.params.buddy_id})
         .then(function(postScript){
             if(!postScript.length) return res.status(404).send(ReturnFormat.get_format(0,postScript,"cannot found"));
             res.send(ReturnFormat.get_format(1,postScript,""));
         }).catch(function(err){
-            res.status(500).send(ReturnFormat.get_format(0, "", err));
+        res.status(500).send(ReturnFormat.get_format(0, "", err));
     });
 });
+
+router.get('/customer/:customer_id', function(req,res, next){
+    PostScript.find({customer_id: req.params.customer_id})
+        .then(function(postScript){
+            if(!postScript.length) return res.status(404).send(ReturnFormat.get_format(0,postScript,"cannot found"));
+            res.send(ReturnFormat.get_format(1,postScript,""));
+        }).catch(function(err){
+        res.status(500).send(ReturnFormat.get_format(0, "", err));
+    });
+});
+
 
 router.post('/', function(req, res){
     PostScript.create(req.body)

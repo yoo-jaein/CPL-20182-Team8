@@ -11,11 +11,7 @@ var checkListSchema = new Schema({
     end_year : String,
     end_month : String,
     end_day :String,
-    //start_time : { type:Date, required: true },
-    //end_time : {type: Date, required: true},
-    location : {
-        name : String
-    },
+    location_name : String,
     people_number : {type : Number, min : 1, required:true},
     requirement_list : [String],
     suggested_price : {type : Number, min : 0, required: true}
