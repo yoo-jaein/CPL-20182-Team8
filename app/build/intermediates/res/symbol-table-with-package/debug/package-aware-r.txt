@@ -1146,6 +1146,8 @@ drawable android_construction
 drawable avd_hide_password
 drawable avd_show_password
 drawable black_border
+drawable buddy_background
+drawable buddy_list
 drawable button
 drawable circle_grey
 drawable circle_opaque
@@ -1184,6 +1186,8 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable grey_border
 drawable grey_border_bottom
+drawable hash_orange
+drawable hash_search_back
 drawable ic_add_to_story
 drawable ic_alert
 drawable ic_android
@@ -1396,6 +1400,10 @@ drawable ic_web
 drawable ic_white_x
 drawable instagram_logo
 drawable like
+drawable like_orange
+drawable loading_back
+drawable location_orange
+drawable maps_search_bar
 drawable mcam_action_capture
 drawable mcam_action_flash
 drawable mcam_action_flash_auto
@@ -1434,6 +1442,7 @@ drawable mr_vol_type_audiotrack_dark
 drawable mr_vol_type_audiotrack_light
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
+drawable mypage_orange
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -1719,7 +1728,6 @@ id radio
 id rating
 id recyclerImageView
 id recycler_view
-id relLayout1
 id relLayout2
 id relLayoutParent
 id reqTabs
@@ -1900,7 +1908,6 @@ layout abc_tooltip
 layout activity_chat
 layout activity_home
 layout activity_introduce_price
-layout activity_loading
 layout activity_login
 layout activity_maps
 layout activity_notice
@@ -2501,6 +2508,7 @@ style RtlOverlay_Widget_AppCompat_Search_DropDown_Text
 style RtlOverlay_Widget_AppCompat_SearchView_MagIcon
 style RtlUnderlay_Widget_AppCompat_ActionButton
 style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow
+style SplashTheme
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2
