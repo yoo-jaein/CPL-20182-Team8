@@ -24,7 +24,7 @@ var postScriptRouter = require('./routes/post_scripts');
 var favoriteBuddyRouter =require('./routes/favorite_buddies');
 var favoriteFeedRouter = require('./routes/favorite_feeds');
 var chattingRouter = require('./routes/chattings');
-
+var profileRouter = require('./routes/profiles');
 
 
 var app = express();
@@ -69,6 +69,7 @@ app.use('/post_scripts', postScriptRouter);
 app.use('/favorite_buddies', favoriteBuddyRouter);
 app.use('/favorite_feeds', favoriteFeedRouter);
 app.use('/chattings', chattingRouter);
+app.use('/profiles', profileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
