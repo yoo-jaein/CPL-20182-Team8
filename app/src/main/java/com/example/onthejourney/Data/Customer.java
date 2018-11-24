@@ -5,9 +5,6 @@ import android.os.Parcelable;
 
 import com.google.maps.android.clustering.ClusterItem;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 public class Customer implements Parcelable {
@@ -76,19 +73,6 @@ public class Customer implements Parcelable {
     @Override
     public int describeContents() {
         return 0;
-    }
-
-    public JSONObject getJsonObject() {
-        JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put("customer_id", customer_id);
-
-            jsonObject.put("nickname", nickname);
-            jsonObject.put("name", name);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return jsonObject;
     }
 
     @Override

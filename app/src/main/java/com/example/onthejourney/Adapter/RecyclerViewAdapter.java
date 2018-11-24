@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.example.onthejourney.Activity.SliderView;
-import com.example.onthejourney.Data.Customer;
 import com.example.onthejourney.R;
 
 import java.util.ArrayList;
@@ -19,12 +18,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
     String url = "http://ec2-18-222-114-158.us-east-2.compute.amazonaws.com:3000/";
     private ArrayList<String> image_path_arr = new ArrayList<String>();;
     private Context context;
-    private Customer customer;
 
-    public RecyclerViewAdapter(Context context, ArrayList<String> list, Customer customer){
+    public RecyclerViewAdapter(Context context, ArrayList<String> list){
         this.context = context;
         this.image_path_arr = list;
-        this.customer = customer;
     }
 
     @NonNull
@@ -43,7 +40,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, SliderView.class);
-                intent.putExtra("Customer",customer);
                 intent.putExtra("position",position);
                 intent.putExtra("List",image_path_arr);
                 context.startActivity(intent);

@@ -88,6 +88,15 @@ public class Buddy implements ClusterItem, Parcelable {
         return 0;
     }
 
+    @Override
+    public String toString() {
+        return "Buddy{" +
+                "mPosition=" + mPosition +
+                ", mTitle='" + name + '\'' +
+                ", mSnippet='" + mSnippet + '\'' +
+                ", buddy_id='" + buddy_id + '\'' +
+                '}';
+    }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -97,17 +106,5 @@ public class Buddy implements ClusterItem, Parcelable {
         dest.writeString(this.buddy_id);
         dest.writeStringList(this.price_list);
         dest.writeInt(this.likeFlag);
-    }
-
-    @Override
-    public String toString() {
-        return "Buddy{" +
-                "mPosition=" + mPosition +
-                ", name='" + name + '\'' +
-                ", mSnippet='" + mSnippet + '\'' +
-                ", buddy_id='" + buddy_id + '\'' +
-                ", price_list=" + price_list +
-                ", likeFlag=" + likeFlag +
-                '}';
     }
 }

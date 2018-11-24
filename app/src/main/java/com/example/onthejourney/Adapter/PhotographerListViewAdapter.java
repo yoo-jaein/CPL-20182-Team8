@@ -21,7 +21,6 @@ public class PhotographerListViewAdapter extends BaseAdapter {
     private ArrayList<Buddy> listViewItemList;
     private ArrayList<ArrayList<String>> image_path_list;
 
-
     public PhotographerListViewAdapter(ArrayList<Buddy> arrayList, ArrayList<ArrayList<String>> image_path_list) {
         listViewItemList = arrayList;
         this.image_path_list = image_path_list;
@@ -50,14 +49,13 @@ public class PhotographerListViewAdapter extends BaseAdapter {
         final ImageView imageView1;
         final ImageView imageView2;
         final ImageView imageView3;
-        final TextView like;
+
         if (convertView == null) {
             context = parent.getContext();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.photographer, parent, false);
         }
 
-        like = convertView.findViewById(R.id.like);
         titleTextView = (TextView) convertView.findViewById(R.id.textView);
         imageView1 = (ImageView) convertView.findViewById(R.id.imageView1);
         imageView2 = (ImageView) convertView.findViewById(R.id.imageView2);
@@ -73,8 +71,7 @@ public class PhotographerListViewAdapter extends BaseAdapter {
         }
         Buddy buddy = listViewItemList.get(position);
         titleTextView.setText(buddy.getBuddy_id());
-        if (buddy.getLikeFlag() == 1)
-            like.setText("♥ ");
+
         return convertView;
     }
 

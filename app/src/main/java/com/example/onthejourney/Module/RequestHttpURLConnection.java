@@ -42,8 +42,7 @@ public class RequestHttpURLConnection {
                     json = jArr.getJSONObject(i);
                     if (json.getString("buddy_id").equals(id)) {
                         String image_path = json.getString(option2);
-                        Log.d("option2",option2);
-                        Log.d("image_path",image_path);
+
                         arrayList.add(image_path);
                     }
                 }
