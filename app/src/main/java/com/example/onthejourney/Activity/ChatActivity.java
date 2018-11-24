@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import com.example.onthejourney.Adapter.ChatAdapter;
 import com.example.onthejourney.Data.ChatDTO;
+import com.example.onthejourney.Data.CheckList;
 import com.example.onthejourney.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -24,7 +25,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private String CHAT_NAME;
     private String USER_NAME;
-
+    private CheckList checkList;
     private ListView chat_view;
     private EditText chat_edit;
     private Button chat_send;

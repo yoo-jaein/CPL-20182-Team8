@@ -57,8 +57,8 @@ public class RequestAdapter extends BaseAdapter {
         }
         CheckList checkList = checkLists.get(position);
         holder.buddyId.setText("Buddy_id : " + checkList.getBuddy_id());
-        holder.startDate.setText(checkList.getStart_time().toString());
-        holder.endDate.setText(checkList.getEnd_time().toString());
+        holder.startDate.setText(checkList.getStart_year() + "년 " + checkList.getStart_month() + "월 " + checkList.getStart_day() + "일 ");
+        holder.endDate.setText(checkList.getEnd_year() + "년 " + checkList.getEnd_month() + "월 " + checkList.getEnd_day() + "일 ");
         holder.location.setText(checkList.getLocation());
         holder.people_number.setText(""+checkList.getPeople_number());
         holder.suggetPrice.setText(""+ checkList.getSuggested_price() +"원");

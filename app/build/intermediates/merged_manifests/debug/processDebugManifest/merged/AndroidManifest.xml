@@ -91,6 +91,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.onthejourney.Activity.LoginSelectActivity" />
+        <activity android:name="com.example.onthejourney.Activity.BookingActivity" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
