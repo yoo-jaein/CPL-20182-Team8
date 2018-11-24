@@ -32,6 +32,9 @@ router.get('/:chatting_id', function(req, res, next){
 
 
 
+
+
+
 /* Get particular chatting*/
 router.get('/customer/:customer_id', function(req, res, next){
     Chatting.find({customer_id : req.params.customer_id})

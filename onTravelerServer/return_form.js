@@ -7,7 +7,7 @@ module.exports = () => {
             return { success : s, size : data.length, datas :data, error : err, newUser : 0};
         },
         put_format : function(s, data, err){
-            return { success : s, size : data.length, datas : data, error : err, newUser : 0};
+            return { success : s, size : 0, datas : [], error : err, newUser : 0};
         },
         delete_format : function(s, err){
             return {success: s, size : 0, datas : "", error : err, newUser : 0};

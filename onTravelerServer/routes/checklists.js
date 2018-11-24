@@ -51,6 +51,33 @@ router.get('/buddy/:buddy_id', function(req, res, next){
 });
 
 
+router.get('/date/:dates', function(req,res,next){
+    var dates = req.params.dates.split(/[ ,]+/);
+
+    var search_start_time = new Date(dates[0]);
+    var search_end_time = new Date(dates[1]);
+
+    console.log(search_start_time);
+    console.log(search_end_time);
+
+    Checklist.find({
+        start_time : {
+            "$gte" : search_start_time
+        },
+        end_time : {
+            "$lte" : search_end_time
+        }
+    }).then(function(checklist){
+        if(!checklist.length) return res.status(404).send(ReturnFormat.get_format(0,checklist,"cannot found"));
+        res.send(ReturnFormat.get_format(1,checklist,""));
+    }).catch(function(err){
+        res.status(500).send(ReturnFormat.get_format(0, "", err));
+    });
+
+
+});
+
+
 /* Create checklist or update */
 router.post('/', function(req, res){
     Checklist.create(req.body)
