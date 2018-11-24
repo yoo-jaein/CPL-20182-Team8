@@ -6,6 +6,7 @@ var feedSchema = new Schema({
     image_path : {type:String, require: true},
     favorite_num : { type:Number, min : 0},
     picture_taken_location : {
+        name : String,
         latitude : String,
         longitude : String
     },
