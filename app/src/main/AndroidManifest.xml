@@ -55,23 +55,23 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.HomeActivity">
-
-        </activity>
+        <activity android:name=".Activity.HomeActivity" />
         <activity android:name=".Activity.Photographer_info" />
         <activity android:name=".Activity.SliderView" />
         <activity android:name=".Activity.Notice" />
         <activity android:name=".Activity.IntroducePrice" />
         <activity android:name=".Activity.Schedule" />
-        <activity android:name=".Activity.ChatActivity"></activity>
+        <activity android:name=".Activity.ChatActivity" />
         <activity android:name=".Activity.LoginActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".Activity.LoginSelectActivity" />
+        <activity android:name=".Activity.SplashActivity" />
+        <activity android:name=".Activity.BookingActivity"></activity>
     </application>
 
 </manifest>

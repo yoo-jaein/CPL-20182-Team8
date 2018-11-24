@@ -78,12 +78,24 @@ public class CheckListDialog extends Dialog implements View.OnClickListener {
             case R.id.findPwDialogFindTv:
                 CheckList checkList = new CheckList();
 
-                MyDate sdate = new MyDate(sdp.getYear(), sdp.getMonth()+1, sdp.getDayOfMonth());
-                MyDate edate = new MyDate(edp.getYear(), edp.getMonth()+1, edp.getDayOfMonth());
-                checkList.setStart_time(sdate);
-                checkList.setEnd_time(edate);
+               String syear = Integer.toString(sdp.getYear());
+               String smonth = Integer.toString(sdp.getMonth()+1);
+               String sday = Integer.toString(sdp.getDayOfMonth());
+
+                checkList.setStart_year(syear);
+                checkList.setStart_month(smonth);
+                checkList.setStart_day(sday);
+
+                String eyear = Integer.toString(edp.getYear());
+                String emonth = Integer.toString(edp.getMonth()+1);
+                String eday = Integer.toString(edp.getDayOfMonth());
+
+                checkList.setEnd_year(eyear);
+                checkList.setEnd_month(emonth);
+                checkList.setEnd_day(eday);
                 checkList.setSuggested_price(Integer.parseInt(suggest_priceEt.getText().toString()));
                 checkList.setLocation(locationEt.getText().toString());
+                Log.d("location",checkList.getLocation());
                 checkList.setPeople_number(Integer.parseInt(people_numberEt.getText().toString()));
 
                 ArrayList<String> arrayList = new ArrayList<>();

@@ -2,6 +2,7 @@ package com.example.onthejourney.Adapter;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.Data.ChatDTO;
+import com.example.onthejourney.Data.Customer;
 import com.example.onthejourney.R;
 
 import java.text.SimpleDateFormat;
@@ -20,11 +23,22 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
     private final static int TYPE_MY_SELF = 0;
     private final static int TYPE_ANOTHER = 1;
     private String mMyEmail;
+    private Customer customer = null;
+    private Buddy buddy = null;
 
     public ChatAdapter(Context context, int resource) {
         super(context, resource);
     }
-
+    public ChatAdapter(Context context, int resource, Customer customer){
+        super(context, resource);
+        this.customer = customer;
+        Log.d("customerInAdapter",customer.toString());
+    }
+    public ChatAdapter(Context context, int resource, Buddy buddy){
+        super(context, resource);
+        this.buddy = buddy;
+        Log.d("Buddy",buddy.toString());
+    }
     public void setEmail(String email) {
         mMyEmail = email;
     }
@@ -49,6 +63,7 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
     public View getView(int position, View convertView, ViewGroup parent) {
         int viewType = getItemViewType(position);
         LayoutInflater inflater = LayoutInflater.from(getContext());
+
         if (convertView == null) {
             if (viewType == TYPE_ANOTHER) {
                 convertView = setAnotherView(inflater);
@@ -81,7 +96,7 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
     @Override
     public int getItemViewType(int position) {
         String email = getItem(position).getUserName();
-        if (!TextUtils.isEmpty(mMyEmail) && mMyEmail.equals(email)) {
+        if (buddy == null && email == customer.getCustomer_id()) {
             return TYPE_MY_SELF; // 나의 채팅내용
         } else {
             return TYPE_ANOTHER; // 상대방의 채팅내용

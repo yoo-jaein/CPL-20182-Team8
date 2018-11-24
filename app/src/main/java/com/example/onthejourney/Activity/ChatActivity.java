@@ -11,7 +11,9 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.onthejourney.Adapter.ChatAdapter;
+import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.Data.ChatDTO;
+import com.example.onthejourney.Data.Customer;
 import com.example.onthejourney.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -22,13 +24,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ChatActivity extends AppCompatActivity {
 
+    private Customer customer = null;
+    private Buddy buddy = null;
     private String CHAT_NAME;
     private String USER_NAME;
-
+    private ChatAdapter adapter;
     private ListView chat_view;
     private EditText chat_edit;
     private Button chat_send;
-    private ChatAdapter adapter;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
@@ -38,19 +41,17 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
 
-
         // 위젯 ID 참조
         chat_view = (ListView) findViewById(R.id.chat_view);
         chat_edit = (EditText) findViewById(R.id.chat_edit);
         chat_send = (Button) findViewById(R.id.chat_sent);
 
-        adapter = new ChatAdapter(this, R.layout.listitem_chat);
-
         // 로그인 화면에서 받아온 채팅방 이름, 유저 이름 저장
         Intent intent = getIntent();
         CHAT_NAME = intent.getStringExtra("chatName");
         USER_NAME = intent.getStringExtra("userName");
-
+        buddy = intent.getParcelableExtra("Buddy");
+        customer = intent.getParcelableExtra("Customer");
         // 채팅 방 입장
         openChat(CHAT_NAME);
 
@@ -85,9 +86,12 @@ public class ChatActivity extends AppCompatActivity {
 
     private void openChat(String chatName) {
         // 리스트 어댑터 생성 및 세팅
-        final ChatAdapter adapter
 
-                = new ChatAdapter(this, R.layout.listitem_chat);
+
+        if (buddy == null)
+            adapter = new ChatAdapter(this, R.layout.listitem_chat, customer);
+        else
+            adapter = new ChatAdapter(this, R.layout.listitem_chat, buddy);
         chat_view.setAdapter(adapter);
 
 
@@ -96,7 +100,7 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 addMessage(dataSnapshot);
-                Log.e("LOG", "s:"+s);
+                Log.e("LOG", "s:" + s);
             }
 
             @Override

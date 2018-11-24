@@ -73,8 +73,7 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.onthejourney.Activity.HomeActivity" >
-        </activity>
+        <activity android:name="com.example.onthejourney.Activity.HomeActivity" />
         <activity android:name="com.example.onthejourney.Activity.Photographer_info" />
         <activity android:name="com.example.onthejourney.Activity.SliderView" />
         <activity android:name="com.example.onthejourney.Activity.Notice" />
@@ -88,6 +87,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.onthejourney.Activity.LoginSelectActivity" />
+        <activity android:name="com.example.onthejourney.Activity.SplashActivity" />
+        <activity android:name="com.example.onthejourney.Activity.BookingActivity" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

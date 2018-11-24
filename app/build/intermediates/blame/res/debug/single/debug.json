@@ -16,6 +16,10 @@
         "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\mipmap-xxhdpi\\mcam_circle_selector.xml"
     },
     {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
@@ -36,12 +40,12 @@
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_web.png.flat",
         "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\drawable-xxhdpi\\ic_web.png"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_tooltip.xml.flat",
@@ -76,24 +80,24 @@
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\db082924a967ae0074c75320dca0858e\\res\\drawable-hdpi-v4\\design_ic_visibility_off.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_add_to_story.png.flat",
-        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\drawable-xxhdpi\\ic_add_to_story.png"
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_mcam_camera_rear.xml.flat",
+        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\drawable-xxhdpi\\mcam_camera_rear.xml"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_05_light.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_05_light.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_mcam_camera_rear.xml.flat",
-        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\drawable-xxhdpi\\mcam_camera_rear.xml"
-    },
-    {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_08_light.png.flat",
-        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_08_light.png"
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_add_to_story.png.flat",
+        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\drawable-xxhdpi\\ic_add_to_story.png"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_transformation_sheet_expand_spec.xml.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\db082924a967ae0074c75320dca0858e\\res\\animator\\mtrl_fab_transformation_sheet_expand_spec.xml"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_08_light.png.flat",
+        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_08_light.png"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_edittext.xml.flat",
@@ -212,12 +216,12 @@
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_15_dark.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_black_x.png.flat",
-        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_black_x.png"
-    },
-    {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_ic_vol_type_speaker_group_dark.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-hdpi-v4\\ic_vol_type_speaker_group_dark.png"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_black_x.png.flat",
+        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_black_x.png"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout_listitem_chat.xml.flat",
@@ -280,12 +284,12 @@
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_thumb_material.xml.flat",
-        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\drawable\\abc_seekbar_thumb_material.xml"
-    },
-    {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_10_dark.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_10_dark.png"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_thumb_material.xml.flat",
+        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_unlike.png.flat",
@@ -300,28 +304,28 @@
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-mdpi-v4\\ic_mr_button_disconnected_light.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout-watch-v20_abc_alert_dialog_title_material.xml.flat",
-        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\layout-watch-v20\\abc_alert_dialog_title_material.xml"
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_ic_group_collapse_09.png.flat",
+        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xxxhdpi-v4\\ic_group_collapse_09.png"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_media_pause_dark.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xxhdpi-v4\\ic_media_pause_dark.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_ic_group_collapse_09.png.flat",
-        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xxxhdpi-v4\\ic_group_collapse_09.png"
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout-watch-v20_abc_alert_dialog_title_material.xml.flat",
+        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\layout-watch-v20\\abc_alert_dialog_title_material.xml"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_24_dark.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_24_dark.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
-        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
-    },
-    {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_03_light.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_03_light.png"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
+        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_ic_mr_button_grey.png.flat",
@@ -388,12 +392,12 @@
         "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\drawable-xxhdpi\\ic_camera_white.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\1a599f58f05614478748087f3ef1026b\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
-    },
-    {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_disabled_dark.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xhdpi-v4\\ic_mr_button_disabled_dark.png"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\1a599f58f05614478748087f3ef1026b\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -404,40 +408,40 @@
         "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_material.xml.flat",
-        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\layout\\abc_alert_dialog_material.xml"
-    },
-    {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_ic_group_collapse_11.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xxxhdpi-v4\\ic_group_collapse_11.png"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_material.xml.flat",
+        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_ic_vol_type_speaker_group_dark.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-mdpi-v4\\ic_vol_type_speaker_group_dark.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_evp_action_restart.xml.flat",
-        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\drawable-xxhdpi\\evp_action_restart.xml"
-    },
-    {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\drawable-mdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_grey_border.xml.flat",
-        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\drawable-v24\\grey_border.xml"
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_evp_action_restart.xml.flat",
+        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\drawable-xxhdpi\\evp_action_restart.xml"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_powered_by_google_dark.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\986c8f4dd84aa69089d2d4649ce17fa8\\res\\drawable-mdpi-v4\\powered_by_google_dark.png"
     },
     {
-        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connected_20_dark.png.flat",
-        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_20_dark.png"
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_grey_border.xml.flat",
+        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\drawable-v24\\grey_border.xml"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\45a7af0e91e04c17df28c113aac17216\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connected_20_dark.png.flat",
+        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_20_dark.png"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_01_dark.png.flat",
@@ -522,6 +526,10 @@
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_dark.xml.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_checklist_photographer.xml.flat",
+        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\layout\\dialog_checklist_photographer.xml"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_01_dark.png.flat",
@@ -1506,6 +1514,10 @@
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_mcam_action_play.xml.flat",
         "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\mipmap-xxhdpi\\mcam_action_play.xml"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login_select.xml.flat",
+        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\layout\\activity_login_select.xml"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_clear_material.xml.flat",
@@ -2936,6 +2948,10 @@
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\android-maps-utils-0.5.aar\\7f95e9ba61294ce1c0052da200cb7c18\\res\\raw\\amu_unknwown_folder.kml"
     },
     {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_center_profile.xml.flat",
+        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\layout\\layout_center_profile.xml"
+    },
+    {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_places_ic_clear.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\986c8f4dd84aa69089d2d4649ce17fa8\\res\\drawable-xxxhdpi-v4\\places_ic_clear.png"
     },
@@ -3182,6 +3198,10 @@
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout_snippet_top_profile.xml.flat",
+        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\layout\\snippet_top_profile.xml"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_media_play_light.png.flat",
@@ -4694,6 +4714,10 @@
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_15_light.png.flat",
         "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\ade92781f0b4a91e29945b842a9aaf96\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_15_light.png"
+    },
+    {
+        "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_booking.xml.flat",
+        "source": "C:\\Android\\OntheJourney\\app\\src\\main\\res\\layout\\activity_booking.xml"
     },
     {
         "merged": "C:\\Android\\OntheJourney\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_default_mtrl_shape.xml.flat",

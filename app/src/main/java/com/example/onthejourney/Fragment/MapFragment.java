@@ -6,16 +6,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.onthejourney.Data.Customer;
 import com.example.onthejourney.R;
 
 public class MapFragment extends Fragment {
 
     public MapFragment() {}
 
-    public static MapFragment newInstance(String param1, String param2) {
+    private Customer customer;
+    public static MapFragment newInstance(Customer customer) {
         MapFragment fragment = new MapFragment();
         Bundle args = new Bundle();
+        args.putParcelable("Customer", customer);
         fragment.setArguments(args);
         return fragment;
     }
@@ -27,6 +31,9 @@ public class MapFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+
     }
 
 
