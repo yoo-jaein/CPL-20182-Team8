@@ -21,7 +21,7 @@ public class CheckList {
     private String end_month = null;
     private String end_day = null;
 
-    private String location = null;
+    private String location_name = null;
     private int people_number = 0;
     private ArrayList<String> requirement_list = null;
     private int suggested_price = 0;
@@ -42,7 +42,7 @@ public class CheckList {
         this.end_year = end_year;
         this.end_month = end_month;
         this.end_day = end_day;
-        this.location = location;
+        this.location_name = location;
         this.people_number = people_number;
         this.requirement_list = requirement_list;
         this.suggested_price = suggested_price;
@@ -130,11 +130,11 @@ public class CheckList {
 
 
     public String getLocation() {
-        return location;
+        return location_name;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLocation(String location_name) {
+        this.location_name = location_name;
     }
 
     public int getPeople_number() {
@@ -161,7 +161,7 @@ public class CheckList {
         this.suggested_price = suggested_price;
     }
 
-    public JSONObject getJsonObject(String customer_id, String buddy_id, String state, Date start_time, Date end_time, LatLng location, int people_number, int suggested_price, JSONArray array){
+    public JSONObject getJsonObject(String customer_id, String buddy_id, String state, Date start_time, Date end_time, LatLng location_name, int people_number, int suggested_price, JSONArray array){
         JSONObject jsonObject = null;
         try {
             jsonObject = new JSONObject();
@@ -174,7 +174,7 @@ public class CheckList {
             jsonObject.put("end_year", end_year);
             jsonObject.put("end_month", end_month);
             jsonObject.put("end_day", end_day);
-            jsonObject.put("location",location);
+            jsonObject.put("location_name",location_name);
             jsonObject.put("people_number", people_number);
             jsonObject.put("suggested_price", suggested_price);
             jsonObject.put("requirement_list", array);
@@ -196,7 +196,7 @@ public class CheckList {
             jsonObject.put("end_year", end_year);
             jsonObject.put("end_month", end_month);
             jsonObject.put("end_day", end_day);
-            jsonObject.put("location_name",location);
+            jsonObject.put("location_name",location_name);
             jsonObject.put("people_number", people_number);
             jsonObject.put("suggested_price", suggested_price);
             jsonObject.put("requirement_list", requirement_list);
@@ -218,7 +218,7 @@ public class CheckList {
                 ", end_year='" + end_year + '\'' +
                 ", end_month='" + end_month + '\'' +
                 ", end_day='" + end_day + '\'' +
-                ", location='" + location + '\'' +
+                ", location_name='" + location_name + '\'' +
                 ", people_number=" + people_number +
                 ", requirement_list=" + requirement_list +
                 ", suggested_price=" + suggested_price +

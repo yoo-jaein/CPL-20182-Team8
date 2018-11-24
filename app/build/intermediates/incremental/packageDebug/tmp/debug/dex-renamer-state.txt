@@ -1,7 +1,7 @@
-#Sun Nov 25 04:15:54 KST 2018
-base.0=C\:\\Android\\CPL-20182-Team8-onthejourney\\CPL-20182-Team8-onthejourney\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Sun Nov 25 04:42:45 KST 2018
+base.0=C\:\\Android\\CPL-20182-Team8\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Android\\CPL-20182-Team8-onthejourney\\CPL-20182-Team8-onthejourney\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+base.1=C\:\\Android\\CPL-20182-Team8\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
