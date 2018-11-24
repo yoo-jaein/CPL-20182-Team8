@@ -1187,6 +1187,7 @@ drawable googleg_standard_color_18
 drawable grey_border
 drawable grey_border_bottom
 drawable hash_orange
+drawable hash_search_back
 drawable ic_add_to_story
 drawable ic_alert
 drawable ic_android

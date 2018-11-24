@@ -11,14 +11,17 @@
         <EditText
             android:id="@+id/editTextInsearch"
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="wrap_content"
+            android:paddingLeft="75dp"
+            android:background="@drawable/hash_search_back"/>
 
         <Button
             android:id="@+id/buttonInsearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:onClick="onClickInSearch"
-            android:text="POST" />
+            android:background="@drawable/maps_search_bar"/>
 
         <TextView
             android:id="@+id/textInsearch"

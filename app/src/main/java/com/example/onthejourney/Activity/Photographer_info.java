@@ -2,8 +2,8 @@
 package com.example.onthejourney.Activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -19,8 +19,6 @@ import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.R;
 
 import java.util.ArrayList;
-
-import static java.lang.Thread.sleep;
 
 public class Photographer_info extends AppCompatActivity {
 
