@@ -86,7 +86,10 @@ router.post('/', upload.single('image'),function(req, res){
 });
 
 
-router.put('/:feed_item_id', function (req, res) {
+router.put('/:feed_item_id', upload.single('image'), function (req, res) {
+
+    req.body['image_path'] = 'images/' + req.file.originalname;
+
     Feed.updateMany({_id : req.params.feed_item_id}, {$set:req.body})
         .then(function(feed_item){
             res.send(ReturnFormat.put_format(1, feed_item, ""));
