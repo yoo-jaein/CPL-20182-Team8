@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="날짜 " />
+            android:text="날짜 : " />
 
         <TextView
             android:id="@+id/item_request_start"
@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="장소 " />
+            android:text="장소 : " />
 
         <TextView
             android:id="@+id/item_request_location"
@@ -57,7 +57,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="인원 " />
+            android:text="인원 : " />
 
         <TextView
             android:id="@+id/item_request_people_number"

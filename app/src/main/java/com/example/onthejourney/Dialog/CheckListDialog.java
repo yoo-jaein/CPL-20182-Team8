@@ -11,10 +11,11 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 
 import com.example.onthejourney.Data.CheckList;
+import com.example.onthejourney.Data.MyDate;
 import com.example.onthejourney.R;
 
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class CheckListDialog extends Dialog implements View.OnClickListener {
     private static final int LAYOUT = R.layout.dialog_checklist;
@@ -77,13 +78,12 @@ public class CheckListDialog extends Dialog implements View.OnClickListener {
             case R.id.findPwDialogFindTv:
                 CheckList checkList = new CheckList();
 
-
-                Date sdate = new Date(sdp.getYear(),sdp.getMonth(),sdp.getDayOfMonth());
-                Date edate = new Date(edp.getYear(),edp.getMonth(),edp.getDayOfMonth());
+                MyDate sdate = new MyDate(sdp.getYear(), sdp.getMonth()+1, sdp.getDayOfMonth());
+                MyDate edate = new MyDate(edp.getYear(), edp.getMonth()+1, edp.getDayOfMonth());
                 checkList.setStart_time(sdate);
                 checkList.setEnd_time(edate);
                 checkList.setSuggested_price(Integer.parseInt(suggest_priceEt.getText().toString()));
-                checkList.setLocation(locationEt.toString());
+                checkList.setLocation(locationEt.getText().toString());
                 checkList.setPeople_number(Integer.parseInt(people_numberEt.getText().toString()));
 
                 ArrayList<String> arrayList = new ArrayList<>();

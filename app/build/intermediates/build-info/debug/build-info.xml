@@ -5,30 +5,33 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
+    ir-eligibility="CLASS_ADDED"
     plugin-version="3.2.1"
-    timestamp="1543059058197"
+    timestamp="1543060542645"
     token="-4816925225421496071"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1145" />
+        duration="1136" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="28" />
+        duration="53" />
     <task
         name="verifier"
-        duration="11" />
+        duration="23" />
 
     <artifact
-        location="C:\Android\OntheJourney\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="C:\Android\OntheJourney\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
         type="SPLIT" />
     <artifact
         location="C:\Android\OntheJourney\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Android\OntheJourney\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
 
     <build
@@ -77,14 +80,34 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1543059058197"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1543059762613"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Android\OntheJourney\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1543059980112"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Android\OntheJourney\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1543060542645"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Android\OntheJourney\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
         <artifact
             location="C:\Android\OntheJourney\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Android\OntheJourney\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
     </build>
 

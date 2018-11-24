@@ -13,8 +13,8 @@ public class CheckList {
     private String customer_id=null;
     private String buddy_id = null;
     private String state = null;
-    private Date start_time = null;
-    private Date end_time = null;
+    private MyDate start_time = null;
+    private MyDate end_time = null;
     private String location = null;
     private int people_number = 0;
     private ArrayList<String> requirement_list = null;
@@ -25,7 +25,7 @@ public class CheckList {
     public CheckList(){
 
     }
-    public CheckList(String customer_id, String buddy_id, String state, Date start_time, Date end_time, String location, int people_number, ArrayList<String> requirement_list, int suggested_price) {
+    public CheckList(String customer_id, String buddy_id, String state, MyDate start_time, MyDate end_time, String location, int people_number, ArrayList<String> requirement_list, int suggested_price) {
         this.customer_id = customer_id;
         this.buddy_id = buddy_id;
         this.state = state;
@@ -61,19 +61,19 @@ public class CheckList {
         this.state = state;
     }
 
-    public Date getStart_time() {
+    public MyDate getStart_time() {
         return start_time;
     }
 
-    public void setStart_time(Date start_time) {
+    public void setStart_time(MyDate start_time) {
         this.start_time = start_time;
     }
 
-    public Date getEnd_time() {
+    public MyDate getEnd_time() {
         return end_time;
     }
 
-    public void setEnd_time(Date end_time) {
+    public void setEnd_time(MyDate end_time) {
         this.end_time = end_time;
     }
 
