@@ -28,23 +28,15 @@ public class LikeBuddyFragment extends Fragment {
 
     public  ArrayList<Buddy> buddies = new ArrayList<Buddy>();
 
-    public LikeBuddyFragment() {}
 
-    public static final Customer customer = new Customer("traveler",
-            "hhm",
-            "kim");
+    public static Customer customer = null;
     private ArrayList<String> favorite_buddy;
 
-    public static LikeBuddyFragment newInstance() {
+    public LikeBuddyFragment() {}
+    public static LikeBuddyFragment newInstance(Customer customer) {
         LikeBuddyFragment fragment = new LikeBuddyFragment();
         Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    public static LikeBuddyFragment newInstance(String param1, String param2) {
-        LikeBuddyFragment fragment = new LikeBuddyFragment();
-        Bundle args = new Bundle();
+        args.putParcelable("Customer",customer);
         fragment.setArguments(args);
         return fragment;
     }
@@ -57,6 +49,9 @@ public class LikeBuddyFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        customer = (Customer)getArguments().get("Customer");
+
+
         favorite_buddy = new ArrayList<>();
         favorite_buddy.add("hihi");
         favorite_buddy.add("hiroo~");
@@ -93,6 +88,7 @@ public class LikeBuddyFragment extends Fragment {
                             @Override
                             public void onItemClick(View view, int position) {
                                 Intent intent = new Intent(getActivity(), Photographer_info.class);
+                                intent.putExtra("Customer",customer);
                                 intent.putExtra("Buddy", buddies.get(position));
                                 intent.putStringArrayListExtra("List", s.get(position));
                                 startActivity(intent);

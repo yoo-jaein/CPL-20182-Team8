@@ -9,16 +9,20 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.onthejourney.Adapter.LikeFragmentPagerAdapter;
+import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.Data.Customer;
 import com.example.onthejourney.Fragment.LikeBuddyFragment;
+import com.example.onthejourney.Fragment.LikeFragment;
 import com.example.onthejourney.Fragment.MapFragment;
 import com.example.onthejourney.Fragment.MyPageFragment;
 import com.example.onthejourney.Fragment.SearchFragment;
 import com.example.onthejourney.Fragment.requestAchat;
 import com.example.onthejourney.R;
+import com.google.android.gms.maps.model.LatLng;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 
@@ -26,12 +30,14 @@ public class HomeActivity extends AppCompatActivity {
     private Fragment fragment;
     private FragmentManager fragmentManager;
     private int flag=0;
-
+    Buddy buddy = null;
+    Customer Customer = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        buddy = new Buddy(32.7, 160.5, "hiroo~");
+        Customer = (Customer)getIntent().getParcelableExtra("Customer");
         // Intent login_select = new Intent(this, LoginSelectActivity.class);
         // startActivity(login_select);
 
@@ -60,37 +66,32 @@ public class HomeActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.search:
                         fragment = new requestAchat();
+                        Bundle args = new Bundle();
+                        args.putParcelable("Buddy",buddy);
+                        fragment.setArguments(args);
                         break;
                     case R.id.map:
                         Intent intent = new Intent(HomeActivity.this,MapsActivity.class);
-                        Customer customer = new Customer("hihi","hhm","jun");
-                        intent.putExtra("Customer",customer);
+                        intent.putExtra("Customer",Customer);
                         startActivity(intent);
                         flag = 1;
                         fragment = new MapFragment();
                         break;
                     case R.id.like:
-                        flag = 2;
-                        fragment = new LikeBuddyFragment();
+                        fragment = new LikeFragment();
+                        Bundle arg = new Bundle();
+                        arg.putParcelable("Customer",Customer);
+                        fragment.setArguments(arg);
                         break;
                     case R.id.mypage:
                         fragment = new MyPageFragment();
+                        Bundle args1 = new Bundle();
+                        args1.putParcelable("Customer",Customer);
+                        Log.d("Customer",Customer.toString());
+                        fragment.setArguments(args1);
                         break;
                 }
                 if(flag == 1){
-                    return true;
-                }
-                else if(flag == 2){
-                    LikeFragmentPagerAdapter mFragmentPagerAdapter = new LikeFragmentPagerAdapter(getSupportFragmentManager());
-                    ViewPager mViewPager = (ViewPager)findViewById(R.id.fragmentviewpager);
-                    mViewPager.setAdapter(mFragmentPagerAdapter);
-
-                    mTab.setupWithViewPager(mViewPager);
-                    mTab.setVisibility(TabLayout.VISIBLE);
-
-                    final FragmentTransaction transaction = fragmentManager.beginTransaction();
-                    transaction.replace(R.id.main_container, fragment).commit();
-
                     return true;
                 }
                 else {

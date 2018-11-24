@@ -170,21 +170,19 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:text="작업 제한"
-                    android:textSize="15sp"
+                    android:id="@+id/request"
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:background="@drawable/request"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content" />
                 <Button
-                    android:text="후기 보기"
-                    android:textSize="15sp"
+                    android:id="@+id/post"
                     android:layout_gravity="center"
                     android:textStyle="bold"
                     android:background="@drawable/post"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content" />
 
 
 

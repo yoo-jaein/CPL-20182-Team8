@@ -4,21 +4,24 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
+import com.example.onthejourney.Data.Customer;
 import com.example.onthejourney.Fragment.LikeBuddyFragment;
 import com.example.onthejourney.Fragment.LikePhotoFragment;
 
-public class FragmentPagerAdapter extends android.support.v4.app.FragmentPagerAdapter {
-    public FragmentPagerAdapter(FragmentManager fm) {
+public class FragmentPagerAdapterMy extends android.support.v4.app.FragmentPagerAdapter {
+    private Customer customer;
+    public FragmentPagerAdapterMy(FragmentManager fm, Customer customer) {
         super(fm);
+        this.customer = customer;
     }
 
     @Override
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return LikeBuddyFragment.newInstance();
+                return LikeBuddyFragment.newInstance(customer);
             case 1:
-                return LikePhotoFragment.newInstance();
+                return LikePhotoFragment.newInstance(customer);
             default:
                 return null;
         }

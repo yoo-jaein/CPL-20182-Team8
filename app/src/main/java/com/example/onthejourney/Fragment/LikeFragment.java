@@ -2,15 +2,20 @@ package com.example.onthejourney.Fragment;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.onthejourney.Adapter.FragmentPagerAdapter;
+import com.example.onthejourney.Adapter.FragmentPagerAdapterMy;
+import com.example.onthejourney.Adapter.RequestFragmentPagerAdapterMy;
+import com.example.onthejourney.Data.Customer;
 import com.example.onthejourney.R;
 
 /**
@@ -18,39 +23,42 @@ import com.example.onthejourney.R;
  */
 public class LikeFragment extends Fragment {
 
-    public static TabLayout tabLayout;
-    public static ViewPager viewPager;
-    public static int int_items = 2;
+    private Customer customer;
+    public TabLayout tabLayout;
+    public ViewPager viewPager;
+
+    public LikeFragment() {}
+
+    public static LikeFragment newInstance(Customer customer) {
+        LikeFragment fragment = new LikeFragment();
+        Bundle args = new Bundle();
+        args.putParcelable("Customer",customer);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         /**
          *Inflate tab_layout and setup Views.
          */
-        View v = inflater.inflate(R.layout.fragment_like, container, false);
-        tabLayout = (TabLayout) v.findViewById(R.id.tabs);
-        viewPager = (ViewPager) v.findViewById(R.id.viewpager);
+        return inflater.inflate(R.layout.fragment_like, container, false);
+    }
 
-        /**
-         *Set an Apater for the View Pager
-         */
-        viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        customer = (Customer)getArguments().get("Customer");
+        MyAdapter adapter = new MyAdapter(
+                getActivity().getSupportFragmentManager()
+        );
 
-        /**
-         * Now , this is a workaround ,
-         * The setupWithViewPager dose't works without the runnable .
-         * Maybe a Support Library Bug .
-         */
+        tabLayout = (TabLayout) view.findViewById(R.id.tabs_likefragment);
 
-        tabLayout.post(new Runnable() {
-            @Override
-            public void run() {
-                tabLayout.setupWithViewPager(viewPager);
-            }
-        });
+        viewPager = (ViewPager) view.findViewById(R.id.viewpager_likefragment);
+        viewPager.setAdapter(adapter);
 
-        return v;
-
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     class MyAdapter extends FragmentPagerAdapter {
@@ -67,18 +75,18 @@ public class LikeFragment extends Fragment {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new LikePhotoFragment();
+
+                    return LikeBuddyFragment.newInstance(customer);
                 case 1:
-                    return new LikeBuddyFragment();
+                    return LikePhotoFragment.newInstance(customer);
+                default:
+                    return null;
             }
-            return null;
         }
 
         @Override
         public int getCount() {
-
-            return int_items;
-
+            return 2;
         }
 
         /**
@@ -90,35 +98,17 @@ public class LikeFragment extends Fragment {
 
             switch (position) {
                 case 0:
-                    String str = "Photo";
-                    return str;
-                case 1:
                     String str1 = "Buddy";
                     return str1;
+                case 1:
+                    String str = "Photo";
+
+                    return str;
             }
             return null;
         }
     }
 
-
-
-    ////////////////////////////
-
-    public LikeFragment() {}
-
-    public static LikeFragment newInstance(String param1, String param2) {
-        LikeFragment fragment = new LikeFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        View view = inflater.inflate(R.layout.fragment_like_photo, container, false);
-//        return view;
-//    }
 
 
 }

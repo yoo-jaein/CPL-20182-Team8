@@ -7,11 +7,13 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.onthejourney.Adapter.RequestFragmentPagerAdapter;
+import com.example.onthejourney.Adapter.RequestFragmentPagerAdapterMy;
+import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.R;
 
 /**
@@ -19,10 +21,19 @@ import com.example.onthejourney.R;
  */
 public class requestAchat extends Fragment {
 
+    static Buddy buddy = null;
 
-    public requestAchat() {
-        // Required empty public constructor
+    public static requestAchat newInstance(){
+        Bundle args = new Bundle();
+
+        requestAchat fragment = new requestAchat();
+        args.putParcelable("Buddy",buddy);
+        fragment.setArguments(args);
+        return fragment;
     }
+
+    public requestAchat(){}
+
 
 
     @Override
@@ -36,8 +47,10 @@ public class requestAchat extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RequestFragmentPagerAdapter adapter = new RequestFragmentPagerAdapter(
-                getActivity().getSupportFragmentManager()
+        buddy = (Buddy)getArguments().get("Buddy");
+        Log.d("buddy",buddy.toString());
+        RequestFragmentPagerAdapterMy adapter = new RequestFragmentPagerAdapterMy(
+                getActivity().getSupportFragmentManager(), buddy
         );
         ViewPager viewPager = (ViewPager) getActivity().findViewById(R.id.reqViewPager);
         viewPager.setAdapter(adapter);

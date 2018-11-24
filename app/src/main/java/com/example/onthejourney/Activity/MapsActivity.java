@@ -38,6 +38,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.tasks.Task;
 import com.google.maps.android.clustering.Cluster;
 import com.google.maps.android.clustering.ClusterManager;
 
@@ -149,6 +150,7 @@ public class MapsActivity extends FragmentActivity implements
                                 ArrayList<String> likeBuddyList = s;
 
                                 for (int i = 0; i < ary.length; i++) {
+                                    Log.d("Buddy",((Buddy)ary[i]).toString());
                                     for (int j = 0; j < likeBuddyList.size(); j++) {
                                         if (likeBuddyList.get(j).equals(((Buddy) ary[i]).getBuddy_id())) {
                                             ((Buddy) ary[i]).setLikeFlag(1);
@@ -157,6 +159,7 @@ public class MapsActivity extends FragmentActivity implements
                                     arr.add((Buddy) ary[i]);
                                 }
 
+                                Log.d("arr", arr.toString());
 
 
                                 NetworkTask networkTask = new NetworkTask("feed_items", "image_path", arr, new NetworkTask.Listener() {
@@ -179,6 +182,7 @@ public class MapsActivity extends FragmentActivity implements
 
                                                 Intent intent = new Intent(MapsActivity.this, Photographer_info.class);
                                                 intent.putExtra("Buddy", buddy);
+                                                intent.putExtra("Customer",me);
                                                 intent.putStringArrayListExtra("List", s.get(position));
                                                 startActivity(intent);
                                             }
@@ -228,6 +232,7 @@ public class MapsActivity extends FragmentActivity implements
                                         LinearLayout linearLayout = findViewById(R.id.linearLayout);
                                         linearLayout.setVisibility(LinearLayout.VISIBLE);
                                         count.setText("1");
+                                        like = findViewById(R.id.like);
 
                                         PhotographerListViewAdapter adapter = new PhotographerListViewAdapter(arr, s);
                                         listView.setAdapter(adapter);
@@ -241,6 +246,7 @@ public class MapsActivity extends FragmentActivity implements
 
                                                 Intent intent = new Intent(MapsActivity.this, Photographer_info.class);
                                                 intent.putExtra("Buddy", buddy);
+                                                intent.putExtra("Customer",me);
                                                 intent.putStringArrayListExtra("List", s.get(position));
                                                 startActivity(intent);
                                             }

@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:876315161384:android:0362571190348680",
+        "mobilesdk_app_id": "1:876315161384:android:fd64f9d9ebf17349",
         "android_client_info": {
-          "package_name": "com.example.OntheJournet"
+          "package_name": "com.example.onthejourney"
         }
       },
       "oauth_client": [
         {
-          "client_id": "876315161384-l9sud7eg7trl8not4kdgtr9ugatb639i.apps.googleusercontent.com",
+          "client_id": "876315161384-546gg53rsp1j3burjm8d71fd61g3ru52.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.OntheJournet",
+            "package_name": "com.example.onthejourney",
             "certificate_hash": "f6e2a22027d1ef3cc2de435ae8d7bc66fa9c167a"
           }
         },

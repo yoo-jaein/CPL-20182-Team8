@@ -25,15 +25,15 @@ import java.util.ArrayList;
 public class LikePhotoFragment extends android.support.v4.app.Fragment {
 
 
-    public static final Customer customer = new Customer("traveler",
-            "hhm",
-            "kim");
+    public static Customer customer = null;
     private ArrayList<String> favorite_image;
 
-    public static LikePhotoFragment newInstance() {
+    public LikePhotoFragment(){}
+
+    public static LikePhotoFragment newInstance(Customer customer) {
         // Required empty public constructor
         Bundle args = new Bundle();
-
+        args.putParcelable("Customer",customer);
         LikePhotoFragment fragment = new LikePhotoFragment();
         fragment.setArguments(args);
 
@@ -51,6 +51,7 @@ public class LikePhotoFragment extends android.support.v4.app.Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        customer = (Customer)getArguments().get("Customer");
 
 
         NetworkTask networkTask = new NetworkTask("favorite_feeds/customer/", "feed_id", new NetworkTask.Listener() {
@@ -60,7 +61,7 @@ public class LikePhotoFragment extends android.support.v4.app.Fragment {
                 RecyclerView rv = (RecyclerView) getActivity().findViewById(R.id.rvLikePhoto);
                 rv.setLayoutManager(new GridLayoutManager(getContext(),3));
 
-                RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), s);
+                RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), s,customer);
                 rv.setAdapter(adapter);
 
             }
