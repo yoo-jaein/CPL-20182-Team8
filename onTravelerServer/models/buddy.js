@@ -4,8 +4,8 @@ var Schema = mongoose.Schema;
 var buddySchema = new Schema({
     buddy_id : { type : String, required : true , unique: true},
     name : { type : String, required : true },
+    location_name : String,
     active_location : {
-        name : String,
         latitude : String,
         longitude : String
     },
