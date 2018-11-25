@@ -61,7 +61,7 @@ public class BookingActivity extends AppCompatActivity {
                         }
 
 
-                        RequestAdapter adapter = new RequestAdapter(checkLists);
+                        RequestAdapter adapter = new RequestAdapter(checkLists,customer);
                         chat_list.setAdapter(adapter);
                         chat_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override

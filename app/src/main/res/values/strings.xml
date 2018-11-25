@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OntheJourney</string>
+    <string name="app_name">여행길에</string>
     <string name="title_activity_maps">OntheJourney</string>
     <!-- fragment names -->
     <string name="edit_profile_fragment">Edit Profile</string>

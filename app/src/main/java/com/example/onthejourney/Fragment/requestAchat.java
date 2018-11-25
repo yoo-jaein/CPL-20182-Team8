@@ -22,7 +22,7 @@ import com.example.onthejourney.R;
 public class requestAchat extends Fragment {
 
     static Buddy buddy = null;
-
+    private ViewPager viewPager;
     public static requestAchat newInstance(){
         Bundle args = new Bundle();
 
@@ -52,10 +52,13 @@ public class requestAchat extends Fragment {
         RequestFragmentPagerAdapterMy adapter = new RequestFragmentPagerAdapterMy(
                 getActivity().getSupportFragmentManager(), buddy
         );
-        ViewPager viewPager = (ViewPager) getActivity().findViewById(R.id.reqViewPager);
-        viewPager.setAdapter(adapter);
 
-        TabLayout tabLayout = (TabLayout)getActivity().findViewById(R.id.reqTabs);
-        tabLayout.setupWithViewPager(viewPager);
+        if(viewPager == null) {
+            viewPager = (ViewPager) getActivity().findViewById(R.id.reqViewPager);
+            viewPager.setAdapter(adapter);
+
+            TabLayout tabLayout = (TabLayout) getActivity().findViewById(R.id.reqTabs);
+            tabLayout.setupWithViewPager(viewPager);
+        }
     }
 }

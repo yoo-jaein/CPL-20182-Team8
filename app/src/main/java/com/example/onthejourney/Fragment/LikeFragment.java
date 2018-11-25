@@ -53,12 +53,14 @@ public class LikeFragment extends Fragment {
                 getActivity().getSupportFragmentManager()
         );
 
-        tabLayout = (TabLayout) view.findViewById(R.id.tabs_likefragment);
 
-        viewPager = (ViewPager) view.findViewById(R.id.viewpager_likefragment);
-        viewPager.setAdapter(adapter);
+        if(viewPager == null) {
+            viewPager = (ViewPager) view.findViewById(R.id.viewpager_likefragment);
 
-        tabLayout.setupWithViewPager(viewPager);
+            viewPager.setAdapter(adapter);
+            tabLayout = (TabLayout) view.findViewById(R.id.tabs_likefragment);
+            tabLayout.setupWithViewPager(viewPager);
+        }
     }
 
     class MyAdapter extends FragmentPagerAdapter {

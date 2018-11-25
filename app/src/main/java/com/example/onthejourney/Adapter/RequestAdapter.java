@@ -9,7 +9,9 @@ import android.widget.Checkable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.Data.CheckList;
+import com.example.onthejourney.Data.Customer;
 import com.example.onthejourney.R;
 
 import java.util.ArrayList;
@@ -17,9 +19,16 @@ import java.util.ArrayList;
 public class RequestAdapter extends BaseAdapter {
 
     private ArrayList<CheckList> checkLists = new ArrayList<>();
+    private Buddy buddy;
+    private Customer customer;
 
-    public RequestAdapter(ArrayList<CheckList> list){
+    public RequestAdapter(ArrayList<CheckList> list, Buddy buddy){
         this.checkLists = list;
+        this.buddy = buddy;
+    }
+    public RequestAdapter(ArrayList<CheckList> list, Customer customer){
+        this.checkLists = list;
+        this.customer = customer;
     }
     @Override
     public int getCount() {
@@ -43,6 +52,7 @@ public class RequestAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_request, null, false);
 
             holder = new CustomViewHolder();
+
             holder.buddyId = convertView.findViewById(R.id.item_request_buddyId);
             holder.startDate = convertView.findViewById(R.id.item_request_start);
             holder.endDate = convertView.findViewById(R.id.item_request_end);
@@ -56,7 +66,10 @@ public class RequestAdapter extends BaseAdapter {
             holder = (CustomViewHolder)convertView.getTag();
         }
         CheckList checkList = checkLists.get(position);
-        holder.buddyId.setText("Buddy_id : " + checkList.getBuddy_id());
+        if(buddy == null)
+            holder.buddyId.setText(checkList.getBuddy_id());
+        else
+            holder.buddyId.setText(checkList.getCustomer_id());
         holder.startDate.setText(checkList.getStart_year() + "년 " + checkList.getStart_month() + "월 " + checkList.getStart_day() + "일 ");
         holder.endDate.setText(checkList.getEnd_year() + "년 " + checkList.getEnd_month() + "월 " + checkList.getEnd_day() + "일 ");
         holder.location.setText(checkList.getLocation());

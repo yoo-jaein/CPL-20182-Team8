@@ -1,7 +1,6 @@
 package com.example.onthejourney.Fragment;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,13 +13,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.onthejourney.Activity.HomeActivity;
-import com.example.onthejourney.Activity.LoginActivity;
 import com.example.onthejourney.Adapter.RequestAdapter;
 import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.Data.CheckList;
-import com.example.onthejourney.Data.Customer;
-import com.example.onthejourney.Dialog.CheckListDialog;
 import com.example.onthejourney.Dialog.PhotographerCheckListDialog;
 import com.example.onthejourney.Module.HttpAsyncTask;
 import com.example.onthejourney.Module.MyCallBack;
@@ -84,7 +79,7 @@ public class RequestFragment extends Fragment {
                         }
 
                         final ListView listView = view.findViewById(R.id.listView_request);
-                        final RequestAdapter adapter = new RequestAdapter(checkLists);
+                        final RequestAdapter adapter = new RequestAdapter(checkLists,buddy);
                         listView.setAdapter(adapter);
 
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
