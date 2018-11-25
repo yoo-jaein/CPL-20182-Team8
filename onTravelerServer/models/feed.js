@@ -5,11 +5,7 @@ var feedSchema = new Schema({
     buddy_id : {type:String, require:true},
     image_path : {type:String, require: true},
     favorite_num : { type:Number, min : 0},
-    picture_taken_location : {
-        name : String,
-        latitude : String,
-        longitude : String
-    },
+    location_name :String,
     hashtag : [ String ]
 });
 

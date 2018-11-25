@@ -5,17 +5,11 @@ var buddySchema = new Schema({
     buddy_id : { type : String, required : true , unique: true},
     name : { type : String, required : true },
     location_name : String,
-    active_location : {
-        latitude : Number,
-        longitude : Number
-    },
+    latitude : Number,
+    longitude : Number,
     notification : String,
-    price_list : [
-        {
-            name : {type:String, required : true},
-            money : {type : Number, required : true, min : 0},
-        }
-    ],
+    price_names : [String],
+    price_moneys : [String],
     hashtag : [String]
 });
 
