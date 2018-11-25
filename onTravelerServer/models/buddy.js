@@ -6,8 +6,8 @@ var buddySchema = new Schema({
     name : { type : String, required : true },
     location_name : String,
     active_location : {
-        latitude : String,
-        longitude : String
+        latitude : Number,
+        longitude : Number
     },
     notification : String,
     price_list : [
