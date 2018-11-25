@@ -2,4 +2,5 @@
     <string name="app_name">google_login_test</string>
     <string name="google_login_client_id">651086014912-3749h1mabbsvcne62jc2a9a79ice8qe4.apps.googleusercontent.com</string>
     <string name="button">Button</string>
+    <string name="title_activity_buddy_home">BuddyHomeActivity</string>
 </resources>
