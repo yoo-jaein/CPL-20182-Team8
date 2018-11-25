@@ -55,26 +55,27 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.HomeActivityCustomer">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-
-            </intent-filter>
-        </activity>
+        <activity android:name=".Activity.HomeActivityCustomer"></activity>
         <activity android:name=".Activity.Photographer_info" />
         <activity android:name=".Activity.SliderView" />
         <activity android:name=".Activity.Notice" />
         <activity android:name=".Activity.IntroducePrice" />
         <activity android:name=".Activity.Schedule" />
         <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.ChatActivity"/>
-        <activity android:name=".Activity.SplashActivity"
+        <activity android:name=".Activity.ChatActivity" />
+        <activity
+            android:name=".Activity.SplashActivity"
             android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".Activity.LoginSelectActivity" />
-        <activity android:name=".Activity.BookingActivity"></activity>
+        <activity android:name=".Activity.BookingActivity" />
+        <activity android:name=".Activity.HomeActivityBuddy" />
+        <activity android:name=".Activity.SignUpActivity"></activity>
     </application>
 
 </manifest>

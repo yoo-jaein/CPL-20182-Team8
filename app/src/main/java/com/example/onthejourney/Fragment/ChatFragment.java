@@ -91,7 +91,7 @@ public class ChatFragment extends Fragment {
                         }
 
 
-                        RequestAdapter adapter = new RequestAdapter(checkLists);
+                        RequestAdapter adapter = new RequestAdapter(checkLists,buddy);
                         chat_list.setAdapter(adapter);
                         chat_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override

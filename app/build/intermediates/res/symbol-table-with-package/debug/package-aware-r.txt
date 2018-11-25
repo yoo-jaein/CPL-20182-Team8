@@ -1500,6 +1500,7 @@ drawable white_grey_border_bottom
 drawable white_grey_border_top
 drawable white_rounded_button
 id ALT
+id ButtonLinear
 id CTRL
 id FUNCTION
 id META
@@ -1815,6 +1816,7 @@ id showHome
 id showTitle
 id sign_in_button_buddy
 id sign_in_button_customer
+id sign_up_button
 id sliderImageView
 id smallLabel
 id snackbar_action
@@ -1960,6 +1962,7 @@ layout abc_tooltip
 layout activity_booking
 layout activity_chat
 layout activity_home
+layout activity_home_buddy
 layout activity_introduce_price
 layout activity_login
 layout activity_login_select
@@ -1968,6 +1971,7 @@ layout activity_notice
 layout activity_photographer_info
 layout activity_resigter
 layout activity_schedule
+layout activity_sign_up
 layout activity_slider_view
 layout amu_info_window
 layout amu_text_bubble

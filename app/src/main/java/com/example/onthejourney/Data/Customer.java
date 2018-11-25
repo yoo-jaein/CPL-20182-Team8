@@ -82,7 +82,6 @@ public class Customer implements Parcelable {
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("customer_id", customer_id);
-
             jsonObject.put("nickname", nickname);
             jsonObject.put("name", name);
         } catch (JSONException e) {

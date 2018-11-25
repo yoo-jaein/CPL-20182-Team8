@@ -30,7 +30,6 @@ public class LikeBuddyFragment extends Fragment {
 
 
     public static Customer customer = null;
-    private ArrayList<String> favorite_buddy;
 
     public LikeBuddyFragment() {}
     public static LikeBuddyFragment newInstance(Customer customer) {
@@ -52,9 +51,6 @@ public class LikeBuddyFragment extends Fragment {
         customer = (Customer)getArguments().get("Customer");
 
 
-        favorite_buddy = new ArrayList<>();
-        favorite_buddy.add("hihi");
-        favorite_buddy.add("hiroo~");
 
         LatLng DEFAULT_LOCATION = new LatLng(37.56, 126.97);
 

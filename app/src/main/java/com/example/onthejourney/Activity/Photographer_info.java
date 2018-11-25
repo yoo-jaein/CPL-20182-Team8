@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import com.example.onthejourney.Adapter.RecyclerViewAdapter;
 import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.Data.CheckList;
 import com.example.onthejourney.Data.Customer;
+import com.example.onthejourney.Data.Profile;
 import com.example.onthejourney.Dialog.CheckListDialog;
 import com.example.onthejourney.Module.HttpAsyncTask;
 import com.example.onthejourney.Module.MyCallBack;
@@ -53,44 +55,53 @@ public class Photographer_info extends AppCompatActivity {
         final Customer me = (Customer)getIntent().getParcelableExtra("Customer");
         ArrayList<String> image_path_list = (ArrayList<String>)getIntent().getStringArrayListExtra("List");
 
+        Log.d("BuddyInPhotoInfo",buddy.toString());
         Log.d("Customer", me.toString());
         Log.d("image_path_list", image_path_list.toString());
 
-        request = findViewById(R.id.request);
-        request.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        if(me != null) {
+            LinearLayout linearLayout = findViewById(R.id.ButtonLinear);
+            linearLayout.setVisibility(LinearLayout.VISIBLE);
+            request = findViewById(R.id.request);
+            request.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                CheckListDialog dialog = new CheckListDialog(v.getContext());
-                dialog.setDialogListener(new CheckListDialog.MyDialogListener() {
-                    @Override
-                    public void onPositiveClicked(CheckList checkList) {
-                        Log.d("checklist",checkList.toString());
-                        checkList.setState("예약중");
-                        checkList.setBuddy_id(buddy.getBuddy_id());
-                        checkList.setCustomer_id(me.getCustomer_id());
-                        JSONObject jsonObject = checkList.getJsonObject();
-                        new HttpAsyncTask("POST", "checkLists", jsonObject, null, new TypeToken<ResultBody<CheckList>>() {
-                        }.getType(),
-                                new MyCallBack() {
-                                    @Override
-                                    public void doTask(Object resultBody) {
-                                        ResultBody<CheckList> result = (ResultBody<CheckList>) resultBody;
-                                    }
-                                })
-                                .execute();
-                        Toast.makeText(context, "작업 제안이 완료되었습니다.", Toast.LENGTH_SHORT).show();
-                    }
+                    CheckListDialog dialog = new CheckListDialog(v.getContext());
+                    dialog.setDialogListener(new CheckListDialog.MyDialogListener() {
+                        @Override
+                        public void onPositiveClicked(CheckList checkList) {
+                            Log.d("checklist", checkList.toString());
+                            checkList.setState("예약중");
+                            checkList.setBuddy_id(buddy.getBuddy_id());
+                            checkList.setCustomer_id(me.getCustomer_id());
+                            JSONObject jsonObject = checkList.getJsonObject();
+                            new HttpAsyncTask("POST", "checkLists", jsonObject, null, new TypeToken<ResultBody<CheckList>>() {
+                            }.getType(),
+                                    new MyCallBack() {
+                                        @Override
+                                        public void doTask(Object resultBody) {
+                                            ResultBody<CheckList> result = (ResultBody<CheckList>) resultBody;
+                                        }
+                                    })
+                                    .execute();
+                            Toast.makeText(context, "작업 제안이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                        }
 
-                    @Override
-                    public void onNegativeClicked() {
-                        Toast.makeText(context, "취소하였습니다.", Toast.LENGTH_SHORT).show();
-                        Log.d("MyDialogListener","onNegativeClicked");
-                    }
-                });
-                dialog.show();
-            }
-        });
+                        @Override
+                        public void onNegativeClicked() {
+                            Toast.makeText(context, "취소하였습니다.", Toast.LENGTH_SHORT).show();
+                            Log.d("MyDialogListener", "onNegativeClicked");
+                        }
+                    });
+                    dialog.show();
+                }
+            });
+        }
+        else{
+            LinearLayout linearLayout = findViewById(R.id.ButtonLinear);
+            linearLayout.setVisibility(LinearLayout.GONE);
+        }
 
         TextView textView = findViewById(R.id.textView2);
         textView.setText(buddy.getTitle());
@@ -110,7 +121,17 @@ public class Photographer_info extends AppCompatActivity {
             }
         });
         imageView = findViewById(R.id.imageView);
-        Glide.with(this).load("http://ec2-18-222-114-158.us-east-2.compute.amazonaws.com:3000/"+image_path_list.get(0)).into(imageView);
+        new HttpAsyncTask("GET", "profiles/buddy/" + buddy.getBuddy_id(), null, null, new TypeToken<ResultBody<Profile>>() {
+        }.getType(),
+                new MyCallBack() {
+                    @Override
+                    public void doTask(Object resultBody) {
+                        ResultBody<Profile> result = (ResultBody<Profile>) resultBody;
+                        Glide.with(context).load("http://ec2-18-222-114-158.us-east-2.compute.amazonaws.com:3000/"+result.getDatas().get(0).getImage_path()).into(imageView);
+
+                    }
+                }
+        ).execute();
 
         this.rvSample = (RecyclerView) findViewById(R.id.rvSample);
         this.rvSample.setLayoutManager(new GridLayoutManager(this,3));

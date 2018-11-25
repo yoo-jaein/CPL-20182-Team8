@@ -10,6 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.onthejourney.Data.Buddy;
+import com.example.onthejourney.Data.Customer;
+import com.example.onthejourney.Module.HttpAsyncTask;
+import com.example.onthejourney.Module.MyCallBack;
+import com.example.onthejourney.Module.ResultBody;
 import com.example.onthejourney.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -18,17 +23,19 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.gson.reflect.TypeToken;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final int CUSTOMER_SIGN_IN = 50001;
     public static final int BUDDY_SIGN_IN = 50002;
+    public static final int SIGN_UP = 50003;
 
     GoogleSignInClient mGoogleSignInClient = null;
     GoogleSignInAccount mGoogleAccount;
     Button mCustomerSignInButton = null;
     Button mBuddySignInButton = null;
-    Button mSignOutButton = null;
+    Button mSignUPButton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +67,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mBuddySignInButton = findViewById(R.id.sign_in_button_buddy);
         mBuddySignInButton.setOnClickListener(this);
 
+        mSignUPButton = findViewById(R.id.sign_up_button);
+        mSignUPButton.setOnClickListener(this);
     }
 
     @Override
@@ -75,6 +84,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.sign_in_button_buddy:
                 buddySignIn();
                 break;
+            case R.id.sign_up_button:
+                signUp();
+                break;
         }
     }
 
@@ -88,11 +100,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         startActivityForResult(signInIntent, BUDDY_SIGN_IN);
     }
 
+    public void signUp(){
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, SIGN_UP);
+    }
+
     public void signOut(){
         mGoogleSignInClient.signOut().addOnCompleteListener(this, new OnCompleteListener<Void>(){
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                //Toast.makeText(MainActivity.this, "signed out", Toast.LENGTH_LONG).show();
+                //Toast.makeText(LoginActivity.this, "signed out", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -105,7 +122,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             try{
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 Log.d("account_id",account.getId());
-                updateUI(account);
+
+                new HttpAsyncTask("GET", "buddies/" + account.getId(), null, null, new TypeToken<ResultBody<Buddy>>() {
+                }.getType(), new MyCallBack() {
+                    @Override
+                    public void doTask(Object resultBody) {
+                        ResultBody<Buddy> result = (ResultBody<Buddy>) resultBody;
+
+                        /*  회원 가입이 되어 있을 때  */
+                        if(result.getDatas().size() == 1){
+                            Intent intent = new Intent(LoginActivity.this, HomeActivityBuddy.class);
+                            intent.putExtra("BuddyAccount", result.getDatas().get(0));
+                            startActivity(intent);
+                        }
+                        /*  회원 가입이 되어 있지 않을 때  */
+                        else{
+                            Toast.makeText(getApplicationContext(), "회원가입 안되있어용!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).execute();
             }catch (ApiException e){
                 e.printStackTrace();
             }
@@ -114,7 +149,50 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             try{
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 Log.d("account_id",account.getId());
-                updateUI(account);
+
+
+                new HttpAsyncTask("GET", "customers/" + account.getId(), null, null, new TypeToken<ResultBody<Customer>>() {
+                }.getType(), new MyCallBack() {
+                    @Override
+                    public void doTask(Object resultBody) {
+                        ResultBody<Customer> result = (ResultBody<Customer>) resultBody;
+
+                        /*  회원 가입이 되어 있을 때  */
+                        if(result.getDatas().size() == 1){
+                            Intent intent = new Intent(LoginActivity.this, HomeActivityCustomer.class);
+                            intent.putExtra("CustomerAccount", result.getDatas().get(0));
+                            startActivity(intent);
+                        }
+                        /*  회원 가입이 되어 있지 않을 때  */
+                        else{
+                            Toast.makeText(getApplicationContext(), "회원가입 안되있어용!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).execute();
+            }catch (ApiException e){
+                e.printStackTrace();
+            }
+        }else if(requestCode == SIGN_UP){
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                               GoogleSignInAccount account = task.getResult(ApiException.class);
+                Log.d("account_id", account.getId());
+
+                new HttpAsyncTask("POST", "customers",
+                        new Customer(account.getFamilyName() + account.getGivenName(), account.getId(), account.getFamilyName() + account.getGivenName()).getJsonObject(),
+                        null, new TypeToken<ResultBody<Customer>>() {
+                }.getType(),
+                        new MyCallBack() {
+                            @Override
+                            public void doTask(Object resultBody) {
+                                System.out.println("make customer");
+                            }
+                        }).execute();
+
+                /*
+                new HttpAsyncTask("POST", "buddies",
+                        new Buddy())
+                        */
             }catch (ApiException e){
                 e.printStackTrace();
             }
