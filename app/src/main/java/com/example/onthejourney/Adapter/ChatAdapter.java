@@ -22,7 +22,7 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
     private final SimpleDateFormat mSimpleDateFormat = new SimpleDateFormat("a h:mm", Locale.getDefault());
     private final static int TYPE_MY_SELF = 0;
     private final static int TYPE_ANOTHER = 1;
-    private String mMyEmail;
+
     private Customer customer = null;
     private Buddy buddy = null;
 
@@ -38,9 +38,6 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
         super(context, resource);
         this.buddy = buddy;
         Log.d("Buddy",buddy.toString());
-    }
-    public void setEmail(String email) {
-        mMyEmail = email;
     }
 
     private View setAnotherView(LayoutInflater inflater) {
@@ -96,7 +93,7 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
     @Override
     public int getItemViewType(int position) {
         String email = getItem(position).getUserName();
-        if (buddy == null && email.equals(customer.getCustomer_id())) {
+        if ((buddy == null && email.equals(customer.getCustomer_id())) || customer == null && email.equals(buddy.getBuddy_id())) {
             return TYPE_MY_SELF; // 나의 채팅내용
         } else {
             return TYPE_ANOTHER; // 상대방의 채팅내용

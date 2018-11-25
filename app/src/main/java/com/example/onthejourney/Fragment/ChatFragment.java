@@ -15,15 +15,24 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.onthejourney.Activity.BookingActivity;
 import com.example.onthejourney.Activity.ChatActivity;
+import com.example.onthejourney.Adapter.RequestAdapter;
 import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.Data.ChatDTO;
+import com.example.onthejourney.Data.CheckList;
+import com.example.onthejourney.Module.HttpAsyncTask;
+import com.example.onthejourney.Module.MyCallBack;
+import com.example.onthejourney.Module.ResultBody;
 import com.example.onthejourney.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,7 +40,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ChatFragment extends Fragment {
 
     private ListView chat_list;
-
+    private Buddy buddy;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
@@ -59,57 +68,47 @@ public class ChatFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final Buddy buddy = (Buddy)getArguments().get("Buddy");
+        buddy = (Buddy)getArguments().get("Buddy");
         Log.d("buddy in chatFragment",buddy.toString());
         chat_list = view.findViewById(R.id.chat_list);
-        chat_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(getActivity(), ChatActivity.class);
-                intent.putExtra("chatName",chat_list.getItemAtPosition(position).toString() );
-                Log.d("chatName",chat_list.getItemAtPosition(position).toString());
-                intent.putExtra("userName", buddy.getBuddy_id());
-                startActivity(intent);
-            }
-        });
         showChatList();
     }
     private void showChatList() {
         // 리스트 어댑터 생성 및 세팅
-        final ArrayAdapter<String> adapter
+        final ArrayList<CheckList> checkLists = new ArrayList<>();
+        new HttpAsyncTask("GET", "checklists/buddy/" + buddy.getBuddy_id(), null, null, new TypeToken<ResultBody<CheckList>>() {
+        }.getType(),
+                new MyCallBack() {
+                    @Override
+                    public void doTask(Object resultBody) {
+                        ResultBody<CheckList> result = (ResultBody<CheckList>) resultBody;
 
-                = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, android.R.id.text1);
-        chat_list.setAdapter(adapter);
+                        for (int i = 0; i < result.getDatas().size(); i++) {
+                            if (result.getDatas().get(i).getState().equals("진행중")) {
+                                checkLists.add((CheckList) result.getDatas().get(i));
+                            }
+                        }
 
-        // 데이터 받아오기 및 어댑터 데이터 추가 및 삭제 등..리스너 관리
-        databaseReference.child("CHAT").addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Log.e("LOG", "dataSnapshot.getKey() : " + dataSnapshot.getKey());
-                adapter.add(dataSnapshot.getKey());
-            }
 
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                        RequestAdapter adapter = new RequestAdapter(checkLists);
+                        chat_list.setAdapter(adapter);
+                        chat_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-            }
+                                Intent intent = new Intent(getActivity(), ChatActivity.class);
+                                intent.putExtra("Buddy", buddy);
+                                Log.d("Buddy", buddy.toString());
+                                intent.putExtra("chatName", ((CheckList)chat_list.getItemAtPosition(position)).getKey());
+                                Log.d("chatName", chat_list.getItemAtPosition(position).toString());
+                                intent.putExtra("userName", buddy.getBuddy_id());
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                }).execute();
 
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
     }
 }

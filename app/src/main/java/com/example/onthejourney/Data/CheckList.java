@@ -20,7 +20,7 @@ public class CheckList {
     private String end_year = null;
     private String end_month = null;
     private String end_day = null;
-
+    private String key = null;
     private String location_name = null;
     private int people_number = 0;
     private ArrayList<String> requirement_list = null;
@@ -128,6 +128,21 @@ public class CheckList {
         this.state = state;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getLocation_name() {
+        return location_name;
+    }
+
+    public void setLocation_name(String location_name) {
+        this.location_name = location_name;
+    }
 
     public String getLocation() {
         return location_name;
@@ -196,6 +211,7 @@ public class CheckList {
             jsonObject.put("end_year", end_year);
             jsonObject.put("end_month", end_month);
             jsonObject.put("end_day", end_day);
+            jsonObject.put("key",key);
             jsonObject.put("location_name",location_name);
             jsonObject.put("people_number", people_number);
             jsonObject.put("suggested_price", suggested_price);
@@ -218,6 +234,7 @@ public class CheckList {
                 ", end_year='" + end_year + '\'' +
                 ", end_month='" + end_month + '\'' +
                 ", end_day='" + end_day + '\'' +
+                ", key='" + key + '\'' +
                 ", location_name='" + location_name + '\'' +
                 ", people_number=" + people_number +
                 ", requirement_list=" + requirement_list +

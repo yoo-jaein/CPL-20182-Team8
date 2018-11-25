@@ -11,8 +11,10 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.onthejourney.Adapter.ChatAdapter;
+import com.example.onthejourney.Data.Buddy;
 import com.example.onthejourney.Data.ChatDTO;
 import com.example.onthejourney.Data.CheckList;
+import com.example.onthejourney.Data.Customer;
 import com.example.onthejourney.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -32,6 +34,8 @@ public class ChatActivity extends AppCompatActivity {
     private ChatAdapter adapter;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
+    private Buddy buddy;
+    private Customer customer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +49,24 @@ public class ChatActivity extends AppCompatActivity {
         chat_edit = (EditText) findViewById(R.id.chat_edit);
         chat_send = (Button) findViewById(R.id.chat_sent);
 
-        adapter = new ChatAdapter(this, R.layout.listitem_chat);
+
 
         // 로그인 화면에서 받아온 채팅방 이름, 유저 이름 저장
         Intent intent = getIntent();
         CHAT_NAME = intent.getStringExtra("chatName");
         USER_NAME = intent.getStringExtra("userName");
-
+        buddy = intent.getParcelableExtra("Buddy");
+        customer = intent.getParcelableExtra("Customer");
         // 채팅 방 입장
+
+        if(buddy == null)
+        adapter = new ChatAdapter(this, R.layout.listitem_chat, customer);
+
+        else
+            adapter = new ChatAdapter(this, R.layout.listitem_chat, buddy);
+
+        chat_view.setAdapter(adapter);
+
         openChat(CHAT_NAME);
 
         // 메시지 전송 버튼에 대한 클릭 리스너 지정
@@ -75,8 +89,9 @@ public class ChatActivity extends AppCompatActivity {
         ChatDTO chatDTO = dataSnapshot.getValue(ChatDTO.class);
         chatDTO.setFirebaseKey(dataSnapshot.getKey());
         adapter.add(chatDTO);
-        chat_view.setAdapter(adapter);
+
         chat_view.smoothScrollToPosition(adapter.getCount());
+        Log.d("adapteCount",Integer.toString(adapter.getCount()));
     }
 
     private void removeMessage(DataSnapshot dataSnapshot) {
@@ -86,11 +101,6 @@ public class ChatActivity extends AppCompatActivity {
 
     private void openChat(String chatName) {
         // 리스트 어댑터 생성 및 세팅
-        final ChatAdapter adapter
-
-                = new ChatAdapter(this, R.layout.listitem_chat);
-        chat_view.setAdapter(adapter);
-
 
         // 데이터 받아오기 및 어댑터 데이터 추가 및 삭제 등..리스너 관리
         databaseReference.child("CHAT").child(chatName).addChildEventListener(new ChildEventListener() {

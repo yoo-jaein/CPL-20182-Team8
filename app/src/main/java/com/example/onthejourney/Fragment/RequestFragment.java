@@ -39,6 +39,7 @@ import java.util.ArrayList;
  */
 public class RequestFragment extends Fragment {
 
+    private Buddy buddy;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
@@ -68,7 +69,7 @@ public class RequestFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        final Buddy buddy = (Buddy) getArguments().getParcelable("Buddy");
+        buddy = (Buddy) getArguments().getParcelable("Buddy");
         final ArrayList<CheckList> checkLists = new ArrayList<>();
         new HttpAsyncTask("GET", "checklists/buddy/" + buddy.getBuddy_id(), null, null, new TypeToken<ResultBody<CheckList>>() {
         }.getType(),
@@ -94,8 +95,11 @@ public class RequestFragment extends Fragment {
                                     @Override
                                     public void onPositiveClicked() {
                                         CheckList checkList = checkLists.get(position);
+                                        checkLists.remove(position);
                                         Log.d("checklist", checkList.toString());
                                         checkList.setState("진행중");
+                                        String key = databaseReference.child("CHAT").push().getKey();
+                                        checkList.setKey(key);
                                         JSONObject jsonObject = checkList.getJsonObject();
                                         new HttpAsyncTask("PUT", "checkLists/" + checkList.get_id(), jsonObject, null, new TypeToken<ResultBody<CheckList>>() {
                                         }.getType(),
@@ -107,7 +111,7 @@ public class RequestFragment extends Fragment {
                                                 })
                                                 .execute();
 
-                                        databaseReference.child("CHAT").push().setValue(checkList.getCustomer_id());
+
                                         listView.setAdapter(adapter);
                                         Toast.makeText(view.getContext(), "작업을 수락하였습니다.", Toast.LENGTH_SHORT).show();
                                     }

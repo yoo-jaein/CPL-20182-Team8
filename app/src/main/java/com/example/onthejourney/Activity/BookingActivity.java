@@ -32,7 +32,7 @@ public class BookingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_booking);
 
          customer = getIntent().getParcelableExtra("Customer");
-        Log.d("buddyinBookingActivity", customer.toString());
+        Log.d("cusinBookingActivity", customer.toString());
 
 
 
@@ -57,7 +57,6 @@ public class BookingActivity extends AppCompatActivity {
                         for (int i = 0; i < result.getDatas().size(); i++) {
                             if (result.getDatas().get(i).getState().equals("진행중")) {
                                 checkLists.add((CheckList) result.getDatas().get(i));
-                                Log.d("진행중",checkLists.get(0).toString());
                             }
                         }
 
@@ -71,7 +70,7 @@ public class BookingActivity extends AppCompatActivity {
                                 Intent intent = new Intent(BookingActivity.this, ChatActivity.class);
                                 intent.putExtra("Customer", customer);
                                 Log.d("Customer", customer.toString());
-                                intent.putExtra("chatName", chat_list.getItemAtPosition(position).toString());
+                                intent.putExtra("chatName", ((CheckList)chat_list.getItemAtPosition(position)).getKey());
                                 Log.d("chatName", chat_list.getItemAtPosition(position).toString());
                                 intent.putExtra("userName", customer.getCustomer_id());
                                 startActivity(intent);

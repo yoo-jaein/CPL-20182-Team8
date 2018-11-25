@@ -62,9 +62,7 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                TabLayout mTab = (TabLayout) findViewById(R.id.tabs);
                 flag = 0;
-                mTab.setVisibility(TabLayout.INVISIBLE);
 
                 switch (item.getItemId()) {
                     case R.id.search:
